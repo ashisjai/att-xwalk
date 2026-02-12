@@ -88,7 +88,7 @@ const PAGE_TEMPLATE = {
       selector: '.experiencefragment:has(#firstnet-email-signup)',
       style: 'dark-blue-accent',
       blocks: ['firstnet-form'],
-      defaultContent: []
+      defaultContent: ['.col-text h2', 'p.description.email-txt', 'p.legal-text.email-txt']
     }
   ]
 };
@@ -167,6 +167,10 @@ export default {
 
     const main = document.body;
 
+    // 0. Immediately remove all scripts to prevent deferred JS from injecting
+    // content (gated forms, tracking pixels) during or after the transform
+    main.querySelectorAll('script').forEach((s) => s.remove());
+
     // 1. Execute beforeTransform transformers (initial cleanup)
     executeTransformers('beforeTransform', main, payload);
 
@@ -190,6 +194,70 @@ export default {
     // 4. Execute afterTransform transformers (final cleanup + section breaks/metadata)
     executeTransformers('afterTransform', main, payload);
 
+    // 4.5. Final pass: remove residual gated form content that survives parsing
+    // These are loose form field labels, tracking pixels, close buttons etc.
+    // that are siblings of the parsed firstnet-form block.
+    const formLabels = [
+      'first name', 'last name', 'company', 'company name',
+      'title', 'title name', 'city', 'state', 'zip code',
+      'email', 'email address', 'phone', 'phone number',
+      'submit', 'feedback',
+    ];
+    // The form labels may be in <label>, <span>, <div>, <input> etc.
+    // (not <p> tags). They become <p> only after markdown→HTML conversion.
+    // Search ALL elements for matching text content.
+    const formLabelSet = new Set(formLabels);
+    [...main.querySelectorAll('p, span, label, div, li, td')].forEach((el) => {
+      const text = (el.textContent || '').replace(/\u00A0/g, ' ').trim();
+      const lower = text.toLowerCase();
+
+      // Skip elements with children that are block-level or contain important content
+      if (el.children.length > 0 && el.tagName !== 'P') {
+        // Only remove leaf elements or simple wrappers
+        const hasBlockChild = el.querySelector('div, table, ul, ol, h1, h2, h3, h4, h5, h6, section');
+        if (hasBlockChild) return;
+      }
+
+      // Close button (× or x as link text)
+      if (el.querySelector('a') && (text === '\u00D7' || text === '×' || lower === 'x')) {
+        el.remove();
+        return;
+      }
+
+      // Tracking pixel images
+      const img = el.querySelector('img');
+      if (img) {
+        const src = img.getAttribute('src') || '';
+        if (src.includes('verint') || src.includes('bat.bing.com')
+            || src.includes('rlcdn.com') || src.includes('d41.co')
+            || src.includes('.gif')) {
+          el.remove();
+          return;
+        }
+      }
+
+      // Form field labels
+      if (formLabelSet.has(lower)) {
+        el.remove();
+        return;
+      }
+
+      // Gated form instructional/consent text
+      if (lower.startsWith('please provide the following information')
+          || lower.startsWith('by submitting this form')) {
+        el.remove();
+        return;
+      }
+    });
+
+    // Remove empty <ul> elements (form validation placeholders)
+    [...main.querySelectorAll('ul')].forEach((ul) => {
+      if ((ul.textContent || '').trim() === '') ul.remove();
+    });
+
+    // Remove <input>, <select>, <textarea> elements (form field remnants)
+    [...main.querySelectorAll('input, select, textarea')].forEach((el) => el.remove());
+
     // 5. Apply WebImporter built-in rules
     const hr = document.createElement('hr');
     main.appendChild(hr);
@@ -202,8 +270,11 @@ export default {
       new URL(params.originalURL).pathname.replace(/\/$/, '').replace(/\.html$/, '')
     );
 
+    // 7. Deep-clone the element to freeze the DOM state
+    const frozen = main.cloneNode(true);
+
     return [{
-      element: main,
+      element: frozen,
       path: path || '/index',
       report: {
         title: document.title,

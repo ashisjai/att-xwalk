@@ -118,7 +118,11 @@
           "blocks": [
             "firstnet-form"
           ],
-          "defaultContent": []
+          "defaultContent": [
+            ".col-text h2",
+            "p.description.email-txt",
+            "p.legal-text.email-txt"
+          ]
         }
       ]
     }

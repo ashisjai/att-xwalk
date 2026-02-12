@@ -224,41 +224,77 @@ var CustomImportScript = (() => {
 
   // tools/importer/parsers/firstnet-form.js
   function parse5(element, { document }) {
-    const refFrag = document.createDocumentFragment();
-    refFrag.appendChild(document.createComment(" field:reference "));
+    const defaultContent = document.createDocumentFragment();
     const heading = element.querySelector(".col-text h2") || element.querySelector("h2");
     if (heading) {
-      refFrag.appendChild(heading);
+      defaultContent.appendChild(heading);
     }
     const desc = element.querySelector(".description.email-txt") || element.querySelector("p.description");
     if (desc) {
-      refFrag.appendChild(desc);
+      defaultContent.appendChild(desc);
     }
     const legalText = element.querySelector(".legal-text.email-txt") || element.querySelector("p.legal-text");
     if (legalText) {
-      refFrag.appendChild(legalText);
+      defaultContent.appendChild(legalText);
     }
-    const actionFrag = document.createDocumentFragment();
-    actionFrag.appendChild(document.createComment(" field:action "));
+    const refCell = document.createDocumentFragment();
+    refCell.appendChild(document.createComment(" field:reference "));
+    const refLink = document.createElement("a");
+    refLink.href = "/forms/email-signup.json";
+    refLink.textContent = "/forms/email-signup.json";
+    refCell.appendChild(refLink);
+    const actionCell = document.createDocumentFragment();
+    actionCell.appendChild(document.createComment(" field:action "));
     const form = element.querySelector("form");
-    if (form && form.action) {
-      const p = document.createElement("p");
-      const link = document.createElement("a");
-      link.href = form.action;
-      link.textContent = form.action;
-      p.appendChild(link);
-      actionFrag.appendChild(p);
-    } else {
-      const p = document.createElement("p");
-      p.textContent = "/email-signup";
-      actionFrag.appendChild(p);
-    }
+    const actionUrl = form && form.action ? form.action : "/email-signup";
+    const actionText = document.createElement("p");
+    actionText.textContent = actionUrl;
+    actionCell.appendChild(actionText);
     const cells = [
-      [refFrag],
-      [actionFrag]
+      [refCell],
+      // Row 1: reference field
+      [actionCell]
+      // Row 2: action field
     ];
     const block = WebImporter.Blocks.createBlock(document, { name: "firstnet-form", cells });
-    element.replaceWith(block);
+    const wrapper = document.createDocumentFragment();
+    wrapper.appendChild(defaultContent);
+    wrapper.appendChild(block);
+    const parent = element.parentElement;
+    element.replaceWith(wrapper);
+    if (parent) {
+      parent.querySelectorAll("form, input, select, textarea").forEach((el) => el.remove());
+      parent.querySelectorAll("ul").forEach((ul) => {
+        if (ul.textContent.trim() === "") ul.remove();
+      });
+      parent.querySelectorAll("p").forEach((p) => {
+        const img = p.querySelector("img");
+        const link = p.querySelector("a");
+        const text = p.textContent.trim();
+        if (img) {
+          const src = img.getAttribute("src") || "";
+          if (src.includes("bat.bing.com") || src.includes("rlcdn.com") || src.includes("verint") || src.includes(".gif")) {
+            p.remove();
+            return;
+          }
+        }
+        if (link && (text === "\xD7" || text === "x") && (!link.href || link.href === "" || link.href.endsWith("#"))) {
+          p.remove();
+          return;
+        }
+        if (text === "Submit" || text === "Feedback" || text === "Please provide the following information to access your document:" || text.startsWith("By submitting this form")) {
+          p.remove();
+          return;
+        }
+        if (!img && !link && text.length < 30 && !p.querySelector("strong, em, h1, h2, h3, h4, h5, h6")) {
+          const prevSibling = p.previousElementSibling;
+          const nextSibling = p.nextElementSibling;
+          if (prevSibling && prevSibling.tagName === "P" && prevSibling.textContent.trim().length < 30 || nextSibling && nextSibling.tagName === "UL" && nextSibling.textContent.trim() === "") {
+            p.remove();
+          }
+        }
+      });
+    }
   }
 
   // tools/importer/transformers/firstnet-cleanup.js
@@ -314,10 +350,71 @@ var CustomImportScript = (() => {
         el.removeAttribute("onclick");
       });
       WebImporter.DOMUtils.remove(element, [
+        ".gated-form",
+        '[class*="gated-content"]',
+        '[class*="gatedContent"]',
+        ".modal-form"
+      ]);
+      element.querySelectorAll("img").forEach((img) => {
+        const src = img.getAttribute("src") || "";
+        if (src.includes("bat.bing.com") || src.includes("rlcdn.com") || src.includes("d41.co") || src.includes("demdex.net") || src.includes("doubleclick.net") || src.includes("facebook.com/tr") || src.includes("verint") || src.endsWith(".gif") && img.width <= 1) {
+          const parent = img.closest("p") || img.parentElement;
+          if (parent && parent.children.length <= 1) {
+            parent.remove();
+          } else {
+            img.remove();
+          }
+        }
+      });
+      WebImporter.DOMUtils.remove(element, [
+        '[class*="verint"]',
+        '[id*="verint"]',
+        '[class*="foresee"]'
+      ]);
+      WebImporter.DOMUtils.remove(element, [
         ".featured-products-container",
         ".error-dropdown-msg",
         ".mobile-image"
       ]);
+      const formFieldLabels = /* @__PURE__ */ new Set([
+        "first name",
+        "last name",
+        "company",
+        "company name",
+        "title",
+        "title name",
+        "city",
+        "state",
+        "zip code",
+        "email",
+        "email address",
+        "phone",
+        "phone number",
+        "submit",
+        "feedback"
+      ]);
+      element.querySelectorAll("p").forEach((p) => {
+        const text = p.textContent.trim();
+        const lower = text.toLowerCase();
+        const link = p.querySelector("a");
+        if (link && (text === "\xD7" || text === "x")) {
+          p.remove();
+          return;
+        }
+        if (formFieldLabels.has(lower)) {
+          p.remove();
+          return;
+        }
+        if (text === "Please provide the following information to access your document:" || text.startsWith("By submitting this form")) {
+          p.remove();
+          return;
+        }
+      });
+      element.querySelectorAll("ul").forEach((ul) => {
+        if (ul.textContent.trim() === "") {
+          ul.remove();
+        }
+      });
     }
   }
 
@@ -443,7 +540,7 @@ var CustomImportScript = (() => {
         selector: ".experiencefragment:has(#firstnet-email-signup)",
         style: "dark-blue-accent",
         blocks: ["firstnet-form"],
-        defaultContent: []
+        defaultContent: [".col-text h2", "p.description.email-txt", "p.legal-text.email-txt"]
       }
     ]
   };
@@ -495,6 +592,7 @@ var CustomImportScript = (() => {
     transform: (payload) => {
       const { document, url, html, params } = payload;
       const main = document.body;
+      main.querySelectorAll("script").forEach((s) => s.remove());
       executeTransformers("beforeTransform", main, payload);
       const pageBlocks = findBlocksOnPage(document, PAGE_TEMPLATE);
       pageBlocks.forEach((block) => {
@@ -510,6 +608,56 @@ var CustomImportScript = (() => {
         }
       });
       executeTransformers("afterTransform", main, payload);
+      const formLabels = [
+        "first name",
+        "last name",
+        "company",
+        "company name",
+        "title",
+        "title name",
+        "city",
+        "state",
+        "zip code",
+        "email",
+        "email address",
+        "phone",
+        "phone number",
+        "submit",
+        "feedback"
+      ];
+      const formLabelSet = new Set(formLabels);
+      [...main.querySelectorAll("p, span, label, div, li, td")].forEach((el) => {
+        const text = (el.textContent || "").replace(/\u00A0/g, " ").trim();
+        const lower = text.toLowerCase();
+        if (el.children.length > 0 && el.tagName !== "P") {
+          const hasBlockChild = el.querySelector("div, table, ul, ol, h1, h2, h3, h4, h5, h6, section");
+          if (hasBlockChild) return;
+        }
+        if (el.querySelector("a") && (text === "\xD7" || text === "\xD7" || lower === "x")) {
+          el.remove();
+          return;
+        }
+        const img = el.querySelector("img");
+        if (img) {
+          const src = img.getAttribute("src") || "";
+          if (src.includes("verint") || src.includes("bat.bing.com") || src.includes("rlcdn.com") || src.includes("d41.co") || src.includes(".gif")) {
+            el.remove();
+            return;
+          }
+        }
+        if (formLabelSet.has(lower)) {
+          el.remove();
+          return;
+        }
+        if (lower.startsWith("please provide the following information") || lower.startsWith("by submitting this form")) {
+          el.remove();
+          return;
+        }
+      });
+      [...main.querySelectorAll("ul")].forEach((ul) => {
+        if ((ul.textContent || "").trim() === "") ul.remove();
+      });
+      [...main.querySelectorAll("input, select, textarea")].forEach((el) => el.remove());
       const hr = document.createElement("hr");
       main.appendChild(hr);
       WebImporter.rules.createMetadata(main, document);
@@ -518,8 +666,9 @@ var CustomImportScript = (() => {
       const path = WebImporter.FileUtils.sanitizePath(
         new URL(params.originalURL).pathname.replace(/\/$/, "").replace(/\.html$/, "")
       );
+      const frozen = main.cloneNode(true);
       return [{
-        element: main,
+        element: frozen,
         path: path || "/index",
         report: {
           title: document.title,

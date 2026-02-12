@@ -71,11 +71,88 @@ export default function transform(hookName, element, payload) {
       el.removeAttribute('onclick');
     });
 
+    // Remove gated content forms and popups (e.g., "Please provide the following information")
+    WebImporter.DOMUtils.remove(element, [
+      '.gated-form',
+      '[class*="gated-content"]',
+      '[class*="gatedContent"]',
+      '.modal-form',
+    ]);
+
+    // Remove tracking pixels (1x1 images from third-party domains)
+    element.querySelectorAll('img').forEach((img) => {
+      const src = img.getAttribute('src') || '';
+      if (src.includes('bat.bing.com')
+        || src.includes('rlcdn.com')
+        || src.includes('d41.co')
+        || src.includes('demdex.net')
+        || src.includes('doubleclick.net')
+        || src.includes('facebook.com/tr')
+        || src.includes('verint')
+        || (src.endsWith('.gif') && img.width <= 1)) {
+        const parent = img.closest('p') || img.parentElement;
+        if (parent && parent.children.length <= 1) {
+          parent.remove();
+        } else {
+          img.remove();
+        }
+      }
+    });
+
+    // Remove Verint/Foresee feedback widgets
+    WebImporter.DOMUtils.remove(element, [
+      '[class*="verint"]',
+      '[id*="verint"]',
+      '[class*="foresee"]',
+    ]);
+
     // Remove empty containers left after cleanup
     WebImporter.DOMUtils.remove(element, [
       '.featured-products-container',
       '.error-dropdown-msg',
       '.mobile-image',
     ]);
+
+    // Remove residual gated form content (form field labels, empty lists,
+    // close buttons, submit buttons, tracking consent text) that survive
+    // after parsers run. These are loose elements outside any container.
+    const formFieldLabels = new Set([
+      'first name', 'last name', 'company', 'company name',
+      'title', 'title name', 'city', 'state', 'zip code',
+      'email', 'email address', 'phone', 'phone number',
+      'submit', 'feedback',
+    ]);
+
+    element.querySelectorAll('p').forEach((p) => {
+      const text = p.textContent.trim();
+      const lower = text.toLowerCase();
+
+      // Remove close button paragraphs (× or x as link text)
+      const link = p.querySelector('a');
+      if (link && (text === '×' || text === 'x')) {
+        p.remove();
+        return;
+      }
+
+      // Remove known form field labels
+      if (formFieldLabels.has(lower)) {
+        p.remove();
+        return;
+      }
+
+      // Remove gated form instructional text
+      if (text === 'Please provide the following information to access your document:'
+        || text.startsWith('By submitting this form')) {
+        p.remove();
+        return;
+      }
+    });
+
+    // Remove empty <ul> elements (leftover from form validation placeholders)
+    element.querySelectorAll('ul').forEach((ul) => {
+      if (ul.textContent.trim() === '') {
+        ul.remove();
+      }
+    });
   }
 }
