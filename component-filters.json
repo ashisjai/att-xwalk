@@ -14,6 +14,11 @@
       "carousel",
       "columns",
       "embed",
+      "firstnet-cards-news",
+      "firstnet-cards-offers",
+      "firstnet-columns",
+      "firstnet-form",
+      "firstnet-hero",
       "fragment",
       "form",
       "hero",
@@ -61,9 +66,30 @@
     ]
   },
   {
+    "id": "firstnet-cards-news",
+    "components": [
+      "card"
+    ]
+  },
+  {
     "id": "firstnet-cards-offers",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "firstnet-columns",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
     ]
   },
   {
