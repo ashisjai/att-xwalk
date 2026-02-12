@@ -61,6 +61,12 @@
     ]
   },
   {
+    "id": "firstnet-cards-offers",
+    "components": [
+      "card"
+    ]
+  },
+  {
     "id": "table",
     "components": [
       "table-row"

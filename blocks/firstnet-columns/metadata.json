@@ -1,0 +1,38 @@
+{
+  "variantName": "firstnet-columns",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-02-12T07:30:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.firstnet.com/",
+    "originPage": "FirstNet homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "firstnet-features",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "icon + title + description x3",
+    "buttonCount": 0,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "FirstNet feature highlight columns",
+      "icon + text feature grids on dark backgrounds",
+      "three-column feature comparison layouts"
+    ],
+    "notSuitableFor": [
+      "image-heavy side-by-side layouts",
+      "two-column text layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-12T07:30:00.000Z"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "definitions": [
+    {
+      "title": "Firstnet Cards News",
+      "id": "firstnet-cards-news",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Firstnet Cards News",
+              "filter": "firstnet-cards-news"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Card",
+      "id": "card",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Card",
+              "model": "card"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "card",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "firstnet-cards-news",
+      "components": ["card"]
+    }
+  ]
+}

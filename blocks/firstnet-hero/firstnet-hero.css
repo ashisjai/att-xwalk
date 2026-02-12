@@ -1,0 +1,37 @@
+.firstnet-hero-container .firstnet-hero-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.firstnet-hero {
+  position: relative;
+  padding: 40px 24px;
+  min-height: 300px;
+}
+
+.firstnet-hero h1 {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--background-color);
+}
+
+.firstnet-hero picture {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.firstnet-hero img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media (width >= 900px) {
+  .firstnet-hero {
+    padding: 40px 32px;
+  }
+}

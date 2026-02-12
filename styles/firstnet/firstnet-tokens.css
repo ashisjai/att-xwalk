@@ -1,0 +1,168 @@
+/*
+ * FirstNet Design Tokens
+ * Extracted from https://www.firstnet.com/
+ *
+ * These CSS custom properties capture the FirstNet brand design system.
+ * Import this file in styles.css to apply FirstNet theming.
+ */
+
+:root {
+  /* ========================================
+   * FirstNet Color Palette
+   * ======================================== */
+
+  /* Primary brand colors */
+  --firstnet-dark-navy: #00263e;
+  --firstnet-blue-accent: #0568ae;
+  --firstnet-blue-light: #009fdb;
+  --firstnet-white: #fff;
+  --firstnet-black: #000;
+
+  /* Neutral colors */
+  --firstnet-grey-light: #f2f2f2;
+  --firstnet-grey-medium: #d2d2d2;
+  --firstnet-grey-dark: #565b60;
+
+  /* Semantic colors */
+  --firstnet-text-primary: #000;
+  --firstnet-text-inverse: #fff;
+  --firstnet-text-muted: #565b60;
+  --firstnet-link-color: #0568ae;
+  --firstnet-link-hover-color: #004a87;
+
+  /* Section backgrounds */
+  --firstnet-bg-default: #fff;
+  --firstnet-bg-dark-navy: #00263e;
+  --firstnet-bg-light-grey: #f2f2f2;
+  --firstnet-bg-blue-accent: #0568ae;
+
+  /* ========================================
+   * FirstNet Typography
+   * ======================================== */
+
+  /* Font families - AT&T proprietary fonts with system fallbacks */
+  --firstnet-heading-font-family: "Brooklyn-Medium", "Helvetica Neue", helvetica, arial, sans-serif;
+  --firstnet-body-font-family: "attAleckSans-Medium", "Helvetica Neue", helvetica, arial, sans-serif;
+  --firstnet-body-font-family-regular: "attAleckSans-Regular", "Helvetica Neue", helvetica, arial, sans-serif;
+
+  /* Heading sizes (mobile-first) */
+  --firstnet-heading-size-xxl: 32px;
+  --firstnet-heading-size-xl: 28px;
+  --firstnet-heading-size-l: 24px;
+  --firstnet-heading-size-m: 20px;
+  --firstnet-heading-size-s: 18px;
+  --firstnet-heading-size-xs: 16px;
+
+  /* Body text sizes */
+  --firstnet-body-size-l: 18px;
+  --firstnet-body-size-m: 16px;
+  --firstnet-body-size-s: 14px;
+  --firstnet-body-size-xs: 12px;
+
+  /* Line heights */
+  --firstnet-heading-line-height: 1.1;
+  --firstnet-body-line-height: 1.4;
+
+  /* Letter spacing */
+  --firstnet-heading-letter-spacing: -0.36px;
+  --firstnet-body-letter-spacing: normal;
+
+  /* ========================================
+   * FirstNet Spacing
+   * ======================================== */
+  --firstnet-spacing-xs: 8px;
+  --firstnet-spacing-s: 16px;
+  --firstnet-spacing-m: 24px;
+  --firstnet-spacing-l: 32px;
+  --firstnet-spacing-xl: 48px;
+  --firstnet-spacing-xxl: 64px;
+
+  /* Section padding */
+  --firstnet-section-padding-mobile: 40px 24px;
+  --firstnet-section-padding-desktop: 48px 32px;
+
+  /* Container */
+  --firstnet-container-max-width: 1200px;
+
+  /* ========================================
+   * FirstNet Buttons
+   * ======================================== */
+
+  /* Primary button (outlined white on dark backgrounds) */
+  --firstnet-button-primary-bg: transparent;
+  --firstnet-button-primary-color: #fff;
+  --firstnet-button-primary-border: 2px solid #fff;
+  --firstnet-button-primary-border-radius: 25px;
+  --firstnet-button-primary-padding: 10px 36px;
+  --firstnet-button-primary-font-size: 17px;
+
+  /* Primary button hover */
+  --firstnet-button-primary-hover-bg: #fff;
+  --firstnet-button-primary-hover-color: #00263e;
+
+  /* CTA button (blue solid) */
+  --firstnet-button-cta-bg: #0568ae;
+  --firstnet-button-cta-color: #fff;
+  --firstnet-button-cta-border: none;
+  --firstnet-button-cta-border-radius: 5px;
+  --firstnet-button-cta-padding: 10px 30px;
+
+  /* CTA button hover */
+  --firstnet-button-cta-hover-bg: #004a87;
+  --firstnet-button-cta-hover-color: #fff;
+
+  /* Link button (text link with arrow) */
+  --firstnet-button-link-color: #0568ae;
+  --firstnet-button-link-hover-color: #004a87;
+  --firstnet-button-link-font-weight: 400;
+
+  /* Button transitions */
+  --firstnet-button-transition: all 0.2s ease;
+
+  /* ========================================
+   * FirstNet Cards
+   * ======================================== */
+  --firstnet-card-bg: #fff;
+  --firstnet-card-border-radius: 0;
+  --firstnet-card-shadow: none;
+
+  /* Eyebrow text (category tags on cards) */
+  --firstnet-eyebrow-font-size: 16px;
+  --firstnet-eyebrow-font-weight: 400;
+  --firstnet-eyebrow-color: #000;
+  --firstnet-eyebrow-text-transform: none;
+
+  /* ========================================
+   * FirstNet Form Elements
+   * ======================================== */
+  --firstnet-input-border: 1px solid #d2d2d2;
+  --firstnet-input-border-radius: 4px;
+  --firstnet-input-padding: 10px 12px;
+  --firstnet-input-font-size: 16px;
+  --firstnet-input-focus-border-color: #0568ae;
+  --firstnet-input-placeholder-color: #767676;
+
+  /* ========================================
+   * FirstNet Miscellaneous
+   * ======================================== */
+  --firstnet-border-radius-pill: 25px;
+  --firstnet-border-radius-default: 5px;
+  --firstnet-transition-default: all 0.2s ease;
+  --firstnet-focus-outline: 2px solid #0568ae;
+  --firstnet-focus-outline-offset: 2px;
+}
+
+/* Desktop breakpoint overrides */
+@media (width >= 900px) {
+  :root {
+    --firstnet-heading-size-xxl: 36px;
+    --firstnet-heading-size-xl: 32px;
+    --firstnet-heading-size-l: 28px;
+    --firstnet-heading-size-m: 22px;
+    --firstnet-heading-size-s: 20px;
+    --firstnet-heading-size-xs: 18px;
+    --firstnet-body-size-l: 18px;
+    --firstnet-body-size-m: 16px;
+    --firstnet-body-size-s: 14px;
+  }
+}

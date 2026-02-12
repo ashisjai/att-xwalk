@@ -1,0 +1,33 @@
+.firstnet-columns > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.firstnet-columns img {
+  width: 100%;
+}
+
+.firstnet-columns > div > div {
+  order: 1;
+}
+
+.firstnet-columns > div > .firstnet-columns-img-col {
+  order: 0;
+}
+
+.firstnet-columns > div > .firstnet-columns-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .firstnet-columns > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
+  }
+
+  .firstnet-columns > div > div {
+    flex: 1;
+    order: unset;
+  }
+}

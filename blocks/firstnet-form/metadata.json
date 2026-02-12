@@ -1,0 +1,38 @@
+{
+  "variantName": "firstnet-form",
+  "baseBlock": "form",
+  "version": "1.0.0",
+  "created": "2026-02-12T07:30:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.firstnet.com/",
+    "originPage": "FirstNet homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "compact",
+    "purpose": "firstnet-signup",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "heading + subtext + email-input + dropdown + submit",
+    "buttonCount": 1,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "FirstNet email signup forms",
+      "newsletter subscription sections",
+      "lead generation forms on accent backgrounds"
+    ],
+    "notSuitableFor": [
+      "complex multi-field forms",
+      "contact forms with many fields"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-12T07:30:00.000Z"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.firstnet.com/"
+      ],
+      "description": "FirstNet.com homepage - main landing page with hero, feature sections, and call-to-action areas for first responder network services",
+      "blocks": [
+        {
+          "name": "firstnet-hero",
+          "instances": [
+            ".marquee-heading"
+          ]
+        },
+        {
+          "name": "firstnet-cards-offers",
+          "instances": [
+            ".new-offers-card:first-of-type .offersCard"
+          ]
+        },
+        {
+          "name": "firstnet-columns",
+          "instances": [
+            ".icon-grid-description.icon-grid"
+          ]
+        },
+        {
+          "name": "firstnet-cards-news",
+          "instances": [
+            ".new-offers-card:last-of-type .offersCard"
+          ]
+        },
+        {
+          "name": "firstnet-form",
+          "instances": [
+            "section.firstnet-email-sub"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero Banner",
+          "selector": ".marquee-heading",
+          "style": null,
+          "blocks": [
+            "firstnet-hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Offers Discounts",
+          "selector": [
+            ".segment-heading:has(h3.no-title:not(.white-text)):first-of-type",
+            ".new-offers-card:first-of-type"
+          ],
+          "style": null,
+          "blocks": [
+            "firstnet-cards-offers"
+          ],
+          "defaultContent": [
+            "section.segment-heading:has(h3:not(.white-text)):first-of-type"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Why FirstNet Features",
+          "selector": [
+            ".segment-heading:has(.white-text)",
+            ".icon-grid-description.icon-grid",
+            ".call-to-action:nth-of-type(2)",
+            ".legal-text.text:has(.white-text)"
+          ],
+          "style": "dark-navy",
+          "blocks": [
+            "firstnet-columns"
+          ],
+          "defaultContent": [
+            "section.segment-heading:has(.white-text)",
+            ".call-to-action:nth-of-type(2)",
+            ".legal-text.text:has(.white-text)"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Latest News",
+          "selector": [
+            ".segment-heading:has(h3.black-text)",
+            ".new-offers-card:last-of-type",
+            ".call-to-action:has(.icon-long-arrow)"
+          ],
+          "style": null,
+          "blocks": [
+            "firstnet-cards-news"
+          ],
+          "defaultContent": [
+            "section.segment-heading:has(h3.black-text)",
+            ".call-to-action:has(.icon-long-arrow)"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Contact CTA",
+          "selector": ".experiencefragment:has(h3 span)",
+          "style": "light-grey",
+          "blocks": [],
+          "defaultContent": [
+            ".experiencefragment:has(h3 span)"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "Email Signup Banner",
+          "selector": ".experiencefragment:has(#firstnet-email-signup)",
+          "style": "dark-blue-accent",
+          "blocks": [
+            "firstnet-form"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

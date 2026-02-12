@@ -1,0 +1,38 @@
+{
+  "variantName": "firstnet-cards-offers",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-02-12T07:30:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.firstnet.com/",
+    "originPage": "FirstNet homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "firstnet-offers",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + eyebrow + heading + description + legal + CTAs",
+    "buttonCount": 2,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "FirstNet offer/promotion cards",
+      "product offer listings",
+      "cards with images, legal text and CTAs"
+    ],
+    "notSuitableFor": [
+      "simple text-only cards",
+      "news/article cards without legal text"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-12T07:30:00.000Z"
+  }
+}

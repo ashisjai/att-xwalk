@@ -1,0 +1,38 @@
+{
+  "variantName": "firstnet-hero",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-02-12T07:30:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.firstnet.com/",
+    "originPage": "FirstNet homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "firstnet-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "eyebrow + heading + paragraph + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "FirstNet landing pages",
+      "public safety hero banners",
+      "pages with dark background hero imagery"
+    ],
+    "notSuitableFor": [
+      "light background hero sections",
+      "text-only hero sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-12T07:30:00.000Z"
+  }
+}
