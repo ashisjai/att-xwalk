@@ -1,0 +1,111 @@
+{
+  "url": "https://www.firstnet.com/",
+  "sections": [
+    {
+      "id": "section-1",
+      "name": "Hero Banner",
+      "style": "dark-navy",
+      "backgroundColor": "#00263e",
+      "sequences": [
+        {
+          "id": "s1-seq1",
+          "description": "Large background image with overlay text — eyebrow 'MISSION-CRITICAL COMMUNICATIONS', heading 'America's first responder network', descriptive paragraph about 2.99 million square miles of coverage, and 'Check eligibility' CTA button"
+        }
+      ]
+    },
+    {
+      "id": "section-2",
+      "name": "Offers / Discounts",
+      "style": "light",
+      "backgroundColor": "#ffffff",
+      "sequences": [
+        {
+          "id": "s2-seq1",
+          "description": "Centered heading 'Discounts for first responders' and subheading 'Switch to FirstNet and take advantage of special offers available'"
+        },
+        {
+          "id": "s2-seq2",
+          "description": "Three card items in a row, each with image, eyebrow tag (e.g. 'New & existing customers'), heading, description text, expandable legal/offer details text, and one or two CTA links (Shop now, View product details, Learn more)"
+        }
+      ]
+    },
+    {
+      "id": "section-3",
+      "name": "Why FirstNet Features",
+      "style": "dark-navy",
+      "backgroundColor": "#00263e",
+      "sequences": [
+        {
+          "id": "s3-seq1",
+          "description": "Centered heading 'Why FirstNet for 5G public safety' and subheading 'Built from the ground up to support emergency services'"
+        },
+        {
+          "id": "s3-seq2",
+          "description": "Three items in a row, each with a pictogram/icon image, bold title, and description paragraph — white text on dark background"
+        },
+        {
+          "id": "s3-seq3",
+          "description": "Centered 'Learn more' CTA button"
+        },
+        {
+          "id": "s3-seq4",
+          "description": "Small legal footnote text about FirstNet 5G coverage (white text)"
+        }
+      ]
+    },
+    {
+      "id": "section-4",
+      "name": "Latest News",
+      "style": "light",
+      "backgroundColor": "#ffffff",
+      "sequences": [
+        {
+          "id": "s4-seq1",
+          "description": "Heading 'Latest news from public safety's network'"
+        },
+        {
+          "id": "s4-seq2",
+          "description": "Three card items in a row, each with image, eyebrow category tag (PRODUCT LAUNCH, HEALTH AND WELLNESS, LAW ENFORCEMENT), heading, description, and 'Read more' CTA link"
+        },
+        {
+          "id": "s4-seq3",
+          "description": "Centered 'Explore more from the FirstNet community' link with animated arrow"
+        }
+      ]
+    },
+    {
+      "id": "section-5",
+      "name": "Contact CTA",
+      "style": "light-grey",
+      "backgroundColor": "#f2f2f2",
+      "sequences": [
+        {
+          "id": "s5-seq1",
+          "description": "Centered heading 'Connect with a FirstNet specialist' and 'Contact us' CTA button"
+        }
+      ]
+    },
+    {
+      "id": "section-6",
+      "name": "Email Signup Banner",
+      "style": "dark-blue-accent",
+      "backgroundColor": "#009fdb",
+      "sequences": [
+        {
+          "id": "s6-seq1",
+          "description": "Heading 'LEARN ABOUT AMERICA'S PUBLIC SAFETY NETWORK', subtext 'Get connected', email subscription form with email input, category dropdown (Law Enforcement, Fire, EMS, Emergency Communications, Other Public Safety), submit button, and legal consent text"
+        }
+      ]
+    }
+  ],
+  "blockInventory": {
+    "local": [
+      "accordion", "cards", "carousel", "columns", "embed", "footer",
+      "form", "fragment", "header", "hero", "modal", "quote",
+      "search", "table", "tabs", "video"
+    ],
+    "blockCollection": [
+      "hero", "cards", "columns", "accordion", "tabs", "carousel", "quote", "fragment"
+    ]
+  }
+}

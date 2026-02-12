@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" jcr:primaryType="cq:Page">
+  <jcr:content cq:template="/libs/core/franklin/templates/page" sling:resourceType="core/franklin/components/page/v1/page" jcr:primaryType="cq:PageContent">
+    <root jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/root/v1/root">
+      <section sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi placerat nulla vel tempor viverra. Fusce efficitur malesuada tellus, vitae elementum diam ultricies eget. Donec eu ligula porta urna dapibus varius id venenatis mauris. Curabitur congue, metus in sagittis placerat, eros massa lacinia eros, eget consequat velit neque a augue. Fusce sed libero elit. In nec malesuada metus. Donec eu ullamcorper ex, quis faucibus massa. Donec tempor ornare augue, a auctor nibh consectetur eu. Praesent porttitor in ex posuere gravida. Ut sed arcu et mi tempor malesuada at et dolor. Praesent eget orci libero. Donec ut sollicitudin erat, elementum pharetra eros. Cras rhoncus justo vitae dapibus facilisis.&lt;/p&gt;&lt;p&gt;Paragraph with formatting: &lt;strong&gt;bold&lt;/strong&gt; &lt;em&gt;emphasis&lt;/em&gt; &lt;div&gt;superscript&lt;/div&gt; &lt;div&gt;supscript&lt;/div&gt;&lt;/p&gt;"/>
+      </section>
+    </root>
+  </jcr:content>
+</jcr:root>

@@ -1,0 +1,1 @@
+Set the page metadata property “Breadcrumbs” to “true” to enable breadcrumb support. [Bulk metadata](https://www.aem.live/docs/bulk-metadata "Bulk metadata") can enable breadcrumbs for a subsection or the whole site

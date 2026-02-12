@@ -1,0 +1,168 @@
+{
+  "url": "https://www.firstnet.com/",
+  "sections": [
+    {
+      "id": "section-1",
+      "name": "Hero Banner",
+      "style": null,
+      "sectionMetadata": false,
+      "sectionMetadataReason": "Background is hero's full-width image, not section container styling",
+      "sequences": [
+        {
+          "id": "s1-seq1",
+          "description": "Large background image with overlay text — eyebrow 'MISSION-CRITICAL COMMUNICATIONS', heading 'America's first responder network', descriptive paragraph, and 'Check eligibility' CTA button",
+          "decision": "block",
+          "blockName": "firstnet-hero",
+          "blockVariant": "firstnet-hero",
+          "reason": "Background image with text overlay layout requires Hero block structure. Obvious match."
+        }
+      ]
+    },
+    {
+      "id": "section-2",
+      "name": "Offers / Discounts",
+      "style": null,
+      "sectionMetadata": false,
+      "sectionMetadataReason": "White background, no distinct styling needed",
+      "sequences": [
+        {
+          "id": "s2-seq1",
+          "description": "Centered heading 'Discounts for first responders' and subheading 'Switch to FirstNet and take advantage of special offers available'",
+          "decision": "default",
+          "reason": "Author can type heading and subheading normally"
+        },
+        {
+          "id": "s2-seq2",
+          "description": "Three offer cards with image, eyebrow tag, heading, description text, expandable legal/offer details, and CTA links",
+          "decision": "block",
+          "blockName": "firstnet-cards-offers",
+          "blockVariant": "firstnet-cards-offers",
+          "reason": "Repeating structured pattern with image + content per item. Obvious match with cards block (2-column rows: image | content)."
+        }
+      ]
+    },
+    {
+      "id": "section-3",
+      "name": "Why FirstNet Features",
+      "style": "dark-navy",
+      "sectionMetadata": true,
+      "sectionMetadataReason": "Dark navy background applies to all content in this section (heading, columns, CTA, legal text)",
+      "sequences": [
+        {
+          "id": "s3-seq1",
+          "description": "Centered heading 'Why FirstNet for 5G public safety' and subheading 'Built from the ground up to support emergency services'",
+          "decision": "default",
+          "reason": "Author can type heading and subheading normally"
+        },
+        {
+          "id": "s3-seq2",
+          "description": "Three items in a row, each with pictogram/icon image, bold title, and description paragraph",
+          "decision": "block",
+          "blockName": "firstnet-columns",
+          "blockVariant": "firstnet-columns",
+          "reason": "Three side-by-side items with icon+title+description. Obvious match with columns (three columns) variant."
+        },
+        {
+          "id": "s3-seq3",
+          "description": "Centered 'Learn more' CTA button",
+          "decision": "default",
+          "reason": "Single CTA link — author types it normally"
+        },
+        {
+          "id": "s3-seq4",
+          "description": "Small legal footnote text about FirstNet 5G coverage",
+          "decision": "default",
+          "reason": "Small paragraph of legal text — author types it normally"
+        }
+      ]
+    },
+    {
+      "id": "section-4",
+      "name": "Latest News",
+      "style": null,
+      "sectionMetadata": false,
+      "sectionMetadataReason": "White background, no distinct styling needed",
+      "sequences": [
+        {
+          "id": "s4-seq1",
+          "description": "Heading 'Latest news from public safety's network'",
+          "decision": "default",
+          "reason": "Single heading — author types it"
+        },
+        {
+          "id": "s4-seq2",
+          "description": "Three news cards with image, eyebrow category tag, heading, description, and 'Read more' CTA link",
+          "decision": "block",
+          "blockName": "firstnet-cards-news",
+          "blockVariant": "firstnet-cards-news",
+          "reason": "Repeating structured pattern with image + content per item. Same cards pattern as Section 2 offers."
+        },
+        {
+          "id": "s4-seq3",
+          "description": "Centered 'Explore more from the FirstNet community' link with arrow",
+          "decision": "default",
+          "reason": "Single link — author types it normally"
+        }
+      ]
+    },
+    {
+      "id": "section-5",
+      "name": "Contact CTA",
+      "style": "light-grey",
+      "sectionMetadata": true,
+      "sectionMetadataReason": "Light grey background distinguishes this section from surrounding white sections",
+      "sequences": [
+        {
+          "id": "s5-seq1",
+          "description": "Centered heading 'Connect with a FirstNet specialist' and 'Contact us' CTA button",
+          "decision": "default",
+          "reason": "Heading and CTA link — author types them normally"
+        }
+      ]
+    },
+    {
+      "id": "section-6",
+      "name": "Email Signup Banner",
+      "style": "dark-blue-accent",
+      "sectionMetadata": true,
+      "sectionMetadataReason": "Blue accent background (#009fdb) provides container styling for form block",
+      "sequences": [
+        {
+          "id": "s6-seq1",
+          "description": "Heading 'LEARN ABOUT AMERICA'S PUBLIC SAFETY NETWORK', subtext 'Get connected', email subscription form with email input, category dropdown, submit button, and legal consent text",
+          "decision": "block",
+          "blockName": "firstnet-form",
+          "blockVariant": "firstnet-form",
+          "reason": "Interactive form with inputs and dropdown selector requires Form block structure."
+        }
+      ]
+    }
+  ],
+  "blockStructures": {
+    "hero": {
+      "structure": "1 row: 1 column [image, heading, paragraph(s)]",
+      "note": "Image + text overlay. Content model: picture, heading, paragraphs, links."
+    },
+    "cards": {
+      "structure": "N rows (one per card): 2 columns [image | heading, paragraph(s)]",
+      "note": "Each card = 1 row with image in col 1, text content in col 2."
+    },
+    "columns": {
+      "structure": "1 row: 3 columns [image, heading, paragraph(s) | image, heading, paragraph(s) | image, heading, paragraph(s)]",
+      "variant": "three columns",
+      "note": "Three side-by-side columns, each with icon/image, heading, description."
+    },
+    "form": {
+      "structure": "2 rows: row 1 = form definition JSON link, row 2 = submission endpoint link",
+      "note": "Form block references a JSON definition for field structure."
+    }
+  },
+  "summary": {
+    "totalSections": 6,
+    "totalSequences": 12,
+    "defaultContentCount": 7,
+    "blockCount": 5,
+    "blocksUsed": ["firstnet-hero", "firstnet-cards-offers", "firstnet-cards-news", "firstnet-columns", "firstnet-form"],
+    "sectionsWithMetadata": ["section-3", "section-5", "section-6"]
+  }
+}
