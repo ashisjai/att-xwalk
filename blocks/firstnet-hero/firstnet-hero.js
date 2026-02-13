@@ -4,7 +4,15 @@ export default function decorate(block) {
   // Extract content from field-hinted rows (order matches model)
   // Row 0: image, Row 1: mobileImage, Row 2: eyebrow, Row 3: heading,
   // Row 4: description, Row 5: cta
-  const [imageRow, , eyebrowRow, headingRow, descriptionRow, ctaRow] = rows;
+  // Row 6: paddingTop, Row 7: paddingBottom, Row 8: marginTop, Row 9: marginBottom
+  const [imageRow, , eyebrowRow, headingRow, descriptionRow, ctaRow,
+    paddingTopRow, paddingBottomRow, marginTopRow, marginBottomRow] = rows;
+
+  // Apply spacing classes from separate dropdown fields
+  [paddingTopRow, paddingBottomRow, marginTopRow, marginBottomRow].forEach((row) => {
+    const val = row?.textContent?.trim();
+    if (val) block.classList.add(val);
+  });
 
   // Build background image container
   const bgContainer = document.createElement('div');

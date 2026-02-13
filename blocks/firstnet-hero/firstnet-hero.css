@@ -124,3 +124,63 @@
     font-size: var(--heading-font-size-xxl);
   }
 }
+
+/* =============================================
+ * Style variants (applied via classes multiselect)
+ * ============================================= */
+
+/* Light overlay — lighter gradient for brighter images */
+.firstnet-hero.light-overlay::after {
+  background: linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 10%) 0%,
+    rgb(0 38 62 / 40%) 60%,
+    rgb(0 38 62 / 60%) 100%
+  );
+}
+
+/* Gradient left — overlay fades from left instead of bottom */
+.firstnet-hero.gradient-left::after {
+  background: linear-gradient(
+    to right,
+    rgb(0 38 62 / 85%) 0%,
+    rgb(0 38 62 / 50%) 50%,
+    rgb(0 38 62 / 10%) 100%
+  );
+}
+
+/* Full bleed — no overlay gradient, image fills entire area */
+.firstnet-hero.full-bleed::after {
+  display: none;
+}
+
+/* =============================================
+ * Padding overrides
+ * ============================================= */
+.firstnet-hero.pt-0 { padding-top: 0; }
+.firstnet-hero.pt-sm { padding-top: 24px; }
+.firstnet-hero.pt-lg { padding-top: 96px; }
+.firstnet-hero.pt-xl { padding-top: 128px; }
+
+.firstnet-hero.pb-0 { padding-bottom: 0; }
+.firstnet-hero.pb-sm { padding-bottom: 24px; }
+.firstnet-hero.pb-lg { padding-bottom: 96px; }
+.firstnet-hero.pb-xl { padding-bottom: 128px; }
+
+/* =============================================
+ * Margin overrides (classes applied on block element)
+ * ============================================= */
+.firstnet-hero.mt-0 { margin-top: 0; }
+.firstnet-hero.mt-sm { margin-top: 16px; }
+.firstnet-hero.mt-lg { margin-top: 64px; }
+
+.firstnet-hero.mb-0 { margin-bottom: 0; }
+.firstnet-hero.mb-sm { margin-bottom: 16px; }
+.firstnet-hero.mb-lg { margin-bottom: 64px; }
+
+@media (width >= 900px) {
+  .firstnet-hero.pt-lg { padding-top: 120px; }
+  .firstnet-hero.pt-xl { padding-top: 160px; }
+  .firstnet-hero.pb-lg { padding-bottom: 120px; }
+  .firstnet-hero.pb-xl { padding-bottom: 160px; }
+}

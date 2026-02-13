@@ -1,12 +1,12 @@
 {
-  "total": 3,
+  "total": 8,
   "offset": 0,
-  "limit": 3,
+  "limit": 8,
   "data": [
     {
       "Type": "email",
       "Name": "email",
-      "Label": "Email Address",
+      "Label": "Email Address*",
       "Placeholder": "Enter your email",
       "Mandatory": "true",
       "Value": "",
@@ -26,6 +26,66 @@
       "Style": "",
       "Fieldset": "",
       "Id": "form-category"
+    },
+    {
+      "Type": "hidden",
+      "Name": "elqFormName",
+      "Label": "",
+      "Placeholder": "",
+      "Mandatory": "",
+      "Value": "newslettersignupform",
+      "Options": "",
+      "Style": "",
+      "Fieldset": "",
+      "Id": "elqFormNameSignup"
+    },
+    {
+      "Type": "hidden",
+      "Name": "elqSiteID",
+      "Label": "",
+      "Placeholder": "",
+      "Mandatory": "",
+      "Value": "2025473527",
+      "Options": "",
+      "Style": "",
+      "Fieldset": "",
+      "Id": "elqSiteIDSignup"
+    },
+    {
+      "Type": "hidden",
+      "Name": "leadSourceMostRecent1",
+      "Label": "",
+      "Placeholder": "",
+      "Mandatory": "",
+      "Value": "fn.com subscribe",
+      "Options": "",
+      "Style": "",
+      "Fieldset": "",
+      "Id": "leadSourceMostRecent1"
+    },
+    {
+      "Type": "hidden",
+      "Name": "module",
+      "Label": "",
+      "Placeholder": "",
+      "Mandatory": "",
+      "Value": "firstnet_signup",
+      "Options": "",
+      "Style": "",
+      "Fieldset": "",
+      "Id": "moduleSignup"
+    },
+    {
+      "Type": "hidden",
+      "Name": "faxNum",
+      "Label": "",
+      "Placeholder": "",
+      "Mandatory": "",
+      "Value": "",
+      "Options": "",
+      "Style": "display:none",
+      "Fieldset": "",
+      "Id": "faxNum"
     },
     {
       "Type": "submit",

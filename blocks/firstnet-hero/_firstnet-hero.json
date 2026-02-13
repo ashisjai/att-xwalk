@@ -81,6 +81,72 @@
           "valueType": "string",
           "name": "ctaUrl",
           "label": "CTA Button URL"
+        },
+        {
+          "component": "select",
+          "name": "classes",
+          "label": "Style",
+          "description": "Visual style variant for the hero overlay",
+          "options": [
+            { "name": "Dark Overlay (Default)", "value": "" },
+            { "name": "Light Overlay", "value": "light-overlay" },
+            { "name": "Gradient Left", "value": "gradient-left" },
+            { "name": "Full Bleed", "value": "full-bleed" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "paddingTop",
+          "label": "Padding Top",
+          "description": "Top inner spacing",
+          "valueType": "string",
+          "options": [
+            { "name": "Default", "value": "" },
+            { "name": "None", "value": "pt-0" },
+            { "name": "Small (24px)", "value": "pt-sm" },
+            { "name": "Large (96px)", "value": "pt-lg" },
+            { "name": "Extra Large (128px)", "value": "pt-xl" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "paddingBottom",
+          "label": "Padding Bottom",
+          "description": "Bottom inner spacing",
+          "valueType": "string",
+          "options": [
+            { "name": "Default", "value": "" },
+            { "name": "None", "value": "pb-0" },
+            { "name": "Small (24px)", "value": "pb-sm" },
+            { "name": "Large (96px)", "value": "pb-lg" },
+            { "name": "Extra Large (128px)", "value": "pb-xl" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "marginTop",
+          "label": "Margin Top",
+          "description": "Top outer spacing",
+          "valueType": "string",
+          "options": [
+            { "name": "Default", "value": "" },
+            { "name": "None", "value": "mt-0" },
+            { "name": "Small (16px)", "value": "mt-sm" },
+            { "name": "Large (64px)", "value": "mt-lg" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "marginBottom",
+          "label": "Margin Bottom",
+          "description": "Bottom outer spacing",
+          "valueType": "string",
+          "options": [
+            { "name": "Default", "value": "" },
+            { "name": "None", "value": "mb-0" },
+            { "name": "Small (16px)", "value": "mb-sm" },
+            { "name": "Large (64px)", "value": "mb-lg" }
+          ]
         }
       ]
     }
