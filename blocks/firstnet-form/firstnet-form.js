@@ -78,23 +78,34 @@ async function handleSubmit(form) {
 }
 
 export default async function decorate(block) {
+  const rows = [...block.children];
+
+  // Row 0: reference (form JSON link), Row 1: action URL,
+  // Row 2: submitLabel, Row 3: confirmationUrl
   const links = [...block.querySelectorAll('a')].map((a) => a.href);
   const formLink = links.find((link) => link.startsWith(window.location.origin) && link.endsWith('.json'));
   let submitLink = links.find((link) => link !== formLink);
 
   // Fallback: extract action URL from plain text in second row
-  if (!submitLink) {
-    const rows = [...block.children];
-    const actionRow = rows[1];
-    if (actionRow) {
-      const text = actionRow.textContent.trim();
-      if (text.startsWith('http')) submitLink = text;
-    }
+  if (!submitLink && rows[1]) {
+    const text = rows[1].textContent.trim();
+    if (text.startsWith('http')) submitLink = text;
   }
+
+  const submitLabel = rows[2]?.textContent.trim() || 'Submit';
+  const confirmationUrl = rows[3]?.textContent.trim() || '';
 
   if (!formLink || !submitLink) return;
 
   const form = await createForm(formLink, submitLink);
+
+  // Apply custom submit label
+  const submitBtn = form.querySelector('button[type="submit"]');
+  if (submitBtn && submitLabel) submitBtn.textContent = submitLabel;
+
+  // Store confirmation URL for post-submit redirect
+  if (confirmationUrl) form.dataset.confirmation = confirmationUrl;
+
   block.replaceChildren(form);
 
   form.addEventListener('submit', (e) => {

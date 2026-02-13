@@ -28,17 +28,24 @@
   z-index: 1;
 }
 
-/* General image and picture — low specificity first */
-.firstnet-hero picture {
+/* Background image — absolute positioned to fill hero */
+.firstnet-hero > .hero-bg {
   position: absolute;
-  z-index: 0;
   inset: 0;
+  z-index: 0;
 }
 
-.firstnet-hero img {
+.firstnet-hero > .hero-bg img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  max-width: none;
+  display: block;
+}
+
+.firstnet-hero > .hero-bg picture {
+  position: absolute;
+  inset: 0;
 }
 
 /* All text white on hero */
@@ -90,7 +97,7 @@
 }
 
 /* Text content overlay */
-.firstnet-hero > div:last-child {
+.firstnet-hero > .hero-content {
   position: relative;
   z-index: 2;
   max-width: 1200px;
@@ -98,41 +105,13 @@
   width: 100%;
 }
 
-/* Text paragraphs in content overlay only */
-.firstnet-hero > div:last-child p {
+/* Text paragraphs in content overlay */
+.firstnet-hero > .hero-content p {
   color: #fff;
   max-width: 600px;
-}
-
-/* Description paragraph */
-.firstnet-hero > div:last-child > div > p {
   font-size: var(--firstnet-body-size-m, 16px);
   line-height: 1.5;
   opacity: 0.9;
-}
-
-/* Background image — absolute positioned to fill hero */
-.firstnet-hero > div:first-child {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.firstnet-hero > div:first-child,
-.firstnet-hero > div:first-child > div,
-.firstnet-hero > div:first-child > div > p {
-  position: absolute;
-  inset: 0;
-  margin: 0;
-  max-width: none;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-}
-
-.firstnet-hero > div:first-child img {
-  max-width: none;
-  display: block;
 }
 
 @media (width >= 900px) {

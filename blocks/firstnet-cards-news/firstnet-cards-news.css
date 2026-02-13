@@ -1,27 +1,73 @@
+/* FirstNet News Cards Block */
 .firstnet-cards-news > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 32px;
 }
 
 .firstnet-cards-news > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+  background-color: transparent;
 }
 
-.firstnet-cards-news .firstnet-cards-news-card-body {
-  margin: 16px;
-}
-
-.firstnet-cards-news .firstnet-cards-news-card-image {
-  line-height: 0;
-}
-
-.firstnet-cards-news > ul > li img {
+.firstnet-cards-news .cards-card-image img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  border-radius: 8px;
+}
+
+.firstnet-cards-news .cards-card-body {
+  padding: 12px 0;
+}
+
+.firstnet-cards-news .cards-card-body .category {
+  font-size: var(--firstnet-body-size-s, 14px);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--firstnet-text-muted, #565b60);
+  margin: 0 0 4px;
+}
+
+.firstnet-cards-news .cards-card-body h3 {
+  font-size: var(--firstnet-heading-size-s, 18px);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--firstnet-text-primary, #000);
+  margin: 0 0 8px;
+}
+
+.firstnet-cards-news .cards-card-body .description {
+  font-size: var(--firstnet-body-size-m, 16px);
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.firstnet-cards-news .cards-card-body .cta-link {
+  margin: 8px 0 0;
+}
+
+.firstnet-cards-news .cards-card-body .cta-link a {
+  color: var(--firstnet-link-color, #0568ae);
+  font-size: var(--firstnet-body-size-s, 14px);
+  display: inline-block;
+  border: 1px solid var(--firstnet-link-color, #0568ae);
+  border-radius: var(--firstnet-border-radius-pill, 25px);
+  padding: 8px 24px;
+  text-decoration: none;
+  background: none;
+}
+
+.firstnet-cards-news .cards-card-body .cta-link a:hover {
+  background-color: var(--firstnet-link-color, #0568ae);
+  color: #fff;
+}
+
+@media (width >= 900px) {
+  .firstnet-cards-news > ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
 }

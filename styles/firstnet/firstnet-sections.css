@@ -138,117 +138,19 @@ main .section.dark-blue-accent select {
 }
 
 /* =============================================
- * Offer card styling in dark-navy section
+ * Offer cards block in dark-navy section
  * ============================================= */
 
-/* Offer card images */
-main .section.dark-navy > div > p > img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-/* Offer card text base styling */
-/* stylelint-disable-next-line no-descending-specificity -- dark-navy vs light-grey are mutually exclusive */
-main .section.dark-navy > div > p {
-  font-size: var(--firstnet-body-size-m, 16px);
-  line-height: 1.5;
-}
-
-/* Card image separator - visual gap between offer cards */
-main .section.dark-navy > div > p:has(> img) {
-  margin-top: 48px;
-}
-
-/* Eyebrow / category text after card image */
-main .section.dark-navy > div > p:has(> img) + p {
-  font-size: var(--firstnet-body-size-s, 14px);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  opacity: 0.85;
-  margin-top: 16px;
-  margin-bottom: 4px;
-}
-
-/* Card headline (second paragraph after image) */
-main .section.dark-navy > div > p:has(> img) + p + p {
-  font-size: var(--firstnet-heading-size-m, 20px);
-  font-weight: 600;
-  line-height: 1.25;
-  margin-bottom: 8px;
-}
-
-/* Small / fine print text before CTA button */
-main .section.dark-navy > div > p:has(+ p > a.button) {
-  font-size: var(--firstnet-body-size-xs, 12px);
-  opacity: 0.7;
-}
-
-/* Secondary link after primary CTA (e.g., "View product details") */
-main .section.dark-navy > div > p:has(> a.button) + p:has(> a) a {
-  background: none;
-  border: none;
+/* Inherit white text for offer cards in dark-navy */
+main .section.dark-navy .firstnet-cards-offers .cards-card-body .eyebrow,
+main .section.dark-navy .firstnet-cards-offers .cards-card-body h3,
+main .section.dark-navy .firstnet-cards-offers .cards-card-body .description,
+main .section.dark-navy .firstnet-cards-offers .cards-card-body .legal {
   color: var(--firstnet-text-inverse, #fff);
-  padding: 0;
-  margin: 0;
-  font-weight: 400;
-  font-size: var(--firstnet-body-size-s, 14px);
-  text-decoration: underline;
-  display: inline;
 }
 
-/* =============================================
- * Offer cards desktop 3-column grid layout
- * ============================================= */
-@media (width >= 900px) {
-  main .section.dark-navy > div {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-flow: dense;
-    gap: 0 32px;
-  }
-
-  /* Headings span all columns */
-  main .section.dark-navy > div > h2,
-  main .section.dark-navy > div > h3 {
-    grid-column: 1 / -1;
-  }
-
-  /* Card 1: children 3-9 */
-  main .section.dark-navy > div > :nth-child(3),
-  main .section.dark-navy > div > :nth-child(4),
-  main .section.dark-navy > div > :nth-child(5),
-  main .section.dark-navy > div > :nth-child(6),
-  main .section.dark-navy > div > :nth-child(7),
-  main .section.dark-navy > div > :nth-child(8),
-  main .section.dark-navy > div > :nth-child(9) {
-    grid-column: 1;
-  }
-
-  /* Card 2: children 10-16 */
-  main .section.dark-navy > div > :nth-child(10),
-  main .section.dark-navy > div > :nth-child(11),
-  main .section.dark-navy > div > :nth-child(12),
-  main .section.dark-navy > div > :nth-child(13),
-  main .section.dark-navy > div > :nth-child(14),
-  main .section.dark-navy > div > :nth-child(15),
-  main .section.dark-navy > div > :nth-child(16) {
-    grid-column: 2;
-  }
-
-  /* Card 3: children 17-22 */
-  main .section.dark-navy > div > :nth-child(17),
-  main .section.dark-navy > div > :nth-child(18),
-  main .section.dark-navy > div > :nth-child(19),
-  main .section.dark-navy > div > :nth-child(20),
-  main .section.dark-navy > div > :nth-child(21),
-  main .section.dark-navy > div > :nth-child(22) {
-    grid-column: 3;
-  }
-
-  /* Remove extra top margin on card images in grid */
-  main .section.dark-navy > div > p:has(> img) {
-    margin-top: 0;
-  }
+main .section.dark-navy .firstnet-cards-offers .cards-card-body .secondary-cta a {
+  color: var(--firstnet-text-inverse, #fff);
 }
 
 /* =============================================

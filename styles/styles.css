@@ -293,37 +293,7 @@ main > .section:nth-of-type(4) > div > h3:first-child {
   margin-bottom: 32px;
 }
 
-/* News card images */
-main > .section:nth-of-type(4) > div > p > img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-/* News card image separator */
-main > .section:nth-of-type(4) > div > p:has(> img) {
-  margin-top: 32px;
-}
-
-/* News card eyebrow / category label */
-main > .section:nth-of-type(4) > div > p:has(> img) + p {
-  font-size: var(--firstnet-body-size-s, 14px);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--firstnet-text-muted, #565b60);
-  margin-top: 12px;
-  margin-bottom: 4px;
-}
-
-/* News card headline */
-main > .section:nth-of-type(4) > div > p:has(> img) + p + p {
-  font-size: var(--firstnet-heading-size-s, 18px);
-  font-weight: 600;
-  line-height: 1.3;
-  color: var(--firstnet-text-primary, #000);
-  margin-bottom: 8px;
-}
-
-/* News "Explore more" link at bottom */
+/* News "Explore more" link at bottom of section */
 main > .section:nth-of-type(4) > div > p:last-child {
   text-align: center;
   margin-top: 32px;
@@ -331,67 +301,6 @@ main > .section:nth-of-type(4) > div > p:last-child {
 
 main > .section:nth-of-type(4) > div > p:last-child a {
   color: var(--firstnet-blue-accent, #0568ae);
-}
-
-/* News card "Read more" link */
-main > .section:nth-of-type(4) > div > p:has(> a):not(:last-child) {
-  margin-top: 8px;
-}
-
-main > .section:nth-of-type(4) > div > p:has(> a):not(:last-child) a {
-  color: var(--firstnet-link-color, #0568ae);
-  font-size: var(--firstnet-body-size-s, 14px);
-  display: inline-block;
-  border: 1px solid var(--firstnet-link-color, #0568ae);
-  border-radius: var(--firstnet-border-radius-pill, 25px);
-  padding: 8px 24px;
-  text-decoration: none;
-}
-
-/* News section desktop 3-column grid layout */
-@media (width >= 900px) {
-  main > .section:nth-of-type(4) > div {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-flow: dense;
-    gap: 0 32px;
-  }
-
-  main > .section:nth-of-type(4) > div > h3:first-child {
-    grid-column: 1 / -1;
-  }
-
-  main > .section:nth-of-type(4) > div > :nth-child(2),
-  main > .section:nth-of-type(4) > div > :nth-child(3),
-  main > .section:nth-of-type(4) > div > :nth-child(4),
-  main > .section:nth-of-type(4) > div > :nth-child(5),
-  main > .section:nth-of-type(4) > div > :nth-child(6) {
-    grid-column: 1;
-  }
-
-  main > .section:nth-of-type(4) > div > :nth-child(7),
-  main > .section:nth-of-type(4) > div > :nth-child(8),
-  main > .section:nth-of-type(4) > div > :nth-child(9),
-  main > .section:nth-of-type(4) > div > :nth-child(10),
-  main > .section:nth-of-type(4) > div > :nth-child(11) {
-    grid-column: 2;
-  }
-
-  main > .section:nth-of-type(4) > div > :nth-child(12),
-  main > .section:nth-of-type(4) > div > :nth-child(13),
-  main > .section:nth-of-type(4) > div > :nth-child(14),
-  main > .section:nth-of-type(4) > div > :nth-child(15),
-  main > .section:nth-of-type(4) > div > :nth-child(16) {
-    grid-column: 3;
-  }
-
-  main > .section:nth-of-type(4) > div > p:last-child {
-    grid-column: 1 / -1;
-  }
-
-  main > .section:nth-of-type(4) > div > p:has(> img) {
-    margin-top: 0;
-  }
 }
 
 /* Columns section - white background with centered content */
