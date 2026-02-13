@@ -1,14 +1,30 @@
+/* FirstNet Columns Block */
 .firstnet-columns > div {
   display: flex;
   flex-direction: column;
+  gap: 32px;
 }
 
 .firstnet-columns img {
-  width: 100%;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(24%) sepia(89%) saturate(1986%) hue-rotate(196deg) brightness(97%) contrast(101%);
 }
 
 .firstnet-columns > div > div {
   order: 1;
+  text-align: center;
+}
+
+.firstnet-columns > div > div p {
+  text-align: center;
+}
+
+.firstnet-columns > div > div p > strong {
+  font-size: var(--firstnet-body-size-l, 18px);
+  display: block;
+  margin-bottom: 8px;
 }
 
 .firstnet-columns > div > .firstnet-columns-img-col {
@@ -21,9 +37,9 @@
 
 @media (width >= 900px) {
   .firstnet-columns > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 48px;
   }
 
   .firstnet-columns > div > div {

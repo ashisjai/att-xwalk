@@ -1,3 +1,4 @@
+/* FirstNet Hero Block */
 .firstnet-hero-container .firstnet-hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -5,23 +6,33 @@
 
 .firstnet-hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  padding: 60px 24px 40px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
 }
 
-.firstnet-hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+/* Dark overlay gradient for text readability */
+.firstnet-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgb(0 38 62 / 30%) 0%,
+    rgb(0 38 62 / 70%) 60%,
+    rgb(0 38 62 / 85%) 100%
+  );
+  z-index: 1;
 }
 
+/* General image and picture — low specificity first */
 .firstnet-hero picture {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
 }
 
 .firstnet-hero img {
@@ -30,8 +41,107 @@
   height: 100%;
 }
 
+/* All text white on hero */
+.firstnet-hero h1,
+.firstnet-hero h2,
+.firstnet-hero h3,
+.firstnet-hero h4 {
+  color: #fff;
+  max-width: 600px;
+}
+
+/* Eyebrow text */
+.firstnet-hero h3 {
+  font-size: var(--firstnet-body-size-s, 14px);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 400;
+  margin-bottom: 4px;
+  opacity: 0.9;
+}
+
+/* Main hero heading */
+.firstnet-hero h2 {
+  font-size: var(--heading-font-size-xl);
+  line-height: 1.15;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+/* Link color inside hero — before button for ascending specificity */
+.firstnet-hero a:any-link {
+  color: #fff;
+}
+
+/* CTA button in hero */
+.firstnet-hero a.button:any-link {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: var(--firstnet-border-radius-pill, 25px);
+  padding: 10px 36px;
+  font-size: 16px;
+  transition: var(--firstnet-transition-default, all 0.2s ease);
+}
+
+.firstnet-hero a.button:hover {
+  background-color: #fff;
+  color: var(--firstnet-dark-navy, #00263e);
+}
+
+/* Text content overlay */
+.firstnet-hero > div:last-child {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Text paragraphs in content overlay only */
+.firstnet-hero > div:last-child p {
+  color: #fff;
+  max-width: 600px;
+}
+
+/* Description paragraph */
+.firstnet-hero > div:last-child > div > p {
+  font-size: var(--firstnet-body-size-m, 16px);
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* Background image — absolute positioned to fill hero */
+.firstnet-hero > div:first-child {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.firstnet-hero > div:first-child,
+.firstnet-hero > div:first-child > div,
+.firstnet-hero > div:first-child > div > p {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.firstnet-hero > div:first-child img {
+  max-width: none;
+  display: block;
+}
+
 @media (width >= 900px) {
   .firstnet-hero {
-    padding: 40px 32px;
+    padding: 80px 32px 60px;
+    min-height: 480px;
+  }
+
+  .firstnet-hero h2 {
+    font-size: var(--heading-font-size-xxl);
   }
 }

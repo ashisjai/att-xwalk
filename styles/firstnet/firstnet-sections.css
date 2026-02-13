@@ -3,12 +3,14 @@
  * Extracted from https://www.firstnet.com/
  *
  * These styles apply to sections with section-metadata style values:
- * - dark-navy: Deep navy background (#00263e) used for "Why FirstNet" features
- * - light-grey: Light grey background (#f2f2f2) used for "Contact CTA" section
+ * - dark-navy: Deep navy background (#00263e) used for offers
+ * - light-grey: Light grey background (#f2f2f2) used for contact CTA
  * - dark-blue-accent: Blue accent background (#0568ae) used for email signup
  */
 
-/* Dark navy section (Why FirstNet Features) */
+/* =============================================
+ * Dark navy section
+ * ============================================= */
 main .section.dark-navy {
   background-color: var(--firstnet-bg-dark-navy, #00263e);
   color: var(--firstnet-text-inverse, #fff);
@@ -39,18 +41,14 @@ main .section.dark-navy a.button:hover {
   color: var(--firstnet-bg-dark-navy, #00263e);
 }
 
-/* Light grey section (Contact CTA) */
+/* =============================================
+ * Light grey section (Contact CTA)
+ * ============================================= */
 main .section.light-grey {
   background-color: var(--firstnet-bg-light-grey, #f2f2f2);
   color: var(--firstnet-text-primary, #000);
   margin: 0;
   padding: 48px 0;
-  text-align: center;
-}
-
-main .section.light-grey h2,
-main .section.light-grey h3 {
-  color: var(--firstnet-text-primary, #000);
 }
 
 main .section.light-grey a.button:any-link {
@@ -64,18 +62,14 @@ main .section.light-grey a.button:hover {
   background-color: var(--firstnet-link-hover-color, #004a87);
 }
 
-/* Blue accent section (Email Signup Banner) */
+/* =============================================
+ * Blue accent section (Email Signup Banner)
+ * ============================================= */
 main .section.dark-blue-accent {
   background-color: var(--firstnet-bg-blue-accent, #0568ae);
   color: var(--firstnet-text-inverse, #fff);
   margin: 0;
   padding: 48px 0;
-}
-
-main .section.dark-blue-accent h2,
-main .section.dark-blue-accent h3,
-main .section.dark-blue-accent p {
-  color: var(--firstnet-text-inverse, #fff);
 }
 
 main .section.dark-blue-accent a:any-link {
@@ -96,6 +90,42 @@ main .section.dark-blue-accent button:hover {
   color: var(--firstnet-bg-blue-accent, #0568ae);
 }
 
+/* =============================================
+ * Child-combinator rules (higher specificity)
+ * ============================================= */
+
+/* Dark navy headings - centered */
+main .section.dark-navy > div > h2,
+main .section.dark-navy > div > h3 {
+  text-align: center;
+}
+
+/* Light grey headings */
+main .section.light-grey > div > h2,
+main .section.light-grey > div > h3 {
+  color: var(--firstnet-text-primary, #000);
+}
+
+main .section.light-grey > div > h3 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* Split layout: top contact area + bottom form area */
+main .section.light-grey > div > h2 {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Blue accent headings */
+main .section.dark-blue-accent > div > h2,
+main .section.dark-blue-accent > div > h3 {
+  color: var(--firstnet-text-inverse, #fff);
+}
+
+/* Blue accent form elements */
 main .section.dark-blue-accent input,
 main .section.dark-blue-accent select {
   background-color: var(--firstnet-text-inverse, #fff);
@@ -104,4 +134,46 @@ main .section.dark-blue-accent select {
   border-radius: var(--firstnet-input-border-radius, 4px);
   padding: var(--firstnet-input-padding, 10px 12px);
   font-size: var(--firstnet-input-font-size, 16px);
+}
+
+/* Offer card images in dark-navy section */
+main .section.dark-navy > div > p > img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 32px;
+}
+
+/* Offer card text styling in dark-navy */
+main .section.dark-navy > div > p {
+  font-size: var(--firstnet-body-size-m, 16px);
+  line-height: 1.5;
+}
+
+/* Card image separator - visual gap between offer cards */
+main .section.dark-navy > div > p:has(> img) {
+  margin-top: 40px;
+}
+
+/* Eyebrow / category text after card image */
+main .section.dark-navy > div > p:has(> img) + p {
+  font-size: var(--firstnet-body-size-s, 14px);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+/* Card headline (second paragraph after image) */
+main .section.dark-navy > div > p:has(> img) + p + p {
+  font-size: var(--firstnet-heading-size-m, 20px);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+/* Small / fine print text */
+main .section.dark-navy > div > p:has(+ p > a.button) {
+  font-size: var(--firstnet-body-size-xs, 12px);
+  opacity: 0.7;
 }

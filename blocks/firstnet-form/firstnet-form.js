@@ -80,7 +80,18 @@ async function handleSubmit(form) {
 export default async function decorate(block) {
   const links = [...block.querySelectorAll('a')].map((a) => a.href);
   const formLink = links.find((link) => link.startsWith(window.location.origin) && link.endsWith('.json'));
-  const submitLink = links.find((link) => link !== formLink);
+  let submitLink = links.find((link) => link !== formLink);
+
+  // Fallback: extract action URL from plain text in second row
+  if (!submitLink) {
+    const rows = [...block.children];
+    const actionRow = rows[1];
+    if (actionRow) {
+      const text = actionRow.textContent.trim();
+      if (text.startsWith('http')) submitLink = text;
+    }
+  }
+
   if (!formLink || !submitLink) return;
 
   const form = await createForm(formLink, submitLink);
