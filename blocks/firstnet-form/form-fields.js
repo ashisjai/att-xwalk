@@ -213,6 +213,16 @@ const createRadio = (fd) => {
   return { field, fieldWrapper };
 };
 
+const createHidden = (fd) => {
+  const field = document.createElement('input');
+  field.type = 'hidden';
+  field.id = fd.Id;
+  field.name = fd.Name;
+  field.value = fd.Value;
+
+  return { field, fieldWrapper: field };
+};
+
 const FIELD_CREATOR_FUNCTIONS = {
   select: createSelect,
   heading: createHeading,
@@ -224,6 +234,7 @@ const FIELD_CREATOR_FUNCTIONS = {
   fieldset: createFieldset,
   checkbox: createCheckbox,
   radio: createRadio,
+  hidden: createHidden,
 };
 
 export default async function createField(fd, form) {
