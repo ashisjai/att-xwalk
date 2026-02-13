@@ -30,15 +30,18 @@ main .section.dark-navy a:any-link {
 }
 
 main .section.dark-navy a.button:any-link {
-  background-color: transparent;
-  border: 2px solid var(--firstnet-text-inverse, #fff);
+  background-color: var(--firstnet-blue-accent, #0568ae);
+  border: none;
   color: var(--firstnet-text-inverse, #fff);
   border-radius: var(--firstnet-border-radius-pill, 25px);
+  padding: 12px 32px;
+  font-size: var(--firstnet-body-size-m, 16px);
+  display: inline-block;
 }
 
 main .section.dark-navy a.button:hover {
-  background-color: var(--firstnet-text-inverse, #fff);
-  color: var(--firstnet-bg-dark-navy, #00263e);
+  background-color: var(--firstnet-link-hover-color, #004a87);
+  color: var(--firstnet-text-inverse, #fff);
 }
 
 /* =============================================
@@ -111,12 +114,10 @@ main .section.light-grey > div > h3 {
   margin-bottom: 8px;
 }
 
-/* Split layout: top contact area + bottom form area */
-main .section.light-grey > div > h2 {
-  margin-top: 48px;
-  padding-top: 32px;
-  border-top: 1px solid #ddd;
-  text-align: left;
+/* Contact section CTA centering */
+main .section.light-grey > div > h3 + p {
+  text-align: center;
+  margin-bottom: 32px;
 }
 
 /* Blue accent headings */
@@ -136,14 +137,18 @@ main .section.dark-blue-accent select {
   font-size: var(--firstnet-input-font-size, 16px);
 }
 
-/* Offer card images in dark-navy section */
+/* =============================================
+ * Offer card styling in dark-navy section
+ * ============================================= */
+
+/* Offer card images */
 main .section.dark-navy > div > p > img {
   width: 100%;
   border-radius: 8px;
-  margin-top: 32px;
 }
 
-/* Offer card text styling in dark-navy */
+/* Offer card text base styling */
+/* stylelint-disable-next-line no-descending-specificity -- dark-navy vs light-grey are mutually exclusive */
 main .section.dark-navy > div > p {
   font-size: var(--firstnet-body-size-m, 16px);
   line-height: 1.5;
@@ -151,7 +156,7 @@ main .section.dark-navy > div > p {
 
 /* Card image separator - visual gap between offer cards */
 main .section.dark-navy > div > p:has(> img) {
-  margin-top: 40px;
+  margin-top: 48px;
 }
 
 /* Eyebrow / category text after card image */
@@ -172,8 +177,133 @@ main .section.dark-navy > div > p:has(> img) + p + p {
   margin-bottom: 8px;
 }
 
-/* Small / fine print text */
+/* Small / fine print text before CTA button */
 main .section.dark-navy > div > p:has(+ p > a.button) {
   font-size: var(--firstnet-body-size-xs, 12px);
   opacity: 0.7;
+}
+
+/* Secondary link after primary CTA (e.g., "View product details") */
+main .section.dark-navy > div > p:has(> a.button) + p:has(> a) a {
+  background: none;
+  border: none;
+  color: var(--firstnet-text-inverse, #fff);
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  font-size: var(--firstnet-body-size-s, 14px);
+  text-decoration: underline;
+  display: inline;
+}
+
+/* =============================================
+ * Offer cards desktop 3-column grid layout
+ * ============================================= */
+@media (width >= 900px) {
+  main .section.dark-navy > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
+    gap: 0 32px;
+  }
+
+  /* Headings span all columns */
+  main .section.dark-navy > div > h2,
+  main .section.dark-navy > div > h3 {
+    grid-column: 1 / -1;
+  }
+
+  /* Card 1: children 3-9 */
+  main .section.dark-navy > div > :nth-child(3),
+  main .section.dark-navy > div > :nth-child(4),
+  main .section.dark-navy > div > :nth-child(5),
+  main .section.dark-navy > div > :nth-child(6),
+  main .section.dark-navy > div > :nth-child(7),
+  main .section.dark-navy > div > :nth-child(8),
+  main .section.dark-navy > div > :nth-child(9) {
+    grid-column: 1;
+  }
+
+  /* Card 2: children 10-16 */
+  main .section.dark-navy > div > :nth-child(10),
+  main .section.dark-navy > div > :nth-child(11),
+  main .section.dark-navy > div > :nth-child(12),
+  main .section.dark-navy > div > :nth-child(13),
+  main .section.dark-navy > div > :nth-child(14),
+  main .section.dark-navy > div > :nth-child(15),
+  main .section.dark-navy > div > :nth-child(16) {
+    grid-column: 2;
+  }
+
+  /* Card 3: children 17-22 */
+  main .section.dark-navy > div > :nth-child(17),
+  main .section.dark-navy > div > :nth-child(18),
+  main .section.dark-navy > div > :nth-child(19),
+  main .section.dark-navy > div > :nth-child(20),
+  main .section.dark-navy > div > :nth-child(21),
+  main .section.dark-navy > div > :nth-child(22) {
+    grid-column: 3;
+  }
+
+  /* Remove extra top margin on card images in grid */
+  main .section.dark-navy > div > p:has(> img) {
+    margin-top: 0;
+  }
+}
+
+/* =============================================
+ * Email signup blue accent within light-grey
+ * ============================================= */
+main .section.light-grey > div > h2 {
+  background-color: var(--firstnet-bg-blue-accent, #0568ae);
+  color: var(--firstnet-text-inverse, #fff);
+  margin: 0 -24px;
+  padding: 48px 24px 16px;
+  border-top: none;
+  text-align: center;
+}
+
+/* stylelint-disable-next-line no-descending-specificity -- light-grey vs dark-navy are mutually exclusive */
+main .section.light-grey > div > h2 ~ p {
+  background-color: var(--firstnet-bg-blue-accent, #0568ae);
+  color: var(--firstnet-text-inverse, #fff);
+  margin-left: -24px;
+  margin-right: -24px;
+  padding: 0 24px;
+  text-align: center;
+}
+
+main .section.light-grey .firstnet-form-wrapper {
+  background-color: var(--firstnet-bg-blue-accent, #0568ae);
+  margin: 0 -24px;
+  padding: 0 24px 48px;
+}
+
+main .section.light-grey .firstnet-form-wrapper .firstnet-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+main .section.light-grey > div > h2 ~ p a.button:any-link {
+  background-color: var(--firstnet-text-inverse, #fff);
+  color: var(--firstnet-bg-blue-accent, #0568ae);
+  border: none;
+}
+
+@media (width >= 900px) {
+  main .section.light-grey > div > h2 {
+    margin: 0 -32px;
+    padding: 48px 32px 16px;
+  }
+
+  main .section.light-grey > div > h2 ~ p {
+    margin-left: -32px;
+    margin-right: -32px;
+    padding: 0 32px;
+  }
+
+  main .section.light-grey .firstnet-form-wrapper {
+    margin: 0 -32px;
+    padding: 0 32px 48px;
+  }
 }

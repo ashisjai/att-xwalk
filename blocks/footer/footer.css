@@ -1,5 +1,6 @@
 footer {
-  background-color: var(--light-color);
+  background-color: var(--firstnet-dark-navy, #00263e);
+  color: var(--firstnet-text-inverse, #fff);
   font-size: var(--body-font-size-xs);
 }
 
@@ -11,10 +12,75 @@ footer .footer > div {
 
 footer .footer p {
   margin: 0;
+  color: var(--firstnet-text-inverse, #fff);
+}
+
+footer .footer a:any-link {
+  color: var(--firstnet-text-inverse, #fff);
+}
+
+footer .footer a:hover {
+  text-decoration: underline;
+  color: var(--firstnet-grey-light, #f2f2f2);
+}
+
+footer .footer ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 16px 0;
+}
+
+footer .footer ul li {
+  margin-bottom: 8px;
+}
+
+/* Copyright text */
+footer .footer > div > p:nth-last-child(2) {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgb(255 255 255 / 20%);
+  font-size: var(--firstnet-body-size-xs, 12px);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* Legal links row */
+footer .footer > div > p:last-child {
+  margin-top: 12px;
+  font-size: var(--firstnet-body-size-xs, 12px);
+  opacity: 0.7;
 }
 
 @media (width >= 900px) {
   footer .footer > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 32px;
     padding: 40px 32px 24px;
+  }
+
+  /* Brand link spans all columns */
+  footer .footer > div > p:first-child {
+    grid-column: 1 / -1;
+  }
+
+  /* Sitemap list in column 1 */
+  footer .footer > div > ul:first-of-type {
+    grid-column: 1;
+  }
+
+  /* Support list in column 2 */
+  footer .footer > div > ul:nth-of-type(2) {
+    grid-column: 2;
+  }
+
+  /* Copyright spans all columns */
+  footer .footer > div > p:nth-last-child(2) {
+    grid-column: 1 / -1;
+  }
+
+  /* Legal links span all columns */
+  footer .footer > div > p:last-child {
+    grid-column: 1 / -1;
   }
 }
