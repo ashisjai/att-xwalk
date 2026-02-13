@@ -39,15 +39,50 @@
           "component": "reference",
           "valueType": "string",
           "name": "image",
-          "label": "Image",
+          "label": "Card Image",
           "multi": false
         },
         {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt Text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "category",
+          "label": "Category",
+          "description": "Category label (e.g., PRODUCT LAUNCH, LAW ENFORCEMENT)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title",
+          "description": "Article headline"
+        },
+        {
           "component": "richtext",
-          "name": "text",
+          "name": "description",
           "value": "",
-          "label": "Text",
-          "valueType": "string"
+          "label": "Description",
+          "valueType": "string",
+          "description": "Brief summary of the article"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "cta",
+          "label": "CTA Label",
+          "description": "Link text (e.g., Read more)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "ctaUrl",
+          "label": "CTA URL",
+          "description": "Link to the full article"
         }
       ]
     }

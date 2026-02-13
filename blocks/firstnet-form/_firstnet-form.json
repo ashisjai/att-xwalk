@@ -23,13 +23,29 @@
         {
           "component": "aem-content",
           "name": "reference",
-          "label": "Form"
+          "label": "Form Definition",
+          "description": "Reference to the form JSON spreadsheet that defines fields"
         },
         {
           "component": "text",
           "name": "action",
           "label": "Action URL",
-          "valueType": "string"
+          "valueType": "string",
+          "description": "Form submission endpoint URL"
+        },
+        {
+          "component": "text",
+          "name": "submitLabel",
+          "label": "Submit Button Label",
+          "valueType": "string",
+          "description": "Text for the submit button (default: Submit)"
+        },
+        {
+          "component": "text",
+          "name": "confirmationUrl",
+          "label": "Confirmation URL",
+          "valueType": "string",
+          "description": "Redirect URL after successful form submission"
         }
       ]
     }

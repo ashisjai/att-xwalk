@@ -268,15 +268,50 @@
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Image",
+        "label": "Card Image",
         "multi": false
       },
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "category",
+        "label": "Category",
+        "description": "Category label (e.g., PRODUCT LAUNCH, LAW ENFORCEMENT)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title",
+        "description": "Article headline"
+      },
+      {
         "component": "richtext",
-        "name": "text",
+        "name": "description",
         "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "label": "Description",
+        "valueType": "string",
+        "description": "Brief summary of the article"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta",
+        "label": "CTA Label",
+        "description": "Link text (e.g., Read more)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaUrl",
+        "label": "CTA URL",
+        "description": "Link to the full article"
       }
     ]
   },
@@ -287,15 +322,70 @@
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Image",
+        "label": "Card Image",
         "multi": false
       },
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow",
+        "label": "Eyebrow",
+        "description": "Category label (e.g., New & existing customers)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Heading",
+        "description": "Card headline (e.g., Get the new iPhone 17 Pro for $0)"
+      },
+      {
         "component": "richtext",
-        "name": "text",
+        "name": "description",
         "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "label": "Description",
+        "valueType": "string",
+        "description": "Body text explaining the offer"
+      },
+      {
+        "component": "richtext",
+        "name": "legal",
+        "value": "",
+        "label": "Legal / Fine Print",
+        "valueType": "string",
+        "description": "Terms, restrictions, and disclaimers"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta",
+        "label": "Primary CTA Label",
+        "description": "Primary button text (e.g., Shop now)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaUrl",
+        "label": "Primary CTA URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "secondaryCta",
+        "label": "Secondary Link Label",
+        "description": "Optional secondary link text (e.g., View product details)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "secondaryCtaUrl",
+        "label": "Secondary Link URL"
       }
     ]
   },
@@ -324,13 +414,29 @@
       {
         "component": "aem-content",
         "name": "reference",
-        "label": "Form"
+        "label": "Form Definition",
+        "description": "Reference to the form JSON spreadsheet that defines fields"
       },
       {
         "component": "text",
         "name": "action",
         "label": "Action URL",
-        "valueType": "string"
+        "valueType": "string",
+        "description": "Form submission endpoint URL"
+      },
+      {
+        "component": "text",
+        "name": "submitLabel",
+        "label": "Submit Button Label",
+        "valueType": "string",
+        "description": "Text for the submit button (default: Submit)"
+      },
+      {
+        "component": "text",
+        "name": "confirmationUrl",
+        "label": "Confirmation URL",
+        "valueType": "string",
+        "description": "Redirect URL after successful form submission"
       }
     ]
   },
@@ -341,22 +447,63 @@
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Image",
+        "label": "Desktop Background Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Alt",
+        "label": "Image Alt Text",
         "value": ""
       },
       {
+        "component": "reference",
+        "valueType": "string",
+        "name": "mobileImage",
+        "label": "Mobile Background Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mobileImageAlt",
+        "label": "Mobile Image Alt Text",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow",
+        "label": "Eyebrow Text",
+        "description": "Small uppercase text above the headline (e.g., MISSION-CRITICAL COMMUNICATIONS)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Headline",
+        "description": "Main hero heading"
+      },
+      {
         "component": "richtext",
-        "name": "text",
+        "name": "description",
         "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "label": "Description",
+        "valueType": "string",
+        "description": "Supporting text below the headline"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta",
+        "label": "CTA Button Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaUrl",
+        "label": "CTA Button URL"
       }
     ]
   },
