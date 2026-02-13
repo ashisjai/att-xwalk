@@ -136,6 +136,18 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "Dark Navy",
+            "value": "dark-navy"
+          },
+          {
+            "name": "Light Grey",
+            "value": "light-grey"
+          },
+          {
+            "name": "Dark Blue Accent",
+            "value": "dark-blue-accent"
           }
         ]
       }
@@ -250,7 +262,7 @@
     ]
   },
   {
-    "id": "card",
+    "id": "news-card",
     "fields": [
       {
         "component": "reference",
@@ -269,7 +281,7 @@
     ]
   },
   {
-    "id": "card",
+    "id": "offer-card",
     "fields": [
       {
         "component": "reference",

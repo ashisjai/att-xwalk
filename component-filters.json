@@ -68,13 +68,13 @@
   {
     "id": "firstnet-cards-news",
     "components": [
-      "card"
+      "news-card"
     ]
   },
   {
     "id": "firstnet-cards-offers",
     "components": [
-      "card"
+      "offer-card"
     ]
   },
   {
