@@ -1,0 +1,249 @@
+/*
+ * AT&T Business Design Tokens
+ * Extracted from https://www.business.att.com/
+ *
+ * These CSS custom properties capture the AT&T Business brand design system.
+ * Import this file in styles.css to apply AT&T Business theming.
+ */
+
+:root {
+  /* ========================================
+   * AT&T Business Color Palette
+   * ======================================== */
+
+  /* Primary brand colors */
+  --batt-blue-primary: #00388f;
+  --batt-blue-hover: #0057b8;
+  --batt-blue-accent: #0074b3;
+  --batt-cyan: #009fdb;
+  --batt-blue-light-bg: #f2fafd;
+  --batt-blue-light-hover: #dcf3fa;
+  --batt-white: #fff;
+  --batt-black: #000;
+
+  /* Neutral / grey scale */
+  --batt-grey-50: #f3f4f6;
+  --batt-grey-100: #f2f2f2;
+  --batt-grey-200: #dcdfe3;
+  --batt-grey-300: #d2d2d2;
+  --batt-grey-350: #c4c4c4;
+  --batt-grey-400: #bdc2c7;
+  --batt-grey-500: #878c94;
+  --batt-grey-550: #767676;
+  --batt-grey-600: #686e74;
+  --batt-grey-700: #454b52;
+  --batt-grey-900: #1d2329;
+
+  /* Dark backgrounds */
+  --batt-dark-bg: #25303a;
+
+  /* Semantic text colors */
+  --batt-text-primary: #1d2329;
+  --batt-text-body: #454b52;
+  --batt-text-secondary: #333;
+  --batt-text-inverse: #fff;
+  --batt-text-muted: #686e74;
+  --batt-text-placeholder: #767676;
+  --batt-text-error: #f00;
+
+  /* Semantic link colors */
+  --batt-link-color: #0568ae;
+  --batt-link-hover-color: #0074b3;
+
+  /* Section backgrounds */
+  --batt-bg-default: #fff;
+  --batt-bg-light: #f2fafd;
+  --batt-bg-neutral: #f3f4f6;
+  --batt-bg-dark: #25303a;
+  --batt-bg-accent: #00388f;
+
+  /* ========================================
+   * AT&T Business Typography
+   * ======================================== */
+
+  /* Font families - AT&T proprietary fonts with system fallbacks */
+  --batt-heading-font-family: "attAleckSans-Bold", "Helvetica Neue", helvetica, arial, sans-serif;
+  --batt-body-font-family: "attAleckSans-Regular", arial, sans-serif;
+  --batt-body-font-family-medium: "attAleckSans-Medium", arial, sans-serif;
+  --batt-body-font-family-light: "attAleckSans-Light", arial, sans-serif;
+
+  /* Heading sizes (desktop) */
+  --batt-heading-size-xxl: 48px;
+  --batt-heading-size-xl: 36px;
+  --batt-heading-size-l: 26px;
+  --batt-heading-size-m: 22px;
+  --batt-heading-size-s: 18px;
+  --batt-heading-size-xs: 16px;
+
+  /* Body text sizes */
+  --batt-body-size-xl: 18px;
+  --batt-body-size-l: 17px;
+  --batt-body-size-m: 16px;
+  --batt-body-size-s: 14px;
+  --batt-body-size-xs: 12px;
+
+  /* Eyebrow text */
+  --batt-eyebrow-size: 26px;
+  --batt-eyebrow-letter-spacing: -0.52px;
+  --batt-eyebrow-line-height: 28px;
+
+  /* Line heights */
+  --batt-heading-line-height: 1.15;
+  --batt-body-line-height: 1.4;
+
+  /* Letter spacing */
+  --batt-heading-letter-spacing-xxl: -1.44px;
+  --batt-heading-letter-spacing-l: -0.78px;
+  --batt-body-letter-spacing: normal;
+  --batt-link-letter-spacing: -0.51px;
+
+  /* ========================================
+   * AT&T Business Spacing
+   * ======================================== */
+  --batt-spacing-2xs: 4px;
+  --batt-spacing-xs: 8px;
+  --batt-spacing-s: 16px;
+  --batt-spacing-m: 24px;
+  --batt-spacing-l: 32px;
+  --batt-spacing-xl: 48px;
+  --batt-spacing-xxl: 64px;
+  --batt-spacing-3xl: 80px;
+
+  /* Container */
+  --batt-container-max-width: 1310px;
+  --batt-container-padding: 0 15px;
+
+  /* ========================================
+   * AT&T Business Buttons
+   * ======================================== */
+
+  /* Shared button properties */
+  --batt-button-font-family: "attAleckSans-Bold", "Helvetica Neue", helvetica, arial, sans-serif;
+  --batt-button-font-size: 14px;
+  --batt-button-border-radius: 28px;
+  --batt-button-height: 48px;
+  --batt-button-padding: 0 32px;
+  --batt-button-min-width: 100px;
+  --batt-button-transition: 0.2s;
+  --batt-button-box-shadow: inset 0 1px 0 rgb(255 255 255 / 15%), 0 1px 1px rgb(0 0 0 / 7.5%);
+
+  /* Primary button (filled blue on light backgrounds) */
+  --batt-button-primary-bg: #00388f;
+  --batt-button-primary-color: #fff;
+  --batt-button-primary-border: 0;
+  --batt-button-primary-hover-bg: #0057b8;
+  --batt-button-primary-hover-color: #f2fafd;
+
+  /* Primary button on dark backgrounds */
+  --batt-button-primary-on-dark-bg: #f2fafd;
+  --batt-button-primary-on-dark-color: #00388f;
+  --batt-button-primary-on-dark-hover-bg: #dcf3fa;
+  --batt-button-primary-on-dark-hover-color: #0057b8;
+
+  /* Secondary button (outlined) */
+  --batt-button-secondary-bg: transparent;
+  --batt-button-secondary-color: #f2fafd;
+  --batt-button-secondary-border: 2px solid #f2fafd;
+  --batt-button-secondary-hover-bg: #0057b8;
+  --batt-button-secondary-hover-color: #fff;
+  --batt-button-secondary-hover-border-color: #0057b8;
+
+  /* Secondary button on light */
+  --batt-button-secondary-light-color: #00388f;
+  --batt-button-secondary-light-border: 2px solid #00388f;
+  --batt-button-secondary-light-hover-bg: #0057b8;
+  --batt-button-secondary-light-hover-color: #fff;
+
+  /* Text CTA link (primary-cta style) */
+  --batt-cta-link-color: #0074b3;
+  --batt-cta-link-font-size: 15px;
+  --batt-cta-link-padding-bottom: 8px;
+  --batt-cta-link-hover-decoration: underline;
+
+  /* ========================================
+   * AT&T Business Cards
+   * ======================================== */
+  --batt-card-bg: #fff;
+  --batt-card-border-radius: 16px;
+  --batt-card-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+
+  /* ========================================
+   * AT&T Business Form Elements
+   * ======================================== */
+  --batt-input-font-family: "attAleckSans-Regular", arial, sans-serif;
+  --batt-input-font-size: 14px;
+  --batt-input-color: #1d2329;
+  --batt-input-bg: #fff;
+  --batt-input-border: 1px solid #878c94;
+  --batt-input-border-radius: 8px;
+  --batt-input-padding: 12px 16px;
+  --batt-input-height: 48px;
+  --batt-input-focus-border-color: #0074b3;
+  --batt-textarea-font-size: 16px;
+  --batt-textarea-border: 1px solid #686e74;
+  --batt-textarea-padding: 12px 16px;
+  --batt-textarea-line-height: 24px;
+  --batt-label-font-family: "attAleckSans-Light", arial, sans-serif;
+  --batt-label-font-size: 14px;
+  --batt-label-font-weight: 700;
+  --batt-label-color: #333;
+
+  /* ========================================
+   * AT&T Business Nav
+   * ======================================== */
+  --batt-nav-height: 120px;
+  --batt-nav-link-color: #454b52;
+  --batt-nav-link-font-size: 14px;
+  --batt-nav-link-font-weight: 500;
+  --batt-nav-link-letter-spacing: 0.028px;
+  --batt-nav-bg: #fff;
+  --batt-nav-border-bottom: 1px solid #d2d2d2;
+  --batt-top-bar-bg: #f3f4f6;
+
+  /* ========================================
+   * AT&T Business Footer
+   * ======================================== */
+  --batt-footer-bg: #25303a;
+  --batt-footer-color: #fff;
+  --batt-footer-link-color: #fff;
+  --batt-footer-font-size: 14px;
+
+  /* ========================================
+   * AT&T Business Miscellaneous
+   * ======================================== */
+  --batt-border-radius-pill: 28px;
+  --batt-border-radius-card: 16px;
+  --batt-border-radius-input: 8px;
+  --batt-border-radius-small: 4px;
+  --batt-transition-default: all 0.2s ease;
+  --batt-transition-fast: 0.2s;
+  --batt-focus-outline: 2px solid #0074b3;
+  --batt-focus-outline-offset: 2px;
+
+  /* Hero overlay */
+  --batt-hero-overlay-gradient: linear-gradient(to right, rgb(0 0 0 / 80%) 35%, rgb(0 0 0 / 0%) 60%);
+
+  /* Blog / insights accent */
+  --batt-blog-accent-purple: #af29bb;
+
+  /* Disabled state */
+  --batt-disabled-bg: #dcdfe3;
+  --batt-disabled-color: #878c94;
+  --batt-disabled-border-color: #878c94;
+}
+
+/* Mobile breakpoint overrides */
+@media (width < 768px) {
+  :root {
+    --batt-heading-size-xxl: 36px;
+    --batt-heading-size-xl: 28px;
+    --batt-heading-size-l: 22px;
+    --batt-heading-size-m: 20px;
+    --batt-heading-size-s: 16px;
+    --batt-heading-size-xs: 14px;
+    --batt-body-size-xl: 16px;
+    --batt-body-size-l: 15px;
+    --batt-body-size-m: 14px;
+    --batt-eyebrow-size: 20px;
+  }
+}

@@ -1,0 +1,187 @@
+/*
+ * AT&T Business Section Styles
+ * Extracted from https://www.business.att.com/
+ *
+ * These styles apply to sections with section-metadata style values:
+ * - light: Light blue background (#f2fafd) used for product features
+ * - neutral: Neutral grey background (#f3f4f6) used for testimonials
+ * - dark: Dark charcoal background (#25303a) used for CTAs
+ * - accent: Deep blue background (#00388f) used for brand messaging
+ */
+
+/* =============================================
+ * Light section (light blue tint)
+ * ============================================= */
+main .section.batt-light {
+  background-color: var(--batt-bg-light, #f2fafd);
+  color: var(--batt-text-primary, #1d2329);
+  margin: 0;
+  padding: 48px 0;
+}
+
+main .section.batt-light h1,
+main .section.batt-light h2,
+main .section.batt-light h3,
+main .section.batt-light h4,
+main .section.batt-light p {
+  color: var(--batt-text-primary, #1d2329);
+}
+
+main .section.batt-light a.button:any-link {
+  background-color: var(--batt-button-primary-bg, #00388f);
+  border: none;
+  color: var(--batt-text-inverse, #fff);
+  border-radius: var(--batt-border-radius-pill, 28px);
+  padding: var(--batt-button-padding, 0 32px);
+  height: var(--batt-button-height, 48px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .section.batt-light a.button:hover {
+  background-color: var(--batt-button-primary-hover-bg, #0057b8);
+}
+
+/* =============================================
+ * Neutral section (grey background)
+ * ============================================= */
+main .section.batt-neutral {
+  background-color: var(--batt-bg-neutral, #f3f4f6);
+  color: var(--batt-text-primary, #1d2329);
+  margin: 0;
+  padding: 48px 0;
+}
+
+main .section.batt-neutral h2,
+main .section.batt-neutral h3 {
+  color: var(--batt-text-primary, #1d2329);
+}
+
+main .section.batt-neutral a.button:any-link {
+  background-color: var(--batt-button-primary-bg, #00388f);
+  border: none;
+  color: var(--batt-text-inverse, #fff);
+  border-radius: var(--batt-border-radius-pill, 28px);
+}
+
+main .section.batt-neutral a.button:hover {
+  background-color: var(--batt-button-primary-hover-bg, #0057b8);
+}
+
+/* =============================================
+ * Dark section (charcoal background)
+ * ============================================= */
+main .section.batt-dark {
+  background-color: var(--batt-bg-dark, #25303a);
+  color: var(--batt-text-inverse, #fff);
+  margin: 0;
+  padding: 48px 0;
+}
+
+main .section.batt-dark h1,
+main .section.batt-dark h2,
+main .section.batt-dark h3,
+main .section.batt-dark h4,
+main .section.batt-dark p {
+  color: var(--batt-text-inverse, #fff);
+}
+
+main .section.batt-dark a:any-link {
+  color: var(--batt-text-inverse, #fff);
+}
+
+/* Primary button on dark bg */
+main .section.batt-dark a.button:any-link {
+  background-color: var(--batt-button-primary-on-dark-bg, #f2fafd);
+  color: var(--batt-button-primary-on-dark-color, #00388f);
+  border: none;
+  border-radius: var(--batt-border-radius-pill, 28px);
+}
+
+main .section.batt-dark a.button:hover {
+  background-color: var(--batt-button-primary-on-dark-hover-bg, #dcf3fa);
+  color: var(--batt-button-primary-on-dark-hover-color, #0057b8);
+}
+
+/* Secondary button on dark bg */
+main .section.batt-dark a.button.secondary {
+  background-color: transparent;
+  color: var(--batt-button-secondary-color, #f2fafd);
+  border: var(--batt-button-secondary-border, 2px solid #f2fafd);
+}
+
+main .section.batt-dark a.button.secondary:hover {
+  background-color: var(--batt-button-secondary-hover-bg, #0057b8);
+  color: var(--batt-button-secondary-hover-color, #fff);
+  border-color: var(--batt-button-secondary-hover-border-color, #0057b8);
+}
+
+/* =============================================
+ * Accent section (deep blue background)
+ * ============================================= */
+main .section.batt-accent {
+  background-color: var(--batt-bg-accent, #00388f);
+  color: var(--batt-text-inverse, #fff);
+  margin: 0;
+  padding: 48px 0;
+}
+
+main .section.batt-accent h1,
+main .section.batt-accent h2,
+main .section.batt-accent h3,
+main .section.batt-accent h4,
+main .section.batt-accent p {
+  color: var(--batt-text-inverse, #fff);
+}
+
+main .section.batt-accent a:any-link {
+  color: var(--batt-text-inverse, #fff);
+}
+
+/* Primary button on accent bg (light blue inverted) */
+main .section.batt-accent a.button:any-link {
+  background-color: var(--batt-button-primary-on-dark-bg, #f2fafd);
+  color: var(--batt-button-primary-on-dark-color, #00388f);
+  border: none;
+  border-radius: var(--batt-border-radius-pill, 28px);
+}
+
+main .section.batt-accent a.button:hover {
+  background-color: var(--batt-button-primary-on-dark-hover-bg, #dcf3fa);
+  color: var(--batt-button-primary-on-dark-hover-color, #0057b8);
+}
+
+/* Secondary button on accent bg */
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.batt-accent a.button.secondary {
+  background-color: transparent;
+  color: var(--batt-button-secondary-color, #f2fafd);
+  border: var(--batt-button-secondary-border, 2px solid #f2fafd);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main .section.batt-accent a.button.secondary:hover {
+  background-color: var(--batt-button-secondary-hover-bg, #0057b8);
+  color: var(--batt-button-secondary-hover-color, #fff);
+  border-color: var(--batt-button-secondary-hover-border-color, #0057b8);
+}
+
+/* =============================================
+ * Centered section headings utility
+ * ============================================= */
+main .section.batt-light > div > h2,
+main .section.batt-neutral > div > h2,
+main .section.batt-dark > div > h2,
+main .section.batt-accent > div > h2 {
+  text-align: center;
+  margin-bottom: var(--batt-spacing-s, 16px);
+}
+
+main .section.batt-light > div > h2 + p,
+main .section.batt-neutral > div > h2 + p,
+main .section.batt-dark > div > h2 + p,
+main .section.batt-accent > div > h2 + p {
+  text-align: center;
+  margin-bottom: var(--batt-spacing-l, 32px);
+}
