@@ -197,6 +197,13 @@ export default async function decorate(block) {
     brandLink.className = '';
     brandLink.closest('.button-container').className = '';
   }
+  // Ensure brand image link is unstyled
+  const brandImgLink = navBrand.querySelector('a');
+  if (brandImgLink) {
+    brandImgLink.classList.remove('button');
+    const brandContainer = brandImgLink.closest('.button-container');
+    if (brandContainer) brandContainer.classList.remove('button-container');
+  }
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
@@ -218,10 +225,12 @@ export default async function decorate(block) {
 
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
-    const search = navTools.querySelector('a[href*="search"]');
-    if (search && search.textContent === '') {
-      search.setAttribute('aria-label', 'Search');
-    }
+    // Strip auto-applied button classes from tool links
+    navTools.querySelectorAll('.button-container').forEach((bc) => {
+      bc.classList.remove('button-container');
+      const btn = bc.querySelector('.button');
+      if (btn) btn.classList.remove('button');
+    });
   }
 
   // hamburger for mobile
