@@ -1,0 +1,139 @@
+{
+  "definitions": [
+    {
+      "title": "Batt Article",
+      "id": "batt-article",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Batt Article",
+              "model": "batt-article"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "batt-article",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "category",
+          "label": "Category",
+          "description": "Article category badge (e.g., BLOG, TECH ADVICE, RESEARCH)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "heading",
+          "label": "Article Title"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "subtitle",
+          "label": "Subtitle / Deck",
+          "description": "Summary paragraph below the title"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "author",
+          "label": "Author Name"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "publishDate",
+          "label": "Publish Date",
+          "description": "Date in format: Month Day, Year (e.g., January 15, 2025)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "readTime",
+          "label": "Read Time",
+          "description": "Estimated read time (e.g., 5 min read)"
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "heroImage",
+          "label": "Hero Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "heroImageAlt",
+          "label": "Hero Image Alt Text"
+        },
+        {
+          "component": "richtext",
+          "name": "body",
+          "value": "",
+          "label": "Article Body",
+          "valueType": "string",
+          "description": "Full article content with headings, paragraphs, images, and lists"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "showToc",
+          "label": "Show Table of Contents",
+          "description": "Auto-generate a sidebar TOC from headings in the article body"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "showSharing",
+          "label": "Show Social Sharing",
+          "description": "Display share buttons (X, LinkedIn, Facebook, Email)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "tags",
+          "label": "Topic Tags",
+          "description": "Comma-separated topic tags (e.g., Cybersecurity, IoT, 5G)"
+        },
+        {
+          "component": "richtext",
+          "name": "relatedArticles",
+          "value": "",
+          "label": "Related Articles",
+          "valueType": "string",
+          "description": "List of related article links (use unordered list)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "subscribeHeading",
+          "label": "Subscribe Heading",
+          "description": "Email subscription CTA heading (e.g., Stay in the know)"
+        },
+        {
+          "component": "richtext",
+          "name": "subscribeDescription",
+          "value": "",
+          "label": "Subscribe Description",
+          "valueType": "string",
+          "description": "Text below the subscribe heading"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "subscribeAction",
+          "label": "Subscribe Form Action URL",
+          "description": "Endpoint for email subscription form"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

@@ -1,0 +1,115 @@
+/* AT&T Business Story / Insight Cards Block */
+.batt-cards-story > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--batt-spacing-l, 32px);
+}
+
+.batt-cards-story > ul > li {
+  background-color: var(--batt-card-bg, #fff);
+  border-radius: var(--batt-card-border-radius, 16px);
+  box-shadow: var(--batt-card-shadow, 0 2px 8px rgb(0 0 0 / 8%));
+  overflow: hidden;
+  transition: var(--batt-transition-default, all 0.2s ease);
+}
+
+.batt-cards-story > ul > li:hover {
+  box-shadow: 0 4px 16px rgb(0 0 0 / 14%);
+}
+
+/* Card image with overlay gradient */
+.batt-cards-story .cards-card-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.batt-cards-story .cards-card-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.batt-cards-story > ul > li:hover .cards-card-image img {
+  transform: scale(1.03);
+}
+
+/* Badge overlay */
+.batt-cards-story .card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--batt-blog-accent-purple, #af29bb);
+  color: var(--batt-text-inverse, #fff);
+  font-family: var(--batt-body-font-family-medium, arial, sans-serif);
+  font-size: var(--batt-body-size-xs, 12px);
+  padding: 4px 12px;
+  border-radius: var(--batt-border-radius-small, 4px);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Card body */
+.batt-cards-story .cards-card-body {
+  padding: var(--batt-spacing-m, 24px);
+}
+
+.batt-cards-story .cards-card-body h3 {
+  font-family: var(--batt-heading-font-family, arial, sans-serif);
+  font-size: var(--batt-heading-size-s, 18px);
+  line-height: 1.3;
+  color: var(--batt-text-primary, #1d2329);
+  margin: 0 0 8px;
+}
+
+.batt-cards-story .cards-card-body .description {
+  font-family: var(--batt-body-font-family, arial, sans-serif);
+  font-size: var(--batt-body-size-s, 14px);
+  line-height: var(--batt-body-line-height, 1.4);
+  color: var(--batt-text-body, #454b52);
+  margin: 0 0 12px;
+}
+
+.batt-cards-story .cards-card-body .cta-link {
+  margin: 0;
+}
+
+.batt-cards-story .cards-card-body .cta-link a {
+  color: var(--batt-cta-link-color, #0074b3);
+  font-size: var(--batt-cta-link-font-size, 15px);
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  font-weight: 500;
+}
+
+.batt-cards-story .cards-card-body .cta-link a:hover {
+  text-decoration: underline;
+}
+
+/* Featured variant — first card spans full width */
+.batt-cards-story.featured > ul > li:first-child {
+  grid-column: 1 / -1;
+}
+
+.batt-cards-story.featured > ul > li:first-child .cards-card-image img {
+  aspect-ratio: 21 / 9;
+}
+
+@media (width >= 900px) {
+  .batt-cards-story > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 2-up variant */
+  .batt-cards-story.two-up > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

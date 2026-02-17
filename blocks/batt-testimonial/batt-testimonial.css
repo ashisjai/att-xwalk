@@ -1,0 +1,113 @@
+/* AT&T Business Testimonial Block */
+.batt-testimonial {
+  background-color: var(--batt-bg-neutral, #f3f4f6);
+  border-radius: var(--batt-border-radius-card, 16px);
+  padding: var(--batt-spacing-xl, 48px) var(--batt-spacing-m, 24px);
+}
+
+/* Carousel track */
+.batt-testimonial .testimonial-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  gap: var(--batt-spacing-l, 32px);
+}
+
+.batt-testimonial .testimonial-track::-webkit-scrollbar {
+  display: none;
+}
+
+.batt-testimonial .testimonial-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Icon / avatar */
+.batt-testimonial .testimonial-icon {
+  margin-bottom: var(--batt-spacing-s, 16px);
+}
+
+.batt-testimonial .testimonial-icon img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Quote */
+.batt-testimonial blockquote {
+  font-family: var(--batt-body-font-family-light, arial, sans-serif);
+  font-size: var(--batt-heading-size-l, 26px);
+  letter-spacing: var(--batt-heading-letter-spacing-l, -0.78px);
+  line-height: 1.3;
+  color: var(--batt-text-primary, #1d2329);
+  margin: 0 0 var(--batt-spacing-m, 24px);
+  max-width: 800px;
+}
+
+.batt-testimonial blockquote::before {
+  content: '\201C';
+}
+
+.batt-testimonial blockquote::after {
+  content: '\201D';
+}
+
+/* Citation */
+.batt-testimonial cite {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.batt-testimonial .attribution-name {
+  font-family: var(--batt-body-font-family-medium, arial, sans-serif);
+  font-size: var(--batt-body-size-m, 16px);
+  color: var(--batt-text-primary, #1d2329);
+}
+
+.batt-testimonial .attribution-role {
+  font-family: var(--batt-body-font-family, arial, sans-serif);
+  font-size: var(--batt-body-size-s, 14px);
+  color: var(--batt-text-muted, #686e74);
+}
+
+/* Navigation dots */
+.batt-testimonial .testimonial-nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: var(--batt-spacing-m, 24px);
+}
+
+.batt-testimonial .testimonial-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--batt-grey-400, #bdc2c7);
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: var(--batt-transition-default, all 0.2s ease);
+}
+
+.batt-testimonial .testimonial-dot.active {
+  background-color: var(--batt-blue-primary, #00388f);
+  border-color: var(--batt-blue-primary, #00388f);
+}
+
+.batt-testimonial .testimonial-dot:hover {
+  border-color: var(--batt-blue-primary, #00388f);
+}
+
+@media (width >= 900px) {
+  .batt-testimonial {
+    padding: var(--batt-spacing-xxl, 64px);
+  }
+}

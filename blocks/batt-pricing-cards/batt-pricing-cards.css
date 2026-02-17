@@ -1,0 +1,183 @@
+/* AT&T Business Pricing Cards Block */
+
+/* Toggle */
+.batt-pricing-cards .pricing-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: var(--batt-spacing-xl, 48px);
+  background-color: var(--batt-grey-100, #f3f4f6);
+  border-radius: var(--batt-border-radius-pill, 24px);
+  padding: 4px;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.batt-pricing-cards .pricing-toggle-option {
+  flex: 1;
+  text-align: center;
+  padding: 10px 20px;
+  font-family: var(--batt-body-font-family-medium, arial, sans-serif);
+  font-size: var(--batt-body-size-s, 14px);
+  color: var(--batt-text-body, #454b52);
+  border-radius: var(--batt-border-radius-pill, 24px);
+  cursor: pointer;
+  transition: var(--batt-transition-fast, 0.2s);
+  white-space: nowrap;
+}
+
+.batt-pricing-cards .pricing-toggle-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.batt-pricing-cards .pricing-toggle-option.active {
+  background-color: var(--batt-white, #fff);
+  color: var(--batt-text-primary, #1d2329);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 12%);
+}
+
+/* Grid */
+.batt-pricing-cards .pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--batt-spacing-m, 24px);
+}
+
+/* Card */
+.batt-pricing-cards .pricing-card {
+  position: relative;
+  background-color: var(--batt-white, #fff);
+  border: 1px solid var(--batt-grey-200, #dcdfe3);
+  border-radius: var(--batt-border-radius-card, 16px);
+  padding: var(--batt-spacing-l, 32px) var(--batt-spacing-m, 24px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.batt-pricing-cards .pricing-card.has-badge {
+  border-color: var(--batt-cyan, #009fdb);
+  border-width: 2px;
+}
+
+.batt-pricing-cards .pricing-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--batt-cyan, #009fdb);
+  color: var(--batt-white, #fff);
+  font-family: var(--batt-body-font-family-bold, arial, sans-serif);
+  font-size: var(--batt-body-size-xs, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 16px;
+  border-radius: var(--batt-border-radius-pill, 24px);
+  white-space: nowrap;
+}
+
+/* Header */
+.batt-pricing-cards .pricing-header h3 {
+  font-family: var(--batt-heading-font-family, arial, sans-serif);
+  font-size: var(--batt-heading-size-s, 20px);
+  color: var(--batt-text-primary, #1d2329);
+  margin: 0 0 4px;
+}
+
+.batt-pricing-cards .pricing-speed {
+  font-family: var(--batt-body-font-family, arial, sans-serif);
+  font-size: var(--batt-body-size-s, 14px);
+  color: var(--batt-text-light, #6a7279);
+  margin-bottom: var(--batt-spacing-s, 16px);
+}
+
+/* Price */
+.batt-pricing-cards .pricing-prices {
+  margin-bottom: var(--batt-spacing-s, 16px);
+}
+
+.batt-pricing-cards .pricing-price {
+  font-family: var(--batt-heading-font-family, arial, sans-serif);
+  font-size: var(--batt-heading-size-xl, 36px);
+  color: var(--batt-text-primary, #1d2329);
+  display: none;
+}
+
+.batt-pricing-cards .pricing-price.active {
+  display: block;
+}
+
+/* Features */
+.batt-pricing-cards .pricing-features {
+  text-align: left;
+  width: 100%;
+  margin-bottom: var(--batt-spacing-m, 24px);
+}
+
+.batt-pricing-cards .pricing-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.batt-pricing-cards .pricing-features li {
+  padding: 8px 0;
+  font-family: var(--batt-body-font-family, arial, sans-serif);
+  font-size: var(--batt-body-size-s, 14px);
+  color: var(--batt-text-body, #454b52);
+  border-bottom: 1px solid var(--batt-grey-100, #f3f4f6);
+}
+
+.batt-pricing-cards .pricing-features li::before {
+  content: '✓';
+  color: var(--batt-green-success, #0c8500);
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* Legal */
+.batt-pricing-cards .pricing-legal {
+  font-size: var(--batt-body-size-xs, 12px);
+  color: var(--batt-text-light, #6a7279);
+  margin-bottom: var(--batt-spacing-s, 16px);
+}
+
+/* CTA */
+.batt-pricing-cards .pricing-cta {
+  margin-top: auto;
+  width: 100%;
+  background-color: var(--batt-blue-primary, #00388f);
+  color: var(--batt-white, #fff);
+  border-radius: var(--batt-border-radius-pill, 24px);
+  padding: 12px 24px;
+  font-family: var(--batt-body-font-family-bold, arial, sans-serif);
+  font-size: var(--batt-body-size-m, 16px);
+  text-decoration: none;
+  display: block;
+}
+
+.batt-pricing-cards .pricing-cta:hover {
+  background-color: var(--batt-blue-dark, #001e60);
+}
+
+@media (width >= 600px) {
+  .batt-pricing-cards .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .batt-pricing-cards .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (width >= 1200px) {
+  .batt-pricing-cards .pricing-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

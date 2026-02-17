@@ -1,0 +1,149 @@
+/* AT&T Business Value Proposition Block */
+.batt-value-prop {
+  display: flex;
+  flex-direction: column;
+  gap: var(--batt-spacing-l, 32px);
+}
+
+/* Image */
+.batt-value-prop > .value-prop-image {
+  flex: 1;
+}
+
+.batt-value-prop > .value-prop-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--batt-border-radius-card, 16px);
+  display: block;
+}
+
+/* Content */
+.batt-value-prop > .value-prop-content {
+  flex: 1;
+}
+
+.batt-value-prop .value-prop-eyebrow {
+  font-family: var(--batt-body-font-family-medium, arial, sans-serif);
+  font-size: var(--batt-eyebrow-size, 26px);
+  letter-spacing: var(--batt-eyebrow-letter-spacing, -0.52px);
+  line-height: var(--batt-eyebrow-line-height, 28px);
+  color: var(--batt-text-primary, #1d2329);
+  margin: 0 0 8px;
+}
+
+.batt-value-prop h2 {
+  font-family: var(--batt-heading-font-family, arial, sans-serif);
+  font-size: var(--batt-heading-size-xl, 36px);
+  line-height: var(--batt-heading-line-height, 1.15);
+  color: var(--batt-text-primary, #1d2329);
+  margin: 0 0 16px;
+}
+
+/* Checklist */
+.batt-value-prop .checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.batt-value-prop .checklist li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  font-family: var(--batt-body-font-family, arial, sans-serif);
+  font-size: var(--batt-body-size-m, 16px);
+  line-height: var(--batt-body-line-height, 1.4);
+  color: var(--batt-text-body, #454b52);
+}
+
+.batt-value-prop .checklist li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--batt-cyan, #009fdb);
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+/* Legal */
+.batt-value-prop .value-prop-legal {
+  font-size: var(--batt-body-size-xs, 12px);
+  color: var(--batt-text-muted, #686e74);
+  margin: 0 0 16px;
+}
+
+/* Actions */
+.batt-value-prop .value-prop-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.batt-value-prop .value-prop-actions .button-container {
+  margin: 0;
+}
+
+.batt-value-prop a.button.primary {
+  background-color: var(--batt-button-primary-bg, #00388f);
+  color: var(--batt-button-primary-color, #fff);
+  border: var(--batt-button-primary-border, 0);
+  border-radius: var(--batt-button-border-radius, 28px);
+  padding: var(--batt-button-padding, 0 32px);
+  height: var(--batt-button-height, 48px);
+  line-height: var(--batt-button-height, 48px);
+  font-family: var(--batt-button-font-family, arial, sans-serif);
+  font-size: var(--batt-button-font-size, 14px);
+  transition: var(--batt-button-transition, 0.2s);
+  margin: 0;
+}
+
+.batt-value-prop a.button.primary:hover {
+  background-color: var(--batt-button-primary-hover-bg, #0057b8);
+}
+
+.batt-value-prop a.button.secondary {
+  color: var(--batt-button-secondary-light-color, #00388f);
+  border: var(--batt-button-secondary-light-border, 2px solid #00388f);
+  background-color: transparent;
+  border-radius: var(--batt-button-border-radius, 28px);
+  padding: var(--batt-button-padding, 0 32px);
+  height: var(--batt-button-height, 48px);
+  line-height: calc(var(--batt-button-height, 48px) - 4px);
+  font-family: var(--batt-button-font-family, arial, sans-serif);
+  font-size: var(--batt-button-font-size, 14px);
+  transition: var(--batt-button-transition, 0.2s);
+  margin: 0;
+}
+
+.batt-value-prop a.button.secondary:hover {
+  background-color: var(--batt-button-secondary-light-hover-bg, #0057b8);
+  color: var(--batt-button-secondary-light-hover-color, #fff);
+}
+
+/* Image-right variant */
+.batt-value-prop.image-right {
+  flex-direction: column-reverse;
+}
+
+/* No-image variant */
+.batt-value-prop.no-image > .value-prop-image {
+  display: none;
+}
+
+@media (width >= 900px) {
+  .batt-value-prop {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .batt-value-prop.image-right {
+    flex-direction: row-reverse;
+  }
+
+  .batt-value-prop > .value-prop-image,
+  .batt-value-prop > .value-prop-content {
+    flex: 1 1 50%;
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "definitions": [
+    {
+      "title": "Batt Form",
+      "id": "batt-form",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Batt Form",
+              "model": "batt-form"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "batt-form",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "formHeading",
+          "label": "Form Heading",
+          "description": "Heading displayed above the form"
+        },
+        {
+          "component": "richtext",
+          "name": "formDescription",
+          "value": "",
+          "label": "Form Description",
+          "valueType": "string",
+          "description": "Introductory text below the heading"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "reference",
+          "label": "Form Definition",
+          "description": "Path to the form JSON spreadsheet (e.g., /forms/contact-form)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "action",
+          "label": "Submit Action URL",
+          "description": "Server endpoint to submit form data to"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "submitLabel",
+          "label": "Submit Button Label",
+          "value": "Submit"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "confirmationUrl",
+          "label": "Confirmation Page URL",
+          "description": "Redirect URL after successful submission"
+        },
+        {
+          "component": "richtext",
+          "name": "privacyText",
+          "value": "",
+          "label": "Privacy / Consent Text",
+          "valueType": "string",
+          "description": "Privacy policy and consent text below the submit button"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

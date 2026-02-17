@@ -1,0 +1,83 @@
+/* AT&T Business Feature Cards Block */
+.batt-cards-feature > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--batt-spacing-l, 32px);
+}
+
+.batt-cards-feature > ul > li {
+  background-color: var(--batt-card-bg, #fff);
+  border-radius: var(--batt-card-border-radius, 16px);
+  box-shadow: var(--batt-card-shadow, 0 2px 8px rgb(0 0 0 / 8%));
+  padding: var(--batt-spacing-m, 24px);
+  transition: var(--batt-transition-default, all 0.2s ease);
+}
+
+.batt-cards-feature > ul > li[data-href]:hover {
+  box-shadow: 0 4px 16px rgb(0 0 0 / 14%);
+  transform: translateY(-2px);
+}
+
+/* Card image / icon */
+.batt-cards-feature .cards-card-image {
+  margin-bottom: var(--batt-spacing-s, 16px);
+}
+
+.batt-cards-feature .cards-card-image img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+/* Card body */
+.batt-cards-feature .cards-card-body h3 {
+  font-family: var(--batt-heading-font-family, arial, sans-serif);
+  font-size: var(--batt-heading-size-m, 22px);
+  line-height: var(--batt-heading-line-height, 1.15);
+  color: var(--batt-text-primary, #1d2329);
+  margin: 0 0 8px;
+}
+
+.batt-cards-feature .cards-card-body .description {
+  font-family: var(--batt-body-font-family, arial, sans-serif);
+  font-size: var(--batt-body-size-m, 16px);
+  line-height: var(--batt-body-line-height, 1.4);
+  color: var(--batt-text-body, #454b52);
+  margin: 0 0 12px;
+}
+
+/* CTA link arrow style */
+.batt-cards-feature .cards-card-body .cta-link {
+  margin: 0;
+}
+
+.batt-cards-feature .cards-card-body .cta-link a {
+  color: var(--batt-cta-link-color, #0074b3);
+  font-size: var(--batt-cta-link-font-size, 15px);
+  letter-spacing: var(--batt-link-letter-spacing, -0.51px);
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  font-weight: 500;
+}
+
+.batt-cards-feature .cards-card-body .cta-link a:hover {
+  text-decoration: underline;
+}
+
+.batt-cards-feature .cards-card-body .cta-link a::after {
+  content: ' \203A';
+  font-size: 1.2em;
+}
+
+@media (width >= 900px) {
+  .batt-cards-feature > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,139 @@
+/* AT&T Business Banner Block */
+.batt-banner-container .batt-banner-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.batt-banner {
+  background-color: var(--batt-blue-50, #f2fafd);
+  border-bottom: 1px solid var(--batt-grey-200, #dcdfe3);
+}
+
+.batt-banner .banner-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: var(--batt-container-max-width, 1310px);
+  margin: 0 auto;
+  padding: 12px 24px;
+}
+
+.batt-banner .banner-icon {
+  flex-shrink: 0;
+}
+
+.batt-banner .banner-icon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.batt-banner .banner-message {
+  flex: 1;
+  font-family: var(--batt-body-font-family, arial, sans-serif);
+  font-size: var(--batt-body-size-s, 14px);
+  color: var(--batt-text-primary, #1d2329);
+  line-height: 1.4;
+}
+
+.batt-banner .banner-message p {
+  margin: 0;
+}
+
+.batt-banner .banner-cta {
+  flex-shrink: 0;
+  font-family: var(--batt-body-font-family-bold, arial, sans-serif);
+  font-size: var(--batt-body-size-s, 14px);
+  color: var(--batt-link-color, #0568ae);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.batt-banner .banner-cta:hover {
+  color: var(--batt-link-hover-color, #0074b3);
+  text-decoration: underline;
+}
+
+.batt-banner .banner-close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--batt-text-light, #6a7279);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+  margin: 0;
+  line-height: 1;
+}
+
+.batt-banner .banner-close:hover {
+  color: var(--batt-text-primary, #1d2329);
+}
+
+/* Success variant */
+.batt-banner.success {
+  background-color: #e6f5e4;
+  border-bottom-color: #b8dfb3;
+}
+
+/* Warning variant */
+.batt-banner.warning {
+  background-color: #fff8e1;
+  border-bottom-color: #ffe082;
+}
+
+/* Promo variant */
+.batt-banner.promo {
+  background-color: var(--batt-blue-primary, #00388f);
+  border-bottom: none;
+}
+
+.batt-banner.promo .banner-message {
+  color: var(--batt-white, #fff);
+}
+
+.batt-banner.promo .banner-cta {
+  color: var(--batt-cyan, #009fdb);
+}
+
+.batt-banner.promo .banner-close {
+  color: rgb(255 255 255 / 70%);
+}
+
+.batt-banner.promo .banner-close:hover {
+  color: var(--batt-white, #fff);
+}
+
+/* stylelint-disable no-descending-specificity -- .promo and .dark are mutually exclusive variant classes */
+
+/* Dark variant */
+.batt-banner.dark {
+  background-color: var(--batt-charcoal, #25303a);
+  border-bottom: none;
+}
+
+.batt-banner.dark .banner-message {
+  color: var(--batt-white, #fff);
+}
+
+.batt-banner.dark .banner-cta {
+  color: var(--batt-cyan, #009fdb);
+}
+
+.batt-banner.dark .banner-close {
+  color: rgb(255 255 255 / 70%);
+}
+
+.batt-banner.dark .banner-close:hover {
+  color: var(--batt-white, #fff);
+}
+
+@media (width >= 900px) {
+  .batt-banner .banner-inner {
+    padding: 12px 32px;
+  }
+
+  .batt-banner .banner-message {
+    font-size: var(--batt-body-size-m, 16px);
+  }
+}

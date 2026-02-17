@@ -45,6 +45,22 @@
             {
               "name": "Dark Blue Accent",
               "value": "dark-blue-accent"
+            },
+            {
+              "name": "Batt Light",
+              "value": "batt-light"
+            },
+            {
+              "name": "Batt Neutral",
+              "value": "batt-neutral"
+            },
+            {
+              "name": "Batt Dark",
+              "value": "batt-dark"
+            },
+            {
+              "name": "Batt Accent",
+              "value": "batt-accent"
             }
           ]
         }
@@ -56,6 +72,25 @@
       "id": "section",
       "components": [
         "accordion",
+        "batt-accordion",
+        "batt-anchor-tabs",
+        "batt-article",
+        "batt-banner",
+        "batt-cards-feature",
+        "batt-cards-offer",
+        "batt-cards-product",
+        "batt-comparison-table",
+        "batt-content-tabs",
+        "batt-cards-solution",
+        "batt-cards-story",
+        "batt-columns",
+        "batt-form",
+        "batt-hero",
+        "batt-pricing-cards",
+        "batt-seo-links",
+        "batt-service-grid",
+        "batt-testimonial",
+        "batt-value-prop",
         "button",
         "cards",
         "carousel",

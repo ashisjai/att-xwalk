@@ -1,0 +1,62 @@
+{
+  "definitions": [
+    {
+      "title": "Batt Accordion",
+      "id": "batt-accordion",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Batt Accordion",
+              "filter": "batt-accordion"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Accordion Item",
+      "id": "batt-accordion-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Accordion Item",
+              "model": "batt-accordion-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "batt-accordion-item",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "question",
+          "label": "Question / Title",
+          "description": "The clickable heading that expands the panel"
+        },
+        {
+          "component": "richtext",
+          "name": "answer",
+          "value": "",
+          "label": "Answer / Content",
+          "valueType": "string",
+          "description": "Expandable content area — supports rich text, links, and lists"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "batt-accordion",
+      "components": ["batt-accordion-item"]
+    }
+  ]
+}

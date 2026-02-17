@@ -1,0 +1,215 @@
+/* AT&T Business Form Block */
+.batt-form .field-wrapper {
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+}
+
+.batt-form fieldset {
+  display: grid;
+  grid-auto-flow: row;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.batt-form form > .field-wrapper + .field-wrapper,
+.batt-form form fieldset .field-wrapper + .field-wrapper {
+  margin-top: var(--batt-spacing-m, 24px);
+}
+
+.batt-form form > .selection-wrapper + .selection-wrapper,
+.batt-form form fieldset .selection-wrapper + .selection-wrapper {
+  margin-top: 0.25em;
+}
+
+@media (width >= 600px) {
+  .batt-form fieldset {
+    grid-template-columns: repeat(2, auto);
+    gap: 0.25em 24px;
+  }
+
+  .batt-form form > .selection-wrapper + .selection-wrapper,
+  .batt-form form fieldset .field-wrapper + .field-wrapper,
+  .batt-form form fieldset .selection-wrapper + .selection-wrapper {
+    margin-top: 0;
+  }
+}
+
+@media (width >= 900px) {
+  .batt-form fieldset {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+.batt-form label,
+.batt-form fieldset > legend {
+  font-family: var(--batt-label-font-family, "attAleckSans-Light", arial, sans-serif);
+  font-size: var(--batt-label-font-size, 14px);
+  font-weight: var(--batt-label-font-weight, 700);
+  color: var(--batt-label-color, #333);
+  margin-bottom: 0.25em;
+}
+
+.batt-form .selection-wrapper label {
+  margin: 0;
+  font-weight: normal;
+}
+
+.batt-form input,
+.batt-form select,
+.batt-form textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: var(--batt-input-padding, 12px 16px);
+  border-radius: var(--batt-input-border-radius, 8px);
+  border: var(--batt-input-border, 1px solid #878c94);
+  background-color: var(--batt-input-bg, #fff);
+  color: var(--batt-input-color, #1d2329);
+  font-family: var(--batt-input-font-family, "attAleckSans-Regular", arial, sans-serif);
+  font-size: var(--batt-input-font-size, 14px);
+  height: var(--batt-input-height, 48px);
+  transition: border-color 0.2s;
+}
+
+.batt-form textarea {
+  height: auto;
+  min-height: 120px;
+  resize: vertical;
+  font-size: var(--batt-textarea-font-size, 16px);
+  border: var(--batt-textarea-border, 1px solid #686e74);
+  padding: var(--batt-textarea-padding, 12px 16px);
+  line-height: var(--batt-textarea-line-height, 24px);
+}
+
+.batt-form input:hover,
+.batt-form select:hover,
+.batt-form textarea:hover {
+  border-color: var(--batt-text-secondary, #333);
+}
+
+.batt-form input:focus,
+.batt-form select:focus,
+.batt-form textarea:focus {
+  outline: var(--batt-focus-outline, 2px solid #0074b3);
+  outline-offset: var(--batt-focus-outline-offset, 2px);
+  border-color: var(--batt-input-focus-border-color, #0074b3);
+}
+
+.batt-form input::placeholder,
+.batt-form textarea::placeholder {
+  color: var(--batt-text-placeholder, #767676);
+}
+
+.batt-form .selection-wrapper input {
+  width: max-content;
+  height: auto;
+}
+
+@media (width >= 600px) {
+  .batt-form input,
+  .batt-form select,
+  .batt-form textarea {
+    max-width: 50vw;
+  }
+
+  .batt-form .button {
+    max-width: max-content;
+  }
+}
+
+@media (width >= 900px) {
+  .batt-form input,
+  .batt-form select,
+  .batt-form textarea {
+    max-width: 33vw;
+  }
+}
+
+.batt-form .field-wrapper.selection-wrapper {
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 1ch;
+}
+
+.batt-form label[data-required]::after {
+  content: '*';
+  color: var(--batt-text-error, #f00);
+  margin-inline-start: 1ch;
+}
+
+/* Submit button — AT&T Business primary style */
+.batt-form button[type="submit"] {
+  background-color: var(--batt-button-primary-bg, #00388f);
+  color: var(--batt-button-primary-color, #fff);
+  border: var(--batt-button-primary-border, 0);
+  border-radius: var(--batt-button-border-radius, 28px);
+  padding: var(--batt-button-padding, 0 32px);
+  height: var(--batt-button-height, 48px);
+  min-width: var(--batt-button-min-width, 100px);
+  font-family: var(--batt-button-font-family, arial, sans-serif);
+  font-size: var(--batt-button-font-size, 14px);
+  cursor: pointer;
+  transition: var(--batt-button-transition, 0.2s);
+  margin-top: var(--batt-spacing-m, 24px);
+}
+
+.batt-form button[type="submit"]:hover {
+  background-color: var(--batt-button-primary-hover-bg, #0057b8);
+}
+
+.batt-form button[type="submit"]:disabled {
+  background-color: var(--batt-disabled-bg, #dcdfe3);
+  color: var(--batt-disabled-color, #878c94);
+  cursor: not-allowed;
+}
+
+/* Toggle switch */
+.batt-form .toggle-wrapper .switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.batt-form .toggle-wrapper input {
+  opacity: 0;
+  width: 52px;
+  height: 28px;
+}
+
+.batt-form .toggle-wrapper .slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  border-radius: var(--batt-border-radius-pill, 28px);
+  background-color: var(--batt-grey-500, #878c94);
+  transition: background-color 0.2s;
+}
+
+.batt-form .toggle-wrapper .slider::before {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: var(--batt-white, #fff);
+  transition: transform 0.2s;
+}
+
+.batt-form .toggle-wrapper input:checked + .slider {
+  background-color: var(--batt-blue-accent, #0074b3);
+}
+
+.batt-form .toggle-wrapper input:focus + .slider {
+  outline: var(--batt-focus-outline, 2px solid #0074b3);
+  outline-offset: var(--batt-focus-outline-offset, 2px);
+}
+
+.batt-form .toggle-wrapper input:checked + .slider::before {
+  transform: translateX(24px);
+}

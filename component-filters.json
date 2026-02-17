@@ -9,6 +9,25 @@
     "id": "section",
     "components": [
       "accordion",
+      "batt-accordion",
+      "batt-anchor-tabs",
+      "batt-article",
+      "batt-banner",
+      "batt-cards-feature",
+      "batt-cards-offer",
+      "batt-cards-product",
+      "batt-comparison-table",
+      "batt-content-tabs",
+      "batt-cards-solution",
+      "batt-cards-story",
+      "batt-columns",
+      "batt-form",
+      "batt-hero",
+      "batt-pricing-cards",
+      "batt-seo-links",
+      "batt-service-grid",
+      "batt-testimonial",
+      "batt-value-prop",
       "button",
       "cards",
       "carousel",
@@ -36,6 +55,72 @@
     "id": "accordion",
     "components": [
       "accordion-item"
+    ]
+  },
+  {
+    "id": "batt-accordion",
+    "components": [
+      "batt-accordion-item"
+    ]
+  },
+  {
+    "id": "batt-anchor-tabs",
+    "components": [
+      "batt-anchor-tab"
+    ]
+  },
+  {
+    "id": "batt-cards-feature",
+    "components": [
+      "batt-feature-card"
+    ]
+  },
+  {
+    "id": "batt-cards-offer",
+    "components": [
+      "batt-offer-card"
+    ]
+  },
+  {
+    "id": "batt-cards-product",
+    "components": [
+      "batt-product-card"
+    ]
+  },
+  {
+    "id": "batt-cards-solution",
+    "components": [
+      "batt-solution-card"
+    ]
+  },
+  {
+    "id": "batt-cards-story",
+    "components": [
+      "batt-story-card"
+    ]
+  },
+  {
+    "id": "batt-content-tabs",
+    "components": [
+      "batt-tab-panel"
+    ]
+  },
+  {
+    "id": "batt-pricing-cards",
+    "components": [
+      "batt-pricing-tier"
+    ]
+  },
+  {
+    "id": "batt-service-grid",
+    "components": [
+      "batt-service-category"
+    ]
+  },
+  {
+    "id": "batt-testimonial",
+    "components": [
+      "batt-testimonial-item"
     ]
   },
   {

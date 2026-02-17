@@ -1,0 +1,272 @@
+/* AT&T Business Hero Block */
+.batt-hero-container .batt-hero-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.batt-hero {
+  position: relative;
+  padding: 60px 24px 48px;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--batt-text-inverse, #fff);
+}
+
+/* Dark overlay gradient for text readability */
+.batt-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--batt-hero-overlay-gradient, linear-gradient(to right, rgb(0 0 0 / 80%) 35%, rgb(0 0 0 / 0%) 60%));
+  z-index: 1;
+}
+
+/* Background image — absolute positioned to fill hero */
+.batt-hero > .hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.batt-hero > .hero-bg img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  display: block;
+}
+
+.batt-hero > .hero-bg picture {
+  position: absolute;
+  inset: 0;
+}
+
+/* Text content overlay */
+.batt-hero > .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--batt-container-max-width, 1310px);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Eyebrow text */
+.batt-hero .hero-eyebrow {
+  font-family: var(--batt-body-font-family-medium, arial, sans-serif);
+  font-size: var(--batt-eyebrow-size, 26px);
+  letter-spacing: var(--batt-eyebrow-letter-spacing, -0.52px);
+  line-height: var(--batt-eyebrow-line-height, 28px);
+  color: var(--batt-text-inverse, #fff);
+  margin: 0 0 8px;
+}
+
+/* Main hero heading */
+.batt-hero h1 {
+  font-family: var(--batt-heading-font-family, "attAleckSans-Bold", arial, sans-serif);
+  font-size: var(--batt-heading-size-xxl, 48px);
+  letter-spacing: var(--batt-heading-letter-spacing-xxl, -1.44px);
+  line-height: var(--batt-heading-line-height, 1.15);
+  color: var(--batt-text-inverse, #fff);
+  max-width: 600px;
+  margin: 0 0 16px;
+}
+
+/* Description paragraph */
+.batt-hero .hero-description {
+  font-family: var(--batt-body-font-family, arial, sans-serif);
+  font-size: var(--batt-body-size-l, 17px);
+  line-height: var(--batt-body-line-height, 1.4);
+  color: var(--batt-text-inverse, #fff);
+  max-width: 500px;
+  margin: 0 0 8px;
+  opacity: 0.9;
+}
+
+/* Legal fine print */
+.batt-hero .hero-legal {
+  font-size: var(--batt-body-size-xs, 12px);
+  color: var(--batt-text-inverse, #fff);
+  opacity: 0.7;
+  margin: 0 0 16px;
+}
+
+/* Action buttons container */
+.batt-hero .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.batt-hero .hero-actions .button-container {
+  margin: 0;
+}
+
+/* Primary CTA button */
+.batt-hero a.button.primary {
+  background-color: var(--batt-button-primary-bg, #00388f);
+  color: var(--batt-button-primary-color, #fff);
+  border: var(--batt-button-primary-border, 0);
+  border-radius: var(--batt-button-border-radius, 28px);
+  padding: var(--batt-button-padding, 0 32px);
+  height: var(--batt-button-height, 48px);
+  line-height: var(--batt-button-height, 48px);
+  font-family: var(--batt-button-font-family, arial, sans-serif);
+  font-size: var(--batt-button-font-size, 14px);
+  transition: var(--batt-button-transition, 0.2s);
+  margin: 0;
+}
+
+.batt-hero a.button.primary:hover {
+  background-color: var(--batt-button-primary-hover-bg, #0057b8);
+  color: var(--batt-button-primary-hover-color, #f2fafd);
+}
+
+/* Secondary CTA button */
+.batt-hero a.button.secondary {
+  background-color: var(--batt-button-secondary-bg, transparent);
+  color: var(--batt-button-secondary-color, #f2fafd);
+  border: var(--batt-button-secondary-border, 2px solid #f2fafd);
+  border-radius: var(--batt-button-border-radius, 28px);
+  padding: var(--batt-button-padding, 0 32px);
+  height: var(--batt-button-height, 48px);
+  line-height: calc(var(--batt-button-height, 48px) - 4px);
+  font-family: var(--batt-button-font-family, arial, sans-serif);
+  font-size: var(--batt-button-font-size, 14px);
+  transition: var(--batt-button-transition, 0.2s);
+  margin: 0;
+}
+
+.batt-hero a.button.secondary:hover {
+  background-color: var(--batt-button-secondary-hover-bg, #0057b8);
+  color: var(--batt-button-secondary-hover-color, #fff);
+  border-color: var(--batt-button-secondary-hover-border-color, #0057b8);
+}
+
+@media (width >= 900px) {
+  .batt-hero {
+    padding: 80px 32px 64px;
+    min-height: 500px;
+  }
+}
+
+/* =============================================
+ * Style variants (applied via classes select)
+ * ============================================= */
+
+/* Light variant — white/light-blue background, dark text */
+.batt-hero.light {
+  color: var(--batt-text-primary, #1d2329);
+}
+
+.batt-hero.light::after {
+  display: none;
+}
+
+.batt-hero.light .hero-eyebrow,
+.batt-hero.light h1,
+.batt-hero.light .hero-description {
+  color: var(--batt-text-primary, #1d2329);
+}
+
+.batt-hero.light .hero-legal {
+  color: var(--batt-text-muted, #686e74);
+}
+
+.batt-hero.light a.button.primary {
+  background-color: var(--batt-button-primary-bg, #00388f);
+  color: var(--batt-button-primary-color, #fff);
+}
+
+.batt-hero.light a.button.secondary {
+  color: var(--batt-button-secondary-light-color, #00388f);
+  border: var(--batt-button-secondary-light-border, 2px solid #00388f);
+}
+
+.batt-hero.light a.button.secondary:hover {
+  background-color: var(--batt-button-secondary-light-hover-bg, #0057b8);
+  color: var(--batt-button-secondary-light-hover-color, #fff);
+}
+
+/* Dark variant — solid dark background, no gradient overlay */
+.batt-hero.dark {
+  background-color: var(--batt-bg-dark, #25303a);
+}
+
+.batt-hero.dark::after {
+  display: none;
+}
+
+/* Overlay variant — default gradient-left overlay for images */
+.batt-hero.overlay::after {
+  background: var(--batt-hero-overlay-gradient, linear-gradient(to right, rgb(0 0 0 / 80%) 35%, rgb(0 0 0 / 0%) 60%));
+}
+
+/* Accent variant — solid brand-blue background */
+.batt-hero.accent {
+  background-color: var(--batt-bg-accent, #00388f);
+}
+
+.batt-hero.accent::after {
+  display: none;
+}
+
+.batt-hero.accent a.button.primary {
+  background-color: var(--batt-button-primary-on-dark-bg, #f2fafd);
+  color: var(--batt-button-primary-on-dark-color, #00388f);
+}
+
+.batt-hero.accent a.button.primary:hover {
+  background-color: var(--batt-button-primary-on-dark-hover-bg, #dcf3fa);
+  color: var(--batt-button-primary-on-dark-hover-color, #0057b8);
+}
+
+/* Centered variant — text centered */
+.batt-hero.centered > .hero-content {
+  text-align: center;
+}
+
+.batt-hero.centered h1,
+.batt-hero.centered .hero-description {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.batt-hero.centered .hero-actions {
+  justify-content: center;
+}
+
+/* =============================================
+ * Padding overrides
+ * ============================================= */
+.batt-hero.pt-0 { padding-top: 0; }
+.batt-hero.pt-sm { padding-top: 24px; }
+.batt-hero.pt-lg { padding-top: 96px; }
+.batt-hero.pt-xl { padding-top: 128px; }
+
+.batt-hero.pb-0 { padding-bottom: 0; }
+.batt-hero.pb-sm { padding-bottom: 24px; }
+.batt-hero.pb-lg { padding-bottom: 96px; }
+.batt-hero.pb-xl { padding-bottom: 128px; }
+
+/* =============================================
+ * Margin overrides
+ * ============================================= */
+.batt-hero.mt-0 { margin-top: 0; }
+.batt-hero.mt-sm { margin-top: 16px; }
+.batt-hero.mt-lg { margin-top: 64px; }
+
+.batt-hero.mb-0 { margin-bottom: 0; }
+.batt-hero.mb-sm { margin-bottom: 16px; }
+.batt-hero.mb-lg { margin-bottom: 64px; }
+
+@media (width >= 900px) {
+  .batt-hero.pt-lg { padding-top: 120px; }
+  .batt-hero.pt-xl { padding-top: 160px; }
+  .batt-hero.pb-lg { padding-bottom: 120px; }
+  .batt-hero.pb-xl { padding-bottom: 160px; }
+}

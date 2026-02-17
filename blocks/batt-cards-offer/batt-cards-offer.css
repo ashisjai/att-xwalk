@@ -1,0 +1,106 @@
+/* AT&T Business Offer Cards Block */
+.batt-cards-offer > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--batt-spacing-l, 32px);
+}
+
+.batt-cards-offer > ul > li {
+  background-color: var(--batt-card-bg, #fff);
+  border-radius: var(--batt-card-border-radius, 16px);
+  box-shadow: var(--batt-card-shadow, 0 2px 8px rgb(0 0 0 / 8%));
+  overflow: hidden;
+}
+
+.batt-cards-offer .cards-card-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.batt-cards-offer .cards-card-body {
+  padding: var(--batt-spacing-m, 24px);
+}
+
+.batt-cards-offer .cards-card-body .eyebrow {
+  font-family: var(--batt-body-font-family-medium, arial, sans-serif);
+  font-size: var(--batt-eyebrow-size, 26px);
+  letter-spacing: var(--batt-eyebrow-letter-spacing, -0.52px);
+  line-height: var(--batt-eyebrow-line-height, 28px);
+  color: var(--batt-text-primary, #1d2329);
+  margin: 0 0 4px;
+}
+
+.batt-cards-offer .cards-card-body h3 {
+  font-family: var(--batt-heading-font-family, arial, sans-serif);
+  font-size: var(--batt-heading-size-l, 26px);
+  letter-spacing: var(--batt-heading-letter-spacing-l, -0.78px);
+  line-height: var(--batt-heading-line-height, 1.15);
+  color: var(--batt-text-primary, #1d2329);
+  margin: 0 0 8px;
+}
+
+.batt-cards-offer .cards-card-body .description {
+  font-family: var(--batt-body-font-family, arial, sans-serif);
+  font-size: var(--batt-body-size-m, 16px);
+  line-height: var(--batt-body-line-height, 1.4);
+  color: var(--batt-text-body, #454b52);
+  margin: 0 0 8px;
+}
+
+.batt-cards-offer .cards-card-body .legal {
+  font-size: var(--batt-body-size-xs, 12px);
+  color: var(--batt-text-muted, #686e74);
+  margin: 0 0 16px;
+}
+
+.batt-cards-offer .cards-card-body .button-container {
+  margin: 0 0 8px;
+}
+
+.batt-cards-offer .cards-card-body a.button {
+  background-color: var(--batt-button-primary-bg, #00388f);
+  color: var(--batt-button-primary-color, #fff);
+  border: var(--batt-button-primary-border, 0);
+  border-radius: var(--batt-button-border-radius, 28px);
+  padding: var(--batt-button-padding, 0 32px);
+  height: var(--batt-button-height, 48px);
+  line-height: var(--batt-button-height, 48px);
+  font-family: var(--batt-button-font-family, arial, sans-serif);
+  font-size: var(--batt-button-font-size, 14px);
+  transition: var(--batt-button-transition, 0.2s);
+}
+
+.batt-cards-offer .cards-card-body a.button:hover {
+  background-color: var(--batt-button-primary-hover-bg, #0057b8);
+}
+
+.batt-cards-offer .cards-card-body .secondary-cta {
+  margin: 0;
+}
+
+.batt-cards-offer .cards-card-body .secondary-cta a {
+  color: var(--batt-cta-link-color, #0074b3);
+  font-size: var(--batt-cta-link-font-size, 15px);
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  font-weight: 500;
+}
+
+.batt-cards-offer .cards-card-body .secondary-cta a:hover {
+  text-decoration: underline;
+}
+
+@media (width >= 900px) {
+  .batt-cards-offer > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

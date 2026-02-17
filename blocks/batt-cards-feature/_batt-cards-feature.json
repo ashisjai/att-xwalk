@@ -1,0 +1,95 @@
+{
+  "definitions": [
+    {
+      "title": "Batt Cards Feature",
+      "id": "batt-cards-feature",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Batt Cards Feature",
+              "filter": "batt-cards-feature"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Feature Card",
+      "id": "batt-feature-card",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Feature Card",
+              "model": "batt-feature-card"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "batt-feature-card",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Icon / Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt Text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "heading",
+          "label": "Heading",
+          "description": "Card headline"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "value": "",
+          "label": "Description",
+          "valueType": "string",
+          "description": "Card body text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "cta",
+          "label": "CTA Link Label",
+          "description": "Link text (e.g., Learn more)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "ctaUrl",
+          "label": "CTA Link URL"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linkUrl",
+          "label": "Full Card Link URL",
+          "description": "Makes entire card clickable (optional)"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "batt-cards-feature",
+      "components": ["batt-feature-card"]
+    }
+  ]
+}

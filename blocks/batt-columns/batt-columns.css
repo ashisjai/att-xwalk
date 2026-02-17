@@ -1,0 +1,64 @@
+/* AT&T Business Columns Block */
+.batt-columns > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--batt-spacing-l, 32px);
+}
+
+.batt-columns > div > div {
+  flex: 1;
+}
+
+.batt-columns img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--batt-border-radius-card, 16px);
+}
+
+.batt-columns h2,
+.batt-columns h3,
+.batt-columns h4 {
+  font-family: var(--batt-heading-font-family, arial, sans-serif);
+  color: var(--batt-text-primary, #1d2329);
+}
+
+.batt-columns p {
+  font-family: var(--batt-body-font-family, arial, sans-serif);
+  font-size: var(--batt-body-size-m, 16px);
+  line-height: var(--batt-body-line-height, 1.4);
+  color: var(--batt-text-body, #454b52);
+}
+
+.batt-columns .batt-link {
+  color: var(--batt-link-color, #0568ae);
+  text-decoration: none;
+}
+
+.batt-columns .batt-link:hover {
+  color: var(--batt-link-hover-color, #0074b3);
+  text-decoration: underline;
+}
+
+.batt-columns a.button:any-link {
+  background-color: var(--batt-button-primary-bg, #00388f);
+  color: var(--batt-button-primary-color, #fff);
+  border: var(--batt-button-primary-border, 0);
+  border-radius: var(--batt-button-border-radius, 28px);
+  padding: var(--batt-button-padding, 0 32px);
+  height: var(--batt-button-height, 48px);
+  line-height: var(--batt-button-height, 48px);
+  font-family: var(--batt-button-font-family, arial, sans-serif);
+  font-size: var(--batt-button-font-size, 14px);
+  transition: var(--batt-button-transition, 0.2s);
+}
+
+.batt-columns a.button:hover {
+  background-color: var(--batt-button-primary-hover-bg, #0057b8);
+}
+
+@media (width >= 900px) {
+  .batt-columns > div {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}

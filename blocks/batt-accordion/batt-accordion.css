@@ -1,0 +1,121 @@
+/* AT&T Business Accordion Block */
+.batt-accordion .accordion-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--batt-spacing-s, 16px);
+}
+
+.batt-accordion .accordion-expand-all {
+  background: none;
+  border: none;
+  color: var(--batt-link-color, #0568ae);
+  font-family: var(--batt-body-font-family-medium, arial, sans-serif);
+  font-size: var(--batt-body-size-s, 14px);
+  cursor: pointer;
+  padding: 4px 0;
+  margin: 0;
+}
+
+.batt-accordion .accordion-expand-all:hover {
+  color: var(--batt-link-hover-color, #0074b3);
+  text-decoration: underline;
+}
+
+.batt-accordion .accordion-items {
+  border-top: 1px solid var(--batt-grey-200, #dcdfe3);
+}
+
+.batt-accordion details {
+  border-bottom: 1px solid var(--batt-grey-200, #dcdfe3);
+}
+
+.batt-accordion summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  font-family: var(--batt-body-font-family-bold, arial, sans-serif);
+  font-size: var(--batt-body-size-m, 16px);
+  color: var(--batt-text-primary, #1d2329);
+  cursor: pointer;
+  list-style: none;
+  gap: 16px;
+}
+
+.batt-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.batt-accordion summary::marker {
+  content: '';
+}
+
+.batt-accordion .accordion-chevron {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  transition: transform var(--batt-transition-fast, 0.2s);
+}
+
+.batt-accordion .accordion-chevron::before,
+.batt-accordion .accordion-chevron::after {
+  content: '';
+  position: absolute;
+  background-color: var(--batt-text-body, #454b52);
+  border-radius: 1px;
+}
+
+.batt-accordion .accordion-chevron::before {
+  width: 2px;
+  height: 16px;
+  top: 2px;
+  left: 9px;
+  transition: transform var(--batt-transition-fast, 0.2s);
+}
+
+.batt-accordion .accordion-chevron::after {
+  width: 16px;
+  height: 2px;
+  top: 9px;
+  left: 2px;
+}
+
+.batt-accordion details[open] .accordion-chevron::before {
+  transform: rotate(90deg);
+}
+
+.batt-accordion .accordion-panel {
+  padding: 0 0 24px;
+  font-family: var(--batt-body-font-family, arial, sans-serif);
+  font-size: var(--batt-body-size-m, 16px);
+  line-height: var(--batt-body-line-height, 1.5);
+  color: var(--batt-text-body, #454b52);
+}
+
+.batt-accordion .accordion-panel p {
+  margin: 0 0 12px;
+}
+
+.batt-accordion .accordion-panel a {
+  color: var(--batt-link-color, #0568ae);
+  text-decoration: none;
+}
+
+.batt-accordion .accordion-panel a:hover {
+  color: var(--batt-link-hover-color, #0074b3);
+  text-decoration: underline;
+}
+
+.batt-accordion .accordion-panel ul,
+.batt-accordion .accordion-panel ol {
+  padding-left: 24px;
+  margin: 0 0 12px;
+}
+
+@media (width >= 900px) {
+  .batt-accordion summary {
+    padding: 24px 0;
+    font-size: var(--batt-body-size-l, 18px);
+  }
+}

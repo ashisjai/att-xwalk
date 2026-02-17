@@ -1,0 +1,82 @@
+/* AT&T Business Service Grid Block */
+.batt-service-grid > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--batt-spacing-l, 32px);
+}
+
+/* Icon */
+.batt-service-grid .grid-card-icon {
+  margin-bottom: var(--batt-spacing-s, 16px);
+}
+
+.batt-service-grid .grid-card-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(53%) sepia(96%) saturate(374%) hue-rotate(156deg) brightness(99%) contrast(101%);
+}
+
+/* Heading */
+.batt-service-grid .grid-card-body h3 {
+  font-family: var(--batt-heading-font-family, arial, sans-serif);
+  font-size: var(--batt-heading-size-m, 22px);
+  line-height: var(--batt-heading-line-height, 1.15);
+  color: var(--batt-text-primary, #1d2329);
+  margin: 0 0 12px;
+}
+
+/* Links */
+.batt-service-grid .grid-card-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.batt-service-grid .grid-card-links li {
+  margin-bottom: 8px;
+}
+
+.batt-service-grid .grid-card-links a {
+  color: var(--batt-link-color, #0568ae);
+  font-family: var(--batt-body-font-family, arial, sans-serif);
+  font-size: var(--batt-body-size-m, 16px);
+  text-decoration: none;
+}
+
+.batt-service-grid .grid-card-links a:hover {
+  color: var(--batt-link-hover-color, #0074b3);
+  text-decoration: underline;
+}
+
+/* stylelint-disable-next-line no-descending-specificity -- targets top-level grid items, not nested .grid-card-links li */
+.batt-service-grid > ul > li {
+  border-bottom: 1px solid var(--batt-grey-200, #dcdfe3);
+  padding-bottom: var(--batt-spacing-l, 32px);
+}
+
+.batt-service-grid > ul > li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+@media (width >= 600px) {
+  .batt-service-grid > ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--batt-spacing-l, 32px) var(--batt-spacing-xl, 48px);
+  }
+
+  .batt-service-grid > ul > li {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+@media (width >= 900px) {
+  .batt-service-grid > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

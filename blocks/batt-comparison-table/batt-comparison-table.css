@@ -1,0 +1,85 @@
+/* AT&T Business Comparison Table Block */
+.batt-comparison-table .comparison-heading {
+  font-family: var(--batt-heading-font-family, arial, sans-serif);
+  font-size: var(--batt-heading-size-l, 28px);
+  line-height: var(--batt-heading-line-height, 1.15);
+  color: var(--batt-text-primary, #1d2329);
+  margin: 0 0 var(--batt-spacing-s, 16px);
+  text-align: center;
+}
+
+.batt-comparison-table .comparison-description {
+  text-align: center;
+  font-size: var(--batt-body-size-m, 16px);
+  color: var(--batt-text-body, #454b52);
+  margin-bottom: var(--batt-spacing-l, 32px);
+}
+
+.batt-comparison-table .comparison-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.batt-comparison-table .comparison-grid {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 500px;
+}
+
+.batt-comparison-table .comparison-grid th,
+.batt-comparison-table .comparison-grid td {
+  padding: 14px 16px;
+  text-align: center;
+  font-family: var(--batt-body-font-family, arial, sans-serif);
+  font-size: var(--batt-body-size-s, 14px);
+  color: var(--batt-text-primary, #1d2329);
+  border-bottom: 1px solid var(--batt-grey-200, #dcdfe3);
+}
+
+.batt-comparison-table .comparison-grid th {
+  font-family: var(--batt-body-font-family-bold, arial, sans-serif);
+  font-size: var(--batt-body-size-s, 14px);
+  color: var(--batt-text-primary, #1d2329);
+  background-color: var(--batt-grey-100, #f3f4f6);
+  white-space: nowrap;
+}
+
+.batt-comparison-table .comparison-grid th:first-child,
+.batt-comparison-table .comparison-grid td:first-child {
+  text-align: left;
+  font-family: var(--batt-body-font-family-medium, arial, sans-serif);
+}
+
+.batt-comparison-table .comparison-grid tbody tr:hover {
+  background-color: var(--batt-blue-50, #f2fafd);
+}
+
+/* Highlight-first variant: accent the AT&T column */
+.batt-comparison-table.highlight-first .comparison-grid th:nth-child(2),
+.batt-comparison-table.highlight-first .comparison-grid td:nth-child(2) {
+  background-color: var(--batt-blue-50, #f2fafd);
+  font-family: var(--batt-body-font-family-bold, arial, sans-serif);
+}
+
+/* Striped variant */
+.batt-comparison-table.striped .comparison-grid tbody tr:nth-child(even) {
+  background-color: var(--batt-grey-100, #f3f4f6);
+}
+
+.batt-comparison-table .comparison-legal {
+  margin-top: var(--batt-spacing-s, 16px);
+  font-size: var(--batt-body-size-xs, 12px);
+  color: var(--batt-text-light, #6a7279);
+}
+
+@media (width >= 900px) {
+  .batt-comparison-table .comparison-grid th,
+  .batt-comparison-table .comparison-grid td {
+    padding: 16px 24px;
+    font-size: var(--batt-body-size-m, 16px);
+  }
+
+  .batt-comparison-table .comparison-grid th {
+    font-size: var(--batt-body-size-m, 16px);
+  }
+}

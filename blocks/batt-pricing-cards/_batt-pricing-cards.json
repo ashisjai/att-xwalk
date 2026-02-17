@@ -1,0 +1,128 @@
+{
+  "definitions": [
+    {
+      "title": "Batt Pricing Cards",
+      "id": "batt-pricing-cards",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Batt Pricing Cards",
+              "filter": "batt-pricing-cards"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Pricing Tier",
+      "id": "batt-pricing-tier",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Pricing Tier",
+              "model": "batt-pricing-tier"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "batt-pricing-tier",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "tierName",
+          "label": "Tier Name",
+          "description": "Plan name (e.g., Business Internet 300)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "speed",
+          "label": "Speed / Key Metric",
+          "description": "Primary metric (e.g., 300 Mbps)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "priceStandalone",
+          "label": "Standalone Price",
+          "description": "Price without bundle (e.g., $50/mo)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "priceBundle",
+          "label": "Bundle Price",
+          "description": "Price with wireless bundle (e.g., $35/mo)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "strikethroughPrice",
+          "label": "Strikethrough Price",
+          "description": "Original price shown struck through"
+        },
+        {
+          "component": "richtext",
+          "name": "features",
+          "value": "",
+          "label": "Feature List",
+          "valueType": "string",
+          "description": "Bullet list of features included in this tier"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "badge",
+          "label": "Badge",
+          "description": "Optional badge text (e.g., Best value, Most popular)"
+        },
+        {
+          "component": "richtext",
+          "name": "legal",
+          "value": "",
+          "label": "Legal / Fine Print",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "cta",
+          "label": "CTA Label"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "ctaUrl",
+          "label": "CTA URL"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "secondaryCta",
+          "label": "Secondary CTA Label"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "secondaryCtaUrl",
+          "label": "Secondary CTA URL"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "batt-pricing-cards",
+      "components": ["batt-pricing-tier"]
+    }
+  ]
+}

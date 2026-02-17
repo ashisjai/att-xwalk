@@ -1,0 +1,64 @@
+/* AT&T Business Anchor Tabs Block */
+.batt-anchor-tabs-container .batt-anchor-tabs-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.batt-anchor-tabs {
+  position: sticky;
+  top: var(--batt-nav-height, 120px);
+  z-index: 1;
+  background-color: var(--batt-white, #fff);
+  border-bottom: 1px solid var(--batt-grey-300, #d2d2d2);
+}
+
+.batt-anchor-tabs .anchor-tabs-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  max-width: var(--batt-container-max-width, 1310px);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.batt-anchor-tabs .anchor-tabs-nav ul::-webkit-scrollbar {
+  display: none;
+}
+
+.batt-anchor-tabs .anchor-tabs-nav li {
+  flex: 0 0 auto;
+}
+
+.batt-anchor-tabs .anchor-tabs-nav a {
+  display: block;
+  padding: 16px 20px;
+  font-family: var(--batt-body-font-family-medium, arial, sans-serif);
+  font-size: var(--batt-body-size-s, 14px);
+  color: var(--batt-text-body, #454b52);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: var(--batt-transition-fast, 0.2s);
+}
+
+.batt-anchor-tabs .anchor-tabs-nav a:hover {
+  color: var(--batt-blue-primary, #00388f);
+}
+
+.batt-anchor-tabs .anchor-tabs-nav a.active {
+  color: var(--batt-blue-primary, #00388f);
+  border-bottom-color: var(--batt-cyan, #009fdb);
+}
+
+@media (width >= 900px) {
+  .batt-anchor-tabs .anchor-tabs-nav ul {
+    padding: 0 32px;
+  }
+
+  .batt-anchor-tabs .anchor-tabs-nav a {
+    padding: 16px 24px;
+    font-size: var(--batt-body-size-m, 16px);
+  }
+}

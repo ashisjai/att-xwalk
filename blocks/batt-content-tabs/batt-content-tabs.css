@@ -1,0 +1,127 @@
+/* AT&T Business Content Tabs Block */
+
+/* Tab list */
+.batt-content-tabs .tabs-list {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--batt-grey-200, #dcdfe3);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.batt-content-tabs .tabs-list::-webkit-scrollbar {
+  display: none;
+}
+
+.batt-content-tabs .tab-button {
+  flex: 0 0 auto;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  padding: 14px 20px;
+  font-family: var(--batt-body-font-family-medium, arial, sans-serif);
+  font-size: var(--batt-body-size-s, 14px);
+  color: var(--batt-text-body, #454b52);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--batt-transition-fast, 0.2s);
+}
+
+.batt-content-tabs .tab-button:hover {
+  color: var(--batt-blue-primary, #00388f);
+}
+
+.batt-content-tabs .tab-button.active {
+  color: var(--batt-blue-primary, #00388f);
+  border-bottom-color: var(--batt-cyan, #009fdb);
+  font-family: var(--batt-body-font-family-bold, arial, sans-serif);
+}
+
+/* Panels */
+.batt-content-tabs .tabs-panels {
+  padding-top: var(--batt-spacing-l, 32px);
+}
+
+.batt-content-tabs .tab-panel {
+  display: none;
+}
+
+.batt-content-tabs .tab-panel.active {
+  display: flex;
+  flex-direction: column;
+  gap: var(--batt-spacing-m, 24px);
+}
+
+/* Panel image */
+.batt-content-tabs .tab-panel-image {
+  border-radius: var(--batt-border-radius-card, 16px);
+  overflow: hidden;
+}
+
+.batt-content-tabs .tab-panel-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Panel body */
+.batt-content-tabs .tab-panel-body h3 {
+  font-family: var(--batt-heading-font-family, arial, sans-serif);
+  font-size: var(--batt-heading-size-m, 22px);
+  line-height: var(--batt-heading-line-height, 1.15);
+  color: var(--batt-text-primary, #1d2329);
+  margin: 0 0 var(--batt-spacing-s, 16px);
+}
+
+.batt-content-tabs .tab-panel-content {
+  font-family: var(--batt-body-font-family, arial, sans-serif);
+  font-size: var(--batt-body-size-m, 16px);
+  line-height: var(--batt-body-line-height, 1.5);
+  color: var(--batt-text-body, #454b52);
+}
+
+.batt-content-tabs .tab-panel-content p {
+  margin: 0 0 12px;
+}
+
+.batt-content-tabs .tab-panel-content a {
+  color: var(--batt-link-color, #0568ae);
+}
+
+.batt-content-tabs .tab-panel-cta {
+  display: inline-block;
+  background-color: var(--batt-blue-primary, #00388f);
+  color: var(--batt-white, #fff);
+  border-radius: var(--batt-border-radius-pill, 24px);
+  padding: 12px 32px;
+  font-family: var(--batt-body-font-family-bold, arial, sans-serif);
+  font-size: var(--batt-body-size-m, 16px);
+  text-decoration: none;
+  align-self: flex-start;
+}
+
+.batt-content-tabs .tab-panel-cta:hover {
+  background-color: var(--batt-blue-dark, #001e60);
+}
+
+@media (width >= 900px) {
+  .batt-content-tabs .tab-button {
+    padding: 16px 28px;
+    font-size: var(--batt-body-size-m, 16px);
+  }
+
+  .batt-content-tabs .tab-panel.active {
+    flex-direction: row;
+    gap: var(--batt-spacing-xl, 48px);
+    align-items: center;
+  }
+
+  .batt-content-tabs .tab-panel-image {
+    flex: 0 0 50%;
+  }
+
+  .batt-content-tabs .tab-panel-body {
+    flex: 1;
+  }
+}

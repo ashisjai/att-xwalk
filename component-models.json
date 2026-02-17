@@ -148,6 +148,22 @@
           {
             "name": "Dark Blue Accent",
             "value": "dark-blue-accent"
+          },
+          {
+            "name": "Batt Light",
+            "value": "batt-light"
+          },
+          {
+            "name": "Batt Neutral",
+            "value": "batt-neutral"
+          },
+          {
+            "name": "Batt Dark",
+            "value": "batt-dark"
+          },
+          {
+            "name": "Batt Accent",
+            "value": "batt-accent"
           }
         ]
       }
@@ -169,6 +185,1346 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "batt-accordion-item",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "question",
+        "label": "Question / Title",
+        "description": "The clickable heading that expands the panel"
+      },
+      {
+        "component": "richtext",
+        "name": "answer",
+        "value": "",
+        "label": "Answer / Content",
+        "valueType": "string",
+        "description": "Expandable content area — supports rich text, links, and lists"
+      }
+    ]
+  },
+  {
+    "id": "batt-anchor-tab",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "label",
+        "label": "Tab Label",
+        "description": "Display text for the tab"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "targetId",
+        "label": "Target Section ID",
+        "description": "ID of the section this tab scrolls to"
+      }
+    ]
+  },
+  {
+    "id": "batt-article",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "category",
+        "label": "Category",
+        "description": "Article category badge (e.g., BLOG, TECH ADVICE, RESEARCH)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Article Title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "subtitle",
+        "label": "Subtitle / Deck",
+        "description": "Summary paragraph below the title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "author",
+        "label": "Author Name"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "publishDate",
+        "label": "Publish Date",
+        "description": "Date in format: Month Day, Year (e.g., January 15, 2025)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "readTime",
+        "label": "Read Time",
+        "description": "Estimated read time (e.g., 5 min read)"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "heroImage",
+        "label": "Hero Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heroImageAlt",
+        "label": "Hero Image Alt Text"
+      },
+      {
+        "component": "richtext",
+        "name": "body",
+        "value": "",
+        "label": "Article Body",
+        "valueType": "string",
+        "description": "Full article content with headings, paragraphs, images, and lists"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "showToc",
+        "label": "Show Table of Contents",
+        "description": "Auto-generate a sidebar TOC from headings in the article body"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "showSharing",
+        "label": "Show Social Sharing",
+        "description": "Display share buttons (X, LinkedIn, Facebook, Email)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tags",
+        "label": "Topic Tags",
+        "description": "Comma-separated topic tags (e.g., Cybersecurity, IoT, 5G)"
+      },
+      {
+        "component": "richtext",
+        "name": "relatedArticles",
+        "value": "",
+        "label": "Related Articles",
+        "valueType": "string",
+        "description": "List of related article links (use unordered list)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "subscribeHeading",
+        "label": "Subscribe Heading",
+        "description": "Email subscription CTA heading (e.g., Stay in the know)"
+      },
+      {
+        "component": "richtext",
+        "name": "subscribeDescription",
+        "value": "",
+        "label": "Subscribe Description",
+        "valueType": "string",
+        "description": "Text below the subscribe heading"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "subscribeAction",
+        "label": "Subscribe Form Action URL",
+        "description": "Endpoint for email subscription form"
+      }
+    ]
+  },
+  {
+    "id": "batt-banner",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "icon",
+        "label": "Icon / Badge Image",
+        "multi": false,
+        "description": "Small icon or badge displayed alongside the text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "iconAlt",
+        "label": "Icon Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Banner Heading",
+        "description": "Bold title text before the message"
+      },
+      {
+        "component": "richtext",
+        "name": "message",
+        "value": "",
+        "label": "Banner Message",
+        "valueType": "string",
+        "description": "Promotional or informational message"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta",
+        "label": "CTA Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaUrl",
+        "label": "CTA URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "secondaryCta",
+        "label": "Secondary CTA Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "secondaryCtaUrl",
+        "label": "Secondary CTA URL"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "dismissible",
+        "label": "Dismissible",
+        "description": "Allow users to close the banner"
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Info (Blue)",
+            "value": ""
+          },
+          {
+            "name": "Success (Green)",
+            "value": "success"
+          },
+          {
+            "name": "Warning (Amber)",
+            "value": "warning"
+          },
+          {
+            "name": "Promo (Accent)",
+            "value": "promo"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "batt-feature-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Icon / Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Heading",
+        "description": "Card headline"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string",
+        "description": "Card body text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta",
+        "label": "CTA Link Label",
+        "description": "Link text (e.g., Learn more)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaUrl",
+        "label": "CTA Link URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Full Card Link URL",
+        "description": "Makes entire card clickable (optional)"
+      }
+    ]
+  },
+  {
+    "id": "batt-offer-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Card Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow",
+        "label": "Eyebrow",
+        "description": "Category label (e.g., New & existing customers)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Heading",
+        "description": "Card headline"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "subHeading",
+        "label": "Sub-Heading",
+        "description": "Qualification line below the heading (e.g., Learn how with...)"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string",
+        "description": "Body text explaining the offer"
+      },
+      {
+        "component": "richtext",
+        "name": "legal",
+        "value": "",
+        "label": "Legal / Fine Print",
+        "valueType": "string",
+        "description": "Terms, restrictions, and disclaimers"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta",
+        "label": "Primary CTA Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaUrl",
+        "label": "Primary CTA URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "secondaryCta",
+        "label": "Secondary Link Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "secondaryCtaUrl",
+        "label": "Secondary Link URL"
+      }
+    ]
+  },
+  {
+    "id": "batt-product-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "icon",
+        "label": "Product Icon",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "iconAlt",
+        "label": "Icon Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "badge",
+        "label": "Badge",
+        "description": "Tag label (e.g., New, Best seller)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Product Name"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pricePrefix",
+        "label": "Price Prefix",
+        "description": "Text before price (e.g., Starting at)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "price",
+        "label": "Price",
+        "description": "Price value (e.g., $35/mo)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "strikethroughPrice",
+        "label": "Strikethrough Price",
+        "description": "Original price shown struck through (e.g., $60/mo)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "priceSuffix",
+        "label": "Price Suffix",
+        "description": "Text after price (e.g., per line)"
+      },
+      {
+        "component": "richtext",
+        "name": "legal",
+        "value": "",
+        "label": "Legal / Fine Print",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta",
+        "label": "CTA Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaUrl",
+        "label": "CTA URL"
+      }
+    ]
+  },
+  {
+    "id": "batt-solution-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "icon",
+        "label": "Icon",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "iconAlt",
+        "label": "Icon Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Heading"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta",
+        "label": "CTA Label",
+        "description": "Visible link text (e.g., Learn more)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaUrl",
+        "label": "CTA URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Card Link URL",
+        "description": "Makes entire card clickable"
+      }
+    ]
+  },
+  {
+    "id": "batt-story-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Card Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "badge",
+        "label": "Badge Label",
+        "description": "Category badge overlay (e.g., BLOG, CASE STUDY)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Heading"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "publishDate",
+        "label": "Publish Date",
+        "description": "Article date (e.g., Jan 15, 2025)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta",
+        "label": "CTA Link Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaUrl",
+        "label": "CTA Link URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Card Link URL",
+        "description": "Makes entire card clickable (overrides CTA)"
+      }
+    ]
+  },
+  {
+    "id": "batt-columns",
+    "fields": [
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "columns",
+        "label": "Columns",
+        "value": 2
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "rows",
+        "label": "Rows",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "batt-comparison-table",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Table Heading"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string",
+        "description": "Optional intro text above the table"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "columnHeaders",
+        "label": "Column Headers",
+        "description": "Comma-separated column names (e.g., Feature, AT&T, Spectrum, Comcast)"
+      },
+      {
+        "component": "richtext",
+        "name": "tableRows",
+        "value": "",
+        "label": "Table Rows",
+        "valueType": "string",
+        "description": "Table content — use an HTML table or pipe-delimited rows. Use ✓ for supported, ✕ for unsupported."
+      },
+      {
+        "component": "richtext",
+        "name": "legal",
+        "value": "",
+        "label": "Legal / Fine Print",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "Highlight First Column",
+            "value": "highlight-first"
+          },
+          {
+            "name": "Striped Rows",
+            "value": "striped"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "batt-tab-panel",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tabLabel",
+        "label": "Tab Label",
+        "description": "Text shown on the tab button"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Panel Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Panel Heading"
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "value": "",
+        "label": "Panel Content",
+        "valueType": "string",
+        "description": "Rich text content displayed when this tab is active"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta",
+        "label": "CTA Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaUrl",
+        "label": "CTA URL"
+      }
+    ]
+  },
+  {
+    "id": "batt-form",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "formHeading",
+        "label": "Form Heading",
+        "description": "Heading displayed above the form"
+      },
+      {
+        "component": "richtext",
+        "name": "formDescription",
+        "value": "",
+        "label": "Form Description",
+        "valueType": "string",
+        "description": "Introductory text below the heading"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "reference",
+        "label": "Form Definition",
+        "description": "Path to the form JSON spreadsheet (e.g., /forms/contact-form)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "action",
+        "label": "Submit Action URL",
+        "description": "Server endpoint to submit form data to"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "submitLabel",
+        "label": "Submit Button Label",
+        "value": "Submit"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "confirmationUrl",
+        "label": "Confirmation Page URL",
+        "description": "Redirect URL after successful submission"
+      },
+      {
+        "component": "richtext",
+        "name": "privacyText",
+        "value": "",
+        "label": "Privacy / Consent Text",
+        "valueType": "string",
+        "description": "Privacy policy and consent text below the submit button"
+      }
+    ]
+  },
+  {
+    "id": "batt-hero",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Desktop Background Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "mobileImage",
+        "label": "Mobile Background Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mobileImageAlt",
+        "label": "Mobile Image Alt Text",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "badge",
+        "label": "Badge",
+        "description": "Pill badge above the eyebrow (e.g., New, Limited time offer)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow",
+        "label": "Eyebrow Text",
+        "description": "Small text above the headline (e.g., Explore AT&T Business solutions)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Headline",
+        "description": "Main hero heading"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "subheading",
+        "label": "Subheading",
+        "description": "Secondary heading below the main headline"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string",
+        "description": "Supporting text below the headline"
+      },
+      {
+        "component": "richtext",
+        "name": "legal",
+        "value": "",
+        "label": "Legal / Fine Print",
+        "valueType": "string",
+        "description": "Legal disclaimers or terms text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta",
+        "label": "Primary CTA Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaUrl",
+        "label": "Primary CTA URL"
+      },
+      {
+        "component": "select",
+        "name": "ctaTarget",
+        "label": "Primary CTA Target",
+        "description": "Where the CTA link opens",
+        "options": [
+          {
+            "name": "Same Window",
+            "value": ""
+          },
+          {
+            "name": "New Window",
+            "value": "_blank"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "secondaryCta",
+        "label": "Secondary CTA Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "secondaryCtaUrl",
+        "label": "Secondary CTA URL"
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Style",
+        "description": "Visual style variant for the hero",
+        "options": [
+          {
+            "name": "Dark Overlay (Default)",
+            "value": ""
+          },
+          {
+            "name": "Light (White BG)",
+            "value": "light"
+          },
+          {
+            "name": "Dark (Charcoal BG)",
+            "value": "dark"
+          },
+          {
+            "name": "Image Overlay",
+            "value": "overlay"
+          },
+          {
+            "name": "Accent (Blue BG)",
+            "value": "accent"
+          },
+          {
+            "name": "Centered",
+            "value": "centered"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "paddingTop",
+        "label": "Padding Top",
+        "description": "Top inner spacing",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "None",
+            "value": "pt-0"
+          },
+          {
+            "name": "Small (24px)",
+            "value": "pt-sm"
+          },
+          {
+            "name": "Large (96px)",
+            "value": "pt-lg"
+          },
+          {
+            "name": "Extra Large (128px)",
+            "value": "pt-xl"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "paddingBottom",
+        "label": "Padding Bottom",
+        "description": "Bottom inner spacing",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "None",
+            "value": "pb-0"
+          },
+          {
+            "name": "Small (24px)",
+            "value": "pb-sm"
+          },
+          {
+            "name": "Large (96px)",
+            "value": "pb-lg"
+          },
+          {
+            "name": "Extra Large (128px)",
+            "value": "pb-xl"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "marginTop",
+        "label": "Margin Top",
+        "description": "Top outer spacing",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "None",
+            "value": "mt-0"
+          },
+          {
+            "name": "Small (16px)",
+            "value": "mt-sm"
+          },
+          {
+            "name": "Large (64px)",
+            "value": "mt-lg"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "marginBottom",
+        "label": "Margin Bottom",
+        "description": "Bottom outer spacing",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "None",
+            "value": "mb-0"
+          },
+          {
+            "name": "Small (16px)",
+            "value": "mb-sm"
+          },
+          {
+            "name": "Large (64px)",
+            "value": "mb-lg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "batt-pricing-tier",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tierName",
+        "label": "Tier Name",
+        "description": "Plan name (e.g., Business Internet 300)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "speed",
+        "label": "Speed / Key Metric",
+        "description": "Primary metric (e.g., 300 Mbps)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "priceStandalone",
+        "label": "Standalone Price",
+        "description": "Price without bundle (e.g., $50/mo)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "priceBundle",
+        "label": "Bundle Price",
+        "description": "Price with wireless bundle (e.g., $35/mo)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "strikethroughPrice",
+        "label": "Strikethrough Price",
+        "description": "Original price shown struck through"
+      },
+      {
+        "component": "richtext",
+        "name": "features",
+        "value": "",
+        "label": "Feature List",
+        "valueType": "string",
+        "description": "Bullet list of features included in this tier"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "badge",
+        "label": "Badge",
+        "description": "Optional badge text (e.g., Best value, Most popular)"
+      },
+      {
+        "component": "richtext",
+        "name": "legal",
+        "value": "",
+        "label": "Legal / Fine Print",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta",
+        "label": "CTA Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaUrl",
+        "label": "CTA URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "secondaryCta",
+        "label": "Secondary CTA Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "secondaryCtaUrl",
+        "label": "Secondary CTA URL"
+      }
+    ]
+  },
+  {
+    "id": "batt-seo-links",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Section Heading"
+      },
+      {
+        "component": "richtext",
+        "name": "column1",
+        "value": "",
+        "label": "Column 1 Links",
+        "valueType": "string",
+        "description": "Links for first column (use heading + unordered list)"
+      },
+      {
+        "component": "richtext",
+        "name": "column2",
+        "value": "",
+        "label": "Column 2 Links",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "column3",
+        "value": "",
+        "label": "Column 3 Links",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "column4",
+        "value": "",
+        "label": "Column 4 Links",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "batt-service-category",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "icon",
+        "label": "Category Icon",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "iconAlt",
+        "label": "Icon Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Category Name"
+      },
+      {
+        "component": "richtext",
+        "name": "links",
+        "value": "",
+        "label": "Service Links",
+        "valueType": "string",
+        "description": "List of links to individual services (use unordered list)"
+      }
+    ]
+  },
+  {
+    "id": "batt-testimonial-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "quote",
+        "value": "",
+        "label": "Quote",
+        "valueType": "string",
+        "description": "Customer testimonial text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "attribution",
+        "label": "Name",
+        "description": "Person's name"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "attributionRole",
+        "label": "Role / Title",
+        "description": "Job title or company"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "companyName",
+        "label": "Company Name",
+        "description": "Company or organization name"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "icon",
+        "label": "Avatar / Icon",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "iconAlt",
+        "label": "Avatar Alt Text"
+      }
+    ]
+  },
+  {
+    "id": "batt-value-prop",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow",
+        "label": "Eyebrow Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Heading"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string",
+        "description": "Body text between heading and checklist items"
+      },
+      {
+        "component": "richtext",
+        "name": "checklistItems",
+        "value": "",
+        "label": "Checklist Items",
+        "valueType": "string",
+        "description": "Use an unordered list for check-marked items"
+      },
+      {
+        "component": "richtext",
+        "name": "legal",
+        "value": "",
+        "label": "Legal / Fine Print",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta",
+        "label": "Primary CTA Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaUrl",
+        "label": "Primary CTA URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "secondaryCta",
+        "label": "Secondary CTA Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "secondaryCtaUrl",
+        "label": "Secondary CTA URL"
+      },
+      {
+        "component": "select",
+        "name": "ctaTarget",
+        "label": "CTA Target",
+        "description": "Where CTA links open",
+        "options": [
+          {
+            "name": "Same Window",
+            "value": ""
+          },
+          {
+            "name": "New Window",
+            "value": "_blank"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Layout",
+        "options": [
+          {
+            "name": "Image Left (Default)",
+            "value": ""
+          },
+          {
+            "name": "Image Right",
+            "value": "image-right"
+          },
+          {
+            "name": "No Image",
+            "value": "no-image"
+          }
+        ]
       }
     ]
   },
