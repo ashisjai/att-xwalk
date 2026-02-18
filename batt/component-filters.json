@@ -1,0 +1,209 @@
+[
+  {
+    "id": "main",
+    "components": [
+      "section"
+    ]
+  },
+  {
+    "id": "section",
+    "components": [
+      "batt-accordion",
+      "batt-anchor-tabs",
+      "batt-article",
+      "batt-banner",
+      "batt-cards-feature",
+      "batt-cards-offer",
+      "batt-cards-product",
+      "batt-cards-solution",
+      "batt-cards-story",
+      "batt-columns",
+      "batt-comparison-table",
+      "batt-content-tabs",
+      "batt-form",
+      "batt-hero",
+      "batt-pricing-cards",
+      "batt-seo-links",
+      "batt-service-grid",
+      "batt-testimonial",
+      "batt-value-prop",
+      "accordion",
+      "button",
+      "cards",
+      "carousel",
+      "columns",
+      "embed",
+      "form",
+      "fragment",
+      "hero",
+      "image",
+      "quote",
+      "search",
+      "tabs",
+      "table",
+      "text",
+      "title",
+      "video"
+    ]
+  },
+  {
+    "id": "accordion",
+    "components": [
+      "accordion-item"
+    ]
+  },
+  {
+    "id": "batt-accordion",
+    "components": [
+      "batt-accordion-item"
+    ]
+  },
+  {
+    "id": "batt-anchor-tabs",
+    "components": [
+      "batt-anchor-tab"
+    ]
+  },
+  {
+    "id": "batt-cards-feature",
+    "components": [
+      "batt-feature-card"
+    ]
+  },
+  {
+    "id": "batt-cards-offer",
+    "components": [
+      "batt-offer-card"
+    ]
+  },
+  {
+    "id": "batt-cards-product",
+    "components": [
+      "batt-product-card"
+    ]
+  },
+  {
+    "id": "batt-cards-solution",
+    "components": [
+      "batt-solution-card"
+    ]
+  },
+  {
+    "id": "batt-cards-story",
+    "components": [
+      "batt-story-card"
+    ]
+  },
+  {
+    "id": "batt-content-tabs",
+    "components": [
+      "batt-tab-panel"
+    ]
+  },
+  {
+    "id": "batt-pricing-cards",
+    "components": [
+      "batt-pricing-tier"
+    ]
+  },
+  {
+    "id": "batt-service-grid",
+    "components": [
+      "batt-service-category"
+    ]
+  },
+  {
+    "id": "batt-testimonial",
+    "components": [
+      "batt-testimonial-item"
+    ]
+  },
+  {
+    "id": "cards",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "carousel",
+    "components": [
+      "carousel-item"
+    ]
+  },
+  {
+    "id": "columns",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
+    ]
+  },
+  {
+    "id": "firstnet-cards-news",
+    "components": [
+      "news-card"
+    ]
+  },
+  {
+    "id": "firstnet-cards-offers",
+    "components": [
+      "offer-card"
+    ]
+  },
+  {
+    "id": "firstnet-columns",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
+    ]
+  },
+  {
+    "id": "table",
+    "components": [
+      "table-row"
+    ]
+  },
+  {
+    "id": "table-2-columns",
+    "components": [
+      "table-col-2"
+    ]
+  },
+  {
+    "id": "table-3-columns",
+    "components": [
+      "table-col-3"
+    ]
+  },
+  {
+    "id": "table-4-columns",
+    "components": [
+      "table-col-4"
+    ]
+  },
+  {
+    "id": "tabs",
+    "components": [
+      "tabs-item"
+    ]
+  },
+  {
+    "id": "video",
+    "components": []
+  }
+]

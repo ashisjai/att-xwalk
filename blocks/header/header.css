@@ -1,7 +1,7 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--firstnet-dark-navy, #00263e);
-  color: var(--firstnet-text-inverse, #fff);
+  background-color: var(--brand-nav-bg, #00263e);
+  color: var(--brand-nav-text, #fff);
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -29,7 +29,7 @@ header nav[aria-expanded='true'] {
     'tools tools' var(--nav-height) / auto 1fr;
   overflow-y: auto;
   min-height: 100dvh;
-  background-color: var(--firstnet-dark-navy, #00263e);
+  background-color: var(--brand-nav-bg, #00263e);
 }
 
 @media (width >= 900px) {
@@ -53,7 +53,7 @@ header nav p {
 }
 
 header nav a:any-link {
-  color: var(--firstnet-text-inverse, #fff);
+  color: var(--brand-nav-text, #fff);
 }
 
 /* hamburger */
@@ -248,7 +248,7 @@ header nav .nav-sections ul > li > ul > li {
     width: 200px;
     top: 150%;
     padding: 16px;
-    background-color: var(--firstnet-dark-navy, #00263e);
+    background-color: var(--brand-nav-bg, #00263e);
     white-space: initial;
     z-index: 1;
   }
@@ -262,7 +262,7 @@ header nav .nav-sections ul > li > ul > li {
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--firstnet-dark-navy, #00263e);
+    border-bottom: 8px solid var(--brand-nav-bg, #00263e);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
@@ -292,39 +292,40 @@ header nav .nav-tools p {
 }
 
 header nav .nav-tools a:any-link {
-  color: var(--firstnet-text-inverse, #fff);
+  color: var(--brand-nav-text, #fff);
   font-size: var(--body-font-size-xs);
   white-space: nowrap;
   text-decoration: none;
 }
 
-/* Sign up button - filled blue style */
+/* Primary CTA button */
 header nav .nav-tools p:first-child a {
-  background-color: var(--firstnet-blue, #0568ae);
-  border: 1px solid var(--firstnet-blue, #0568ae);
-  border-radius: var(--firstnet-border-radius-pill, 25px);
+  background-color: var(--brand-button-bg, #0568ae);
+  border: 1px solid var(--brand-button-bg, #0568ae);
+  border-radius: var(--brand-button-radius, 25px);
   padding: 8px 20px;
   display: inline-block;
   font-weight: 600;
+  color: var(--brand-button-color, #fff);
 }
 
 header nav .nav-tools p:first-child a:hover {
-  background-color: #044e8a;
-  border-color: #044e8a;
+  background-color: var(--brand-button-hover-bg, #044e8a);
+  border-color: var(--brand-button-hover-bg, #044e8a);
 }
 
-/* Log in button - outlined style */
+/* Secondary nav button - outlined style */
 /* stylelint-disable-next-line no-descending-specificity */
 header nav .nav-tools p:last-child a {
-  border: 1px solid var(--firstnet-text-inverse, #fff);
-  border-radius: var(--firstnet-border-radius-pill, 25px);
+  border: 1px solid var(--brand-nav-text, #fff);
+  border-radius: var(--brand-button-radius, 25px);
   padding: 8px 20px;
   display: inline-block;
 }
 
 header nav .nav-tools p:last-child a:hover {
-  background-color: var(--firstnet-text-inverse, #fff);
-  color: var(--firstnet-dark-navy, #00263e);
+  background-color: var(--brand-nav-text, #fff);
+  color: var(--brand-nav-bg, #00263e);
 }
 
 /* breadcrumbs */

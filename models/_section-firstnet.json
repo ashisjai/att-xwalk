@@ -1,0 +1,83 @@
+{
+  "definitions": [
+    {
+      "title": "Section",
+      "id": "section",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/section/v1/section",
+            "template": {
+              "model": "section"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "section",
+      "fields": [
+        {
+          "component": "text",
+          "name": "name",
+          "label": "Section Name",
+          "description": "The label shown for this section in the Content Tree"
+        },
+        {
+          "component": "multiselect",
+          "name": "style",
+          "label": "Style",
+          "options": [
+            {
+              "name": "Highlight",
+              "value": "highlight"
+            },
+            {
+              "name": "Dark Navy",
+              "value": "dark-navy"
+            },
+            {
+              "name": "Light Grey",
+              "value": "light-grey"
+            },
+            {
+              "name": "Dark Blue Accent",
+              "value": "dark-blue-accent"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "section",
+      "components": [
+        "firstnet-cards-news",
+        "firstnet-cards-offers",
+        "firstnet-columns",
+        "firstnet-form",
+        "firstnet-hero",
+        "accordion",
+        "button",
+        "cards",
+        "carousel",
+        "columns",
+        "embed",
+        "form",
+        "fragment",
+        "hero",
+        "image",
+        "quote",
+        "search",
+        "tabs",
+        "table",
+        "text",
+        "title",
+        "video"
+      ]
+    }
+  ]
+}

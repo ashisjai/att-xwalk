@@ -232,6 +232,32 @@
   --batt-disabled-border-color: #878c94;
 }
 
+/* ========================================
+ * Abstract Brand Token Mapping
+ * Maps --brand-* tokens when batt theme is active.
+ * These power the brand-neutral global styles in styles.css.
+ * ======================================== */
+body.batt {
+  --brand-bg: var(--batt-bg-default, #fff);
+  --brand-text: var(--batt-text-primary, #1d2329);
+  --brand-text-body: var(--batt-text-body, #454b52);
+  --brand-text-inverse: var(--batt-text-inverse, #fff);
+  --brand-link: var(--batt-link-color, #0568ae);
+  --brand-link-hover: var(--batt-link-hover-color, #0074b3);
+  --brand-heading-font: var(--batt-heading-font-family);
+  --brand-body-font: var(--batt-body-font-family);
+  --brand-button-radius: var(--batt-button-border-radius, 28px);
+  --brand-button-bg: var(--batt-button-primary-bg, #00388f);
+  --brand-button-color: var(--batt-button-primary-color, #fff);
+  --brand-button-hover-bg: var(--batt-button-primary-hover-bg, #0057b8);
+  --brand-light-bg: var(--batt-grey-50, #f3f4f6);
+  --brand-dark-bg: var(--batt-dark-bg, #25303a);
+  --brand-nav-bg: var(--batt-nav-bg, #fff);
+  --brand-nav-text: var(--batt-nav-link-color, #454b52);
+  --brand-footer-bg: var(--batt-footer-bg, #25303a);
+  --brand-footer-text: var(--batt-footer-color, #fff);
+}
+
 /* Mobile breakpoint overrides */
 @media (width < 768px) {
   :root {

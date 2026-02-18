@@ -112,12 +112,28 @@ export function decorateMain(main) {
 }
 
 /**
+ * Returns the active brand theme.
+ * @returns {string} 'batt' or 'firstnet'
+ */
+export function getTheme() {
+  return getMetadata('theme') || 'firstnet';
+}
+
+/**
  * Loads everything needed to get to LCP.
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+
+  // Load brand-specific design tokens + section styles before body appears
+  const theme = getTheme();
+  const brand = ['batt', 'firstnet'].includes(theme) ? theme : 'firstnet';
+  document.body.classList.add(brand);
+  await loadCSS(`${window.hlx.codeBasePath}/styles/${brand}/${brand}-tokens.css`);
+  await loadCSS(`${window.hlx.codeBasePath}/styles/${brand}/${brand}-sections.css`);
+
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
     doc.body.dataset.breadcrumbs = true;
   }

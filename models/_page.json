@@ -21,6 +21,22 @@
           "name": "keywords",
           "multi": true,
           "label": "Keywords"
+        },
+        {
+          "component": "select",
+          "name": "theme",
+          "label": "Theme",
+          "description": "Brand theme applied to this page",
+          "options": [
+            {
+              "name": "FirstNet",
+              "value": "firstnet"
+            },
+            {
+              "name": "AT&T Business",
+              "value": "batt"
+            }
+          ]
         }
       ]
     }

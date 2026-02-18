@@ -174,9 +174,11 @@ async function buildBreadcrumbs() {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-  // load nav as fragment
+  // load nav as fragment — use theme-aware default path
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  const theme = getMetadata('theme');
+  const defaultNav = theme === 'batt' ? '/batt/nav' : '/nav';
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : defaultNav;
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM

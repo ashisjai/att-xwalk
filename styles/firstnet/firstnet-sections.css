@@ -209,3 +209,77 @@ main .section.light-grey > div > h2 ~ p a.button:any-link {
     padding: 0 32px 48px;
   }
 }
+
+/* =============================================
+ * Page-level section styles (moved from styles.css)
+ * ============================================= */
+
+/* stylelint-disable no-descending-specificity */
+
+/* News section styling */
+main > .section:nth-of-type(4) {
+  background-color: var(--firstnet-bg-light-grey, #f2f2f2);
+  margin: 0;
+  padding: 48px 0;
+}
+
+main > .section:nth-of-type(4) > div > h3:first-child {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* News "Explore more" link at bottom of section */
+main > .section:nth-of-type(4) > div > p:last-child {
+  text-align: center;
+  margin-top: 32px;
+}
+
+main > .section:nth-of-type(4) > div > p:last-child a {
+  color: var(--firstnet-blue-accent, #0568ae);
+}
+
+/* Columns section - white background with centered content */
+main > .section:has(.firstnet-columns) {
+  background-color: var(--firstnet-bg-default, #fff);
+  color: var(--firstnet-text-primary, #000);
+  margin: 0;
+  padding: 48px 0;
+}
+
+main > .section:has(.firstnet-columns) h2,
+main > .section:has(.firstnet-columns) h3,
+main > .section:has(.firstnet-columns) p,
+main > .section:has(.firstnet-columns) strong {
+  color: var(--firstnet-text-primary, #000);
+  text-align: center;
+}
+
+main > .section:has(.firstnet-columns) > div > h2,
+main > .section:has(.firstnet-columns) > div > h3 {
+  text-align: center;
+}
+
+main > .section:has(.firstnet-columns) a:any-link {
+  color: var(--firstnet-link-color, #0568ae);
+}
+
+main > .section:has(.firstnet-columns) a.button:any-link {
+  background-color: transparent;
+  border: 2px solid var(--firstnet-link-color, #0568ae);
+  color: var(--firstnet-link-color, #0568ae);
+  border-radius: var(--firstnet-border-radius-pill, 25px);
+}
+
+main > .section:has(.firstnet-columns) a.button:hover {
+  background-color: var(--firstnet-link-color, #0568ae);
+  color: #fff;
+}
+
+/* Footnote text in columns section */
+main > .section:has(.firstnet-columns) > div > p:last-child {
+  font-size: var(--firstnet-body-size-xs, 12px);
+  opacity: 0.6;
+  text-align: center;
+}
+
+/* stylelint-enable no-descending-specificity */

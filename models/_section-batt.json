@@ -1,0 +1,101 @@
+{
+  "definitions": [
+    {
+      "title": "Section",
+      "id": "section",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/section/v1/section",
+            "template": {
+              "model": "section"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "section",
+      "fields": [
+        {
+          "component": "text",
+          "name": "name",
+          "label": "Section Name",
+          "description": "The label shown for this section in the Content Tree"
+        },
+        {
+          "component": "multiselect",
+          "name": "style",
+          "label": "Style",
+          "options": [
+            {
+              "name": "Highlight",
+              "value": "highlight"
+            },
+            {
+              "name": "Batt Light",
+              "value": "batt-light"
+            },
+            {
+              "name": "Batt Neutral",
+              "value": "batt-neutral"
+            },
+            {
+              "name": "Batt Dark",
+              "value": "batt-dark"
+            },
+            {
+              "name": "Batt Accent",
+              "value": "batt-accent"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "section",
+      "components": [
+        "batt-accordion",
+        "batt-anchor-tabs",
+        "batt-article",
+        "batt-banner",
+        "batt-cards-feature",
+        "batt-cards-offer",
+        "batt-cards-product",
+        "batt-cards-solution",
+        "batt-cards-story",
+        "batt-columns",
+        "batt-comparison-table",
+        "batt-content-tabs",
+        "batt-form",
+        "batt-hero",
+        "batt-pricing-cards",
+        "batt-seo-links",
+        "batt-service-grid",
+        "batt-testimonial",
+        "batt-value-prop",
+        "accordion",
+        "button",
+        "cards",
+        "carousel",
+        "columns",
+        "embed",
+        "form",
+        "fragment",
+        "hero",
+        "image",
+        "quote",
+        "search",
+        "tabs",
+        "table",
+        "text",
+        "title",
+        "video"
+      ]
+    }
+  ]
+}

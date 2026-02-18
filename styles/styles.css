@@ -10,34 +10,32 @@
  * governing permissions and limitations under the License.
  */
 
-/* FirstNet Design System */
-@import url('firstnet/firstnet-tokens.css');
-@import url('firstnet/firstnet-sections.css');
-
-/* AT&T Business Design System */
-@import url('batt/batt-tokens.css');
-@import url('batt/batt-sections.css');
+/*
+ * Brand tokens and sections are loaded dynamically by scripts.js
+ * based on <meta name="theme"> (batt or firstnet).
+ * See styles/batt/ and styles/firstnet/ for brand-specific tokens.
+ */
 
 :root {
-  /* colors - FirstNet brand palette */
-  --background-color: white;
-  --light-color: var(--firstnet-grey-light, #f2f2f2);
-  --dark-color: var(--firstnet-grey-dark, #565b60);
-  --text-color: var(--firstnet-text-primary, #000);
-  --link-color: var(--firstnet-link-color, #0568ae);
-  --link-hover-color: var(--firstnet-link-hover-color, #004a87);
-  --overlay-background-color: var(--firstnet-grey-light, #f2f2f2);
+  /* Abstract brand tokens — resolved by body.batt or body.firstnet */
+  --background-color: var(--brand-bg, white);
+  --light-color: var(--brand-light-bg, #f2f2f2);
+  --dark-color: var(--brand-dark-bg, #333);
+  --text-color: var(--brand-text, #000);
+  --link-color: var(--brand-link, #0568ae);
+  --link-hover-color: var(--brand-link-hover, #004a87);
+  --overlay-background-color: var(--brand-light-bg, #f2f2f2);
 
-  /* fonts - FirstNet typography (AT&T proprietary with system fallbacks) */
-  --body-font-family: var(--firstnet-body-font-family, "attAleckSans-Medium", "Helvetica Neue", helvetica, arial, sans-serif);
-  --heading-font-family: var(--firstnet-heading-font-family, "Brooklyn-Medium", "Helvetica Neue", helvetica, arial, sans-serif);
+  /* Abstract font families */
+  --body-font-family: var(--brand-body-font, arial, sans-serif);
+  --heading-font-family: var(--brand-heading-font, arial, sans-serif);
 
-  /* body sizes */
+  /* body sizes (shared across brands) */
   --body-font-size-m: 22px;
   --body-font-size-s: 19px;
   --body-font-size-xs: 17px;
 
-  /* heading sizes */
+  /* heading sizes (shared across brands) */
   --heading-font-size-xxl: 55px;
   --heading-font-size-xl: 44px;
   --heading-font-size-l: 34px;
@@ -45,7 +43,7 @@
   --heading-font-size-s: 24px;
   --heading-font-size-xs: 22px;
 
-  /* nav heights */
+  /* nav heights (shared) */
   --nav-height: 64px;
   --breadcrumbs-height: 34px;
   --header-height: var(--nav-height);
@@ -190,7 +188,7 @@ button {
   max-width: 100%;
   margin: 12px 0;
   border: 2px solid transparent;
-  border-radius: 2.4em;
+  border-radius: var(--brand-button-radius, 2.4em);
   padding: 0.5em 1.2em;
   font-family: var(--body-font-family);
   font-style: normal;
@@ -198,8 +196,8 @@ button {
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  background-color: var(--brand-button-bg, var(--link-color));
+  color: var(--brand-button-color, var(--background-color));
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -210,7 +208,7 @@ a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: var(--brand-button-hover-bg, var(--link-hover-color));
   cursor: pointer;
 }
 
@@ -279,77 +277,9 @@ main > .section:first-of-type > div > ul:first-child {
 }
 
 /*
- * Section-specific styles below use :nth-of-type and :has selectors
- * that target mutually exclusive sections. Specificity ordering across
- * these scopes is irrelevant since they never match the same elements.
+ * Brand-specific section styles are in:
+ *   styles/firstnet/firstnet-sections.css
+ *   styles/batt/batt-sections.css
+ * Loaded conditionally by scripts.js based on active theme.
  */
-/* stylelint-disable no-descending-specificity */
-
-/* News section styling */
-main > .section:nth-of-type(4) {
-  background-color: var(--firstnet-bg-light-grey, #f2f2f2);
-  margin: 0;
-  padding: 48px 0;
-}
-
-main > .section:nth-of-type(4) > div > h3:first-child {
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-/* News "Explore more" link at bottom of section */
-main > .section:nth-of-type(4) > div > p:last-child {
-  text-align: center;
-  margin-top: 32px;
-}
-
-main > .section:nth-of-type(4) > div > p:last-child a {
-  color: var(--firstnet-blue-accent, #0568ae);
-}
-
-/* Columns section - white background with centered content */
-main > .section:has(.firstnet-columns) {
-  background-color: var(--firstnet-bg-default, #fff);
-  color: var(--firstnet-text-primary, #000);
-  margin: 0;
-  padding: 48px 0;
-}
-
-main > .section:has(.firstnet-columns) h2,
-main > .section:has(.firstnet-columns) h3,
-main > .section:has(.firstnet-columns) p,
-main > .section:has(.firstnet-columns) strong {
-  color: var(--firstnet-text-primary, #000);
-  text-align: center;
-}
-
-main > .section:has(.firstnet-columns) > div > h2,
-main > .section:has(.firstnet-columns) > div > h3 {
-  text-align: center;
-}
-
-main > .section:has(.firstnet-columns) a:any-link {
-  color: var(--firstnet-link-color, #0568ae);
-}
-
-main > .section:has(.firstnet-columns) a.button:any-link {
-  background-color: transparent;
-  border: 2px solid var(--firstnet-link-color, #0568ae);
-  color: var(--firstnet-link-color, #0568ae);
-  border-radius: var(--firstnet-border-radius-pill, 25px);
-}
-
-main > .section:has(.firstnet-columns) a.button:hover {
-  background-color: var(--firstnet-link-color, #0568ae);
-  color: #fff;
-}
-
-/* Footnote text in columns section */
-main > .section:has(.firstnet-columns) > div > p:last-child {
-  font-size: var(--firstnet-body-size-xs, 12px);
-  opacity: 0.6;
-  text-align: center;
-}
-
-/* stylelint-enable no-descending-specificity */
 

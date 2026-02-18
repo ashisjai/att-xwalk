@@ -6,9 +6,11 @@ import { loadFragment } from '../fragment/fragment.js';
  * @param {Element} block The footer block element
  */
 export default async function decorate(block) {
-  // load footer as fragment
+  // load footer as fragment — use theme-aware default path
   const footerMeta = getMetadata('footer');
-  const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
+  const theme = getMetadata('theme');
+  const defaultFooter = theme === 'batt' ? '/batt/footer' : '/footer';
+  const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : defaultFooter;
   const fragment = await loadFragment(footerPath);
 
   // decorate footer DOM

@@ -152,6 +152,32 @@
   --firstnet-focus-outline-offset: 2px;
 }
 
+/* ========================================
+ * Abstract Brand Token Mapping
+ * Maps --brand-* tokens when firstnet theme is active.
+ * These power the brand-neutral global styles in styles.css.
+ * ======================================== */
+body.firstnet {
+  --brand-bg: var(--firstnet-bg-default, #fff);
+  --brand-text: var(--firstnet-text-primary, #000);
+  --brand-text-body: var(--firstnet-text-primary, #000);
+  --brand-text-inverse: var(--firstnet-text-inverse, #fff);
+  --brand-link: var(--firstnet-link-color, #0568ae);
+  --brand-link-hover: var(--firstnet-link-hover-color, #004a87);
+  --brand-heading-font: var(--firstnet-heading-font-family);
+  --brand-body-font: var(--firstnet-body-font-family);
+  --brand-button-radius: var(--firstnet-border-radius-pill, 25px);
+  --brand-button-bg: var(--firstnet-button-cta-bg, #0568ae);
+  --brand-button-color: var(--firstnet-button-cta-color, #fff);
+  --brand-button-hover-bg: var(--firstnet-button-cta-hover-bg, #004a87);
+  --brand-light-bg: var(--firstnet-grey-light, #f2f2f2);
+  --brand-dark-bg: var(--firstnet-dark-navy, #00263e);
+  --brand-nav-bg: var(--firstnet-dark-navy, #00263e);
+  --brand-nav-text: var(--firstnet-text-inverse, #fff);
+  --brand-footer-bg: var(--firstnet-dark-navy, #00263e);
+  --brand-footer-text: var(--firstnet-text-inverse, #fff);
+}
+
 /* Desktop breakpoint overrides */
 @media (width >= 900px) {
   :root {

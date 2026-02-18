@@ -1,0 +1,12 @@
+[
+  {
+    "id": "main",
+    "components": ["section"]
+  },
+  {
+    "...": "./_section-batt.json#/filters"
+  },
+  {
+    "...": "../blocks/*/_*.json#/filters"
+  }
+]
