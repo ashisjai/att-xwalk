@@ -1,4 +1,4 @@
-[  
+[
   {
     "...": "./_page.json#/models"
   },
@@ -16,6 +16,12 @@
   },
   {
     "...": "./_section.json#/models"
+  },
+  {
+    "...": "./_section-batt.json#/models"
+  },
+  {
+    "...": "./_section-firstnet.json#/models"
   },
   {
     "...": "../blocks/*/_*.json#/models"

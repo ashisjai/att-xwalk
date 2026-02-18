@@ -1,10 +1,16 @@
 [
   {
     "id": "main",
-    "components": ["section"]
+    "components": ["section-batt", "section-firstnet"]
   },
   {
     "...": "./_section.json#/filters"
+  },
+  {
+    "...": "./_section-batt.json#/filters"
+  },
+  {
+    "...": "./_section-firstnet.json#/filters"
   },
   {
     "...": "../blocks/*/_*.json#/filters"

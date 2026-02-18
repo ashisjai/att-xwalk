@@ -136,7 +136,7 @@
     ]
   },
   {
-    "id": "section",
+    "id": "section-batt",
     "fields": [
       {
         "component": "text",

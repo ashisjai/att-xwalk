@@ -1,14 +1,15 @@
 {
   "definitions": [
     {
-      "title": "Section",
-      "id": "section",
+      "title": "AT&T Business Section",
+      "id": "section-batt",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/section/v1/section",
             "template": {
-              "model": "section"
+              "model": "section-batt",
+              "filter": "section-batt"
             }
           }
         }
@@ -17,7 +18,7 @@
   ],
   "models": [
     {
-      "id": "section",
+      "id": "section-batt",
       "fields": [
         {
           "component": "text",
@@ -57,7 +58,7 @@
   ],
   "filters": [
     {
-      "id": "section",
+      "id": "section-batt",
       "components": [
         "batt-accordion",
         "batt-anchor-tabs",

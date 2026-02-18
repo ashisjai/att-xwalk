@@ -75,6 +75,36 @@
               }
             }
           }
+        },
+        {
+          "title": "AT&T Business Section",
+          "id": "section-batt",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "model": "section-batt",
+                  "filter": "section-batt"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "FirstNet Section",
+          "id": "section-firstnet",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "model": "section-firstnet",
+                  "filter": "section-firstnet"
+                }
+              }
+            }
+          }
         }
       ]
     },

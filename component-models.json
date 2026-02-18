@@ -186,6 +186,78 @@
     ]
   },
   {
+    "id": "section-batt",
+    "fields": [
+      {
+        "component": "text",
+        "name": "name",
+        "label": "Section Name",
+        "description": "The label shown for this section in the Content Tree"
+      },
+      {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Highlight",
+            "value": "highlight"
+          },
+          {
+            "name": "Batt Light",
+            "value": "batt-light"
+          },
+          {
+            "name": "Batt Neutral",
+            "value": "batt-neutral"
+          },
+          {
+            "name": "Batt Dark",
+            "value": "batt-dark"
+          },
+          {
+            "name": "Batt Accent",
+            "value": "batt-accent"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "section-firstnet",
+    "fields": [
+      {
+        "component": "text",
+        "name": "name",
+        "label": "Section Name",
+        "description": "The label shown for this section in the Content Tree"
+      },
+      {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Highlight",
+            "value": "highlight"
+          },
+          {
+            "name": "Dark Navy",
+            "value": "dark-navy"
+          },
+          {
+            "name": "Light Grey",
+            "value": "light-grey"
+          },
+          {
+            "name": "Dark Blue Accent",
+            "value": "dark-blue-accent"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "accordion-item",
     "fields": [
       {

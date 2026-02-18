@@ -63,14 +63,15 @@
       "id": "sections",
       "components": [
         {
-          "title": "Section",
-          "id": "section",
+          "title": "AT&T Business Section",
+          "id": "section-batt",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/section/v1/section",
                 "template": {
-                  "model": "section"
+                  "model": "section-batt",
+                  "filter": "section-batt"
                 }
               }
             }

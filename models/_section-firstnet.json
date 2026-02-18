@@ -1,14 +1,15 @@
 {
   "definitions": [
     {
-      "title": "Section",
-      "id": "section",
+      "title": "FirstNet Section",
+      "id": "section-firstnet",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/section/v1/section",
             "template": {
-              "model": "section"
+              "model": "section-firstnet",
+              "filter": "section-firstnet"
             }
           }
         }
@@ -17,7 +18,7 @@
   ],
   "models": [
     {
-      "id": "section",
+      "id": "section-firstnet",
       "fields": [
         {
           "component": "text",
@@ -53,7 +54,7 @@
   ],
   "filters": [
     {
-      "id": "section",
+      "id": "section-firstnet",
       "components": [
         "firstnet-cards-news",
         "firstnet-cards-offers",

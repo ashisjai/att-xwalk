@@ -24,6 +24,12 @@
       "components": [
         {
           "...": "./_section.json#/definitions"
+        },
+        {
+          "...": "./_section-batt.json#/definitions"
+        },
+        {
+          "...": "./_section-firstnet.json#/definitions"
         }
       ]
     },

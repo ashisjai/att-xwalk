@@ -2,11 +2,11 @@
   {
     "id": "main",
     "components": [
-      "section"
+      "section-batt"
     ]
   },
   {
-    "id": "section",
+    "id": "section-batt",
     "components": [
       "batt-accordion",
       "batt-anchor-tabs",
